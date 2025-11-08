@@ -1,0 +1,62 @@
+## Fitting with curve_fit
+Let's see how to fit the same model using `curve_fit`.
+
+## 1. Defining the Model Function"{auto-animate="true"}
+Next, we define the model function that we want to fit to the data. 
+
+This function **must** take the independent variable (x) and the parameters to fit (lambda and omega) as inputs, and return the predicted dependent variable (y).
+
+```{.python}
+def damped_sine(x, lam, omega):
+    return np.exp(-lam * x) * np.sin(omega * x)
+```
+
+::: {.fragment}
+Why? Look at the signature of [curve_fit](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html):
+
+![](assets/curve_fit_doc.png){width=800px}
+:::
+
+::: footer
+Check the [official documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) for more details.
+:::
+
+## 2. Performing the Fit {auto-animate="true"}
+Now, we can use `curve_fit` to estimate the parameters of our model based on the noisy data.
+```{.python code-line-numbers=|4|5|6|7-8|}
+def damped_sine(x, lam, omega):
+    return np.exp(-lam * x) * np.sin(omega * x)
+
+p0 = (1, 1)
+bounds = ((0.0, 0.0), (np.inf, 5.0))
+popt, pcov = curve_fit(damped_sine, x, y, p0=p0, bounds=bounds)
+lam_hat, omega_hat = popt
+lam_se, omega_se = np.sqrt(np.diag(pcov))
+```
+
+## 3. Visualizing the Results {auto-animate="true"}
+Finally, we can visualize the fitted model against the noisy data and the true model.
+
+```{.python code-line-numbers=|10-11|14-21|}
+def damped_sine(x, lam, omega):
+    return np.exp(-lam * x) * np.sin(omega * x)
+
+p0 = (1, 1)
+bounds = ((0.0, 0.0), (np.inf, 5.0))
+popt, pcov = curve_fit(damped_sine, x, y, p0=p0, bounds=bounds)
+lam_hat, omega_hat = popt
+lam_se, omega_se = np.sqrt(np.diag(pcov))
+
+print(f"Estimated λ    = {lam_hat:.5f} ± {lam_se:.2e} (true 0.5)")
+print(f"Estimated ω    = {omega_hat:.5f} ± {omega_se:.2e} (true {np.pi:.5f})")
+
+plt.figure()
+plt.scatter(x, y, s=10, alpha=0.6, label="noisy data")
+plt.plot(x, damped_sine(x, *popt), lw=2, label=f"fit: λ={lam_hat:.3f}, ω={omega_hat:.3f}")
+plt.plot(x, y_true, lw=1, linestyle="--", label="true: λ=0.5, ω=3.14159")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.title("Fit y = e^{-λx} sin(ωx)")
+plt.legend()
+plt.show()
+```

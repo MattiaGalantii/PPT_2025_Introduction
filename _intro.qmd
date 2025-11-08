@@ -1,0 +1,82 @@
+# {{< fa person-chalkboard >}} Introduction
+Welcome to the "Introduction to Python Scientific Programming for Practicum Process Technology"!  
+
+This course is designed to equip you with the *fundamental* skills and knowledge needed to effectively use Python for scientific computing and data analysis in the context of Practicum Process Technology course.
+
+
+
+## About the lecturers 
+
+**Mattia Galanti**  
+Eindhoven University of Technology (TU/e)  
+📧 m.galanti@tue.nl  
+🏢 STW 0.35, Helix Building
+
+<br/>
+
+**Dr. Ivo Roghair**  
+Eindhoven University of Technology (TU/e)  
+📧 i.roghair@tue.nl  
+🏢 STW 0.37, Helix Building
+
+<br/>
+
+Feel free to reach out via email for any questions or assistance related to the course.
+
+## What will we do in this crash course?
+
+In this crash course, we will cover the following topics:
+
+>- Quick refresh about Python, scientific libraries, environments and Jupyter Notebooks
+- Modeling of dynamic systems, ODEs and Python implementations
+- Fitting models to data and parameter estimation
+- Hands-on exercises and real-world examples
+
+. . . 
+
+By the end of this course, you will have a solid foundation in Python programming for scientific applications, enabling you to tackle the challenges you'll find in the rest of the Practicum Process Technology course.
+
+## Why Python?
+Python is a versatile and powerful programming language widely used in scientific computing and data analysis. Here are some reasons why Python is an excellent choice:
+
+>
+- **Ease of Learning:** Python has a simple and readable syntax, making it accessible for beginners.
+- **Extensive Libraries:** Python has a rich ecosystem of libraries such as NumPy, SciPy, and Matplotlib that facilitate scientific computing and data visualization.
+- **Community Support:** Python has a large and active community, providing ample resources, tutorials, and forums for learning and troubleshooting.
+- **It's Free 😎:** Python is open-source and free to use, making it accessible to everyone.
+
+
+![](https://www.python.org/static/community_logos/python-logo-inkscape.svg){.absolute bottom="100" right="0"}
+
+::: aside
+Formerly, the faculty would endorse Matlab as a scripting language, but proficiency in Python is believed to be more valuable for trained engineers.
+:::
+
+::: footer
+Learn more: [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) by Jake VanderPlas
+:::
+
+## How to program in Python?
+In this course, we will primarily use Jupyter Notebooks for coding and exercises. Jupyter Notebooks provide an interactive environment that allows you to combine code, text, and visualizations in a single document. 
+
+. . . 
+
+You can run Jupyter Notebooks locally on your computer using [VS Code](https://code.visualstudio.com/) or use cloud-based platforms such as [Google Colab](https://colab.research.google.com/).
+
+> Follow the instructions provided in the course materials to set up your Python environment and get started with Jupyter Notebooks.
+
+::: {.callout-warning}
+# Any problems?
+Given the time limitations, I won't address python installation and setup questions during the session. Following the setup instructions provided in the course materials is mandatory. Feel free to ask after class.
+:::
+
+## Let's get started! 
+
+
+
+
+
+
+
+
+

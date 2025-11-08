@@ -1,0 +1,33 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "!assets/"        
+  output-dir: docs
+
+website:
+  title: "Python Crash Course for Practicum Process Technology"
+  site-url: "https://MattiaGalantii.github.io/PPT_intro_slides"
+
+format:
+    revealjs:
+        theme: default
+        width: 1600
+        height: 900
+        logo: assets/TUe_logo.png
+        css: styles.css  
+        slide-number: c/t
+        incremental: true
+        scrollable: true
+        preview-links: auto
+        code-overflow: scroll
+        controls: true
+        controls-layout: bottom-right
+        controls-tutorial: true
+        max-scale: 1.4
+        transition: slide
+        navigation-mode: vertical
+
+
+revealjs-plugins:
+- pointer   # requires the extension; see note below

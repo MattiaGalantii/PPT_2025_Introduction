@@ -1,0 +1,211 @@
+## Solve for systems of ODEs
+Now that we have a basic understanding of how to use `solve_ivp`, let's tackle a more complex ODE system, containing more that one equation.
+
+Recall:
+
+1. **Define the IVP problem**: Define the ODE system and initial conditions.
+
+2. **Implement the ODE system**: Write a function that computes and returns the derivatives.
+
+3. **Setup and call `solve_ivp`**: Specify the time span, initial conditions, and method.
+
+4. **Extract and analyze the results**.
+
+## 1. A *"strange"* example: Lorenz system
+Edward Lorentz (1963) wanted to model atmospheric convection, with variables $x(t)$, $y(t)$, and $z(t)$ related to fluid flow and temperature.
+
+::: {fragment}
+He ended up with a simplified model, a set of three *first-order, coupled, nonlinear* differential equations:
+
+$$
+\begin{align*}
+\dot{x} &= \Pr (y - x) \\
+\dot{y} &= x (\text{Ra} - z) - y \\
+\dot{z} &= xy - \beta z
+\end{align*}
+$$
+
+
+The parameters $\Pr$ (Prandtl), Ra (Rayleigh), and $\beta$ are constants that depend on the physical properties of the fluid and the conditions of the system.
+:::
+
+::: footer
+The story behind the Lorenz system is quite fascinating, I recommend reading about it! Check-out this Veritasium video: [Chaos: The Science of the Butterfly Effect | Veritasium](https://www.youtube.com/watch?v=fDek6cYijxI&t=416s)
+:::
+
+## 2. Implementing the Lorenz system in Python {auto-animate="true"}
+Let's implement the Lorenz system using `solve_ivp`.
+```{.python code-line-numbers=|5|6|7-9|10|}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+def lorenz_system(t, y, Pr, Ra, beta):
+    x, y, z = y
+    dxdt = Pr * (y - x)
+    dydt = x * (Ra - z) - y
+    dzdt = x * y - beta * z
+    return [dxdt, dydt, dzdt]
+```
+
+::: {.fragment}
+Let's consider two initial conditions that are very close to each other:
+$$\mathbf{y_0} = [1.0, 1.0, 1.0]$$
+$$\mathbf{y_0'} = [1.0 + \varepsilon, 1.0, 1.0]$$
+with $\varepsilon = 10^{-6}$.
+:::
+
+
+## 2. Implementing the Lorenz system in Python {auto-animate="true"}
+Let's implement the Lorenz system using `solve_ivp`.
+```{.python code-line-numbers=|}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+def lorenz_system(t, y, Pr, Ra, beta):
+    x, y, z = y
+    dxdt = Pr * (y - x)
+    dydt = x * (Ra - z) - y
+    dzdt = x * y - beta * z
+    return [dxdt, dydt, dzdt]
+
+sigma = 10.0
+rho   = 1
+beta  = 8.0 / 3.0
+```
+
+## 3. Setup the solver {auto-animate="true"}
+Let's implement the Lorenz system using `solve_ivp`.
+
+```{.python code-line-numbers=|16-18|20-21}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+def lorenz_system(t, y, Pr, Ra, beta):
+    x, y, z = y
+    dxdt = Pr * (y - x)
+    dydt = x * (Ra - z) - y
+    dzdt = x * y - beta * z
+    return [dxdt, dydt, dzdt]
+
+sigma = 10.0
+rho   = 1
+beta  = 8.0 / 3.0
+
+y0   = np.array([1.0, 1.0, 1.0])
+eps  = 1e-6
+y0_2 = np.array([1.0 + eps, 1.0, 1.0])
+
+t_span = (0.0, 50.0)
+t_eval = np.linspace(t_span[0], t_span[1], 10000)
+```
+
+## 4. Solve the system and extract results {auto-animate="true"}
+Let's implement the Lorenz system using `solve_ivp`.
+
+```{.python code-line-numbers=23|25-26|28-30}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+def lorenz_system(t, y, Pr, Ra, beta):
+    x, y, z = y
+    dxdt = Pr * (y - x)
+    dydt = x * (Ra - z) - y
+    dzdt = x * y - beta * z
+    return [dxdt, dydt, dzdt]
+
+sigma = 10.0
+rho   = 1
+beta  = 8.0 / 3.0
+
+y0   = np.array([1.0, 1.0, 1.0])
+eps  = 1e-6
+y0_2 = np.array([1.0 + eps, 1.0, 1.0])
+
+t_span = (0.0, 50.0)
+t_eval = np.linspace(t_span[0], t_span[1], 10000)
+
+method = "RK45"          
+
+sol1 = solve_ivp(lorenz_system, t_span, y0,   args=(sigma, rho, beta), t_eval=t_eval, method=method, rtol=1e-9, atol=1e-12)
+sol2 = solve_ivp(lorenz_system, t_span, y0_2, args=(sigma, rho, beta), t_eval=t_eval, method=method, rtol=1e-9, atol=1e-12)
+
+t = sol1.t
+X1, Y1, Z1 = sol1.y
+X2, Y2, Z2 = sol2.y
+
+```
+
+## 5. Visualize the results 
+Visualizing the time evolution of the Lorenz system can reveal its peculiar behavior..
+
+It's time for you to complete the code and generate the plots! 
+[Open the exercise]() and:
+
+- Create a 3x1 subplot figure.
+- Plot $x(t)$, $y(t)$, and $z(t)$ for both initial conditions.
+- Create a 1x3 subplot figure.
+- Plot the phase portraits: $x(t)$ vs $z(t)$, $x(t)$ vs $y(t)$, and $y(t)$ vs $z(t)$ for both initial conditions. (Note: x-axis vs y-axis)
+- Increase slowly Rayleigh number `Ra` (1 - 25) and observe how the system's behavior changes!
+
+::: {.fragment}
+Minimal starter code is provided below:
+```{.python}
+fig_3_1, axes_3_1 = plt.subplots(3, 1, figsize=(12, 10), sharex=True)
+axes[0].plot(t, X1)
+
+fig_3_1, axes_1_3 = plt.subplots(1, 3, figsize=(12, 5), sharex=False, sharey=False)
+axes_1_3[0].plot(X1, Z1)
+```
+:::
+
+## Time series solutions
+
+{{< video assets/lorenz_rho_sweep.mp4 width="1000" >}}
+
+## Phase space plots
+
+{{< video assets/lorenz_phase_rho_sweep.mp4 width="1500" >}}
+
+::: footer
+Want to know more? I highly recommend checking out the following resources:
+
+[The Lorenz Attractor, a Paradigm for Chaos](https://link.springer.com/chapter/10.1007/978-3-0348-0697-8_1)
+
+[Chaos: The Science of the Butterfly Effect | Veritasium](https://www.youtube.com/watch?v=fDek6cYijxI)
+
+[Chaos Theory: The Language of (in)stability | Gonkee](https://www.youtube.com/watch?v=uzJXeluCKMs)
+
+[Are there other Chaotic Attractors?](https://www.youtube.com/watch?v=idpOunnpKTo)
+:::
+
+## Summary
+I might have convinced you that `solve_ivp` is a powerful tool to solve ODEs in Python, even for complex systems.
+
+
+::: {.columns}
+::: {.column}
+You should now be able to:
+
+- Define and implement systems of ODEs in Python.
+- Use `solve_ivp` to solve these systems numerically.
+- Visualize and analyze the results effectively.
+
+:::
+
+
+::: {.column}
+:::: {.fragment}
+![](https://media1.tenor.com/m/3yPBPC_dwe8AAAAd/leonardo-dicaprio-clapping.gif){width=40%}
+::::
+::: 
+
+:::
+
+:::: {.fragment}
+Only one thing is missing: what if we don't know the **parameters** of the system? 
+How can we estimate them from data?
+::::

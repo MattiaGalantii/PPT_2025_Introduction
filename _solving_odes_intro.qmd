@@ -1,0 +1,381 @@
+## Linear ODEs
+
+A **linear ordinary differential equation (ODE)** is one that can be written in the form:
+
+$$
+a_n(x)\,\frac{d^n y}{dx^n} + a_{n-1}(x)\,\frac{d^{n-1} y}{dx^{n-1}} + \dots + a_1(x)\,\frac{dy}{dx} + a_0(x)\,y = g(x)
+$$
+
+where the coefficients $a_i(x)$ and the forcing term $g(x)$ are known functions of the independent variable $x$.
+
+### Key properties
+
+-   The dependent variable $y$ **and its derivatives** appear **only to the first power**.
+-   $y$ and its derivatives are **not multiplied** together.
+-   *Usually*, can be solved analytically
+-   Superposition holds:\
+    if $y_1$ and $y_2$ are solutions of the homogeneous equation, then $c_1 y_1 + c_2 y_2$ is also a solution.
+
+## Nonlinear ODEs
+
+A **non-linear ODE** involves terms that are nonlinear functions of $y$ or its derivatives,\
+for example, $y^2$, $y\,\frac{dy}{dx}$, or $\sin(y)$.
+
+Nonlinear equations often describe richer and more complex dynamics (e.g., oscillations, bifurcations and chaos).
+
+Typically **cannot be solved analytically** and must be studied using **numerical methods** or **approximations**.
+
+:::: {layout-ncol="3"}
+![Strange Attractor](assets/strange_attractor.png){.fragment .fade-left fig-alt="Lorenz strange attractor" width="300"}
+
+![Mandelbrot Set (kinda)](assets/mendelbrot_set.png){.fragment .fade-left fig-alt="Mandelbrot set" width="400"}
+
+::: {.fragment .fade-left}
+$$
+\frac{du}{dt} = \frac{1}{\tau} \left(u_{in} - u\right) + k\,u
+$$
+
+$$
+\frac{d^2 \theta}{dt^2} + \sin(\theta) = 0
+$$
+
+[<em>Linear vs. Nonlinear</em>]{style="font-size:0.9em; color:gray;"}
+:::
+::::
+
+::: footer
+> “Most of everyday life is nonlinear, and the principle of superposition fails spectacularly.” - Steven Strogatz
+:::
+
+## Solving ODEs Numerically
+
+Imagine you have a first-order ODE of the form: 
+$$
+\frac{dx}{dt} = sin(x)
+$$ 
+
+with an initial condition $x(t=0) = x_0$.
+
+Imagine x represents the position of a particle moving along a line over time t.
+
+::: {.fragment .fade-left}
+> Knowing the rule of change, specifically $\frac{dx}{dt}$, already allows us to predict the particle's future behaviour without using any integrals!
+:::
+
+## The power of knowing the derivative {transition="none-in none-out"}
+### The phase-space
+By knowing the derivative $\frac{dx}{dt} = sin(x)$, we can analyze the system's behavior in phase space:
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-3*np.pi, 3*np.pi, 1200)
+y = np.sin(x)
+
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.plot(x, y, linewidth=3, label=r"$\dot{x}=\sin(x)$")
+
+ax.axhline(0, linewidth=1, color='black')
+ax.axvline(0, linewidth=1, color='black')
+ax.set_ylim(-1.5, 1.5)
+ax.set_ylim(-1.5, 1.5)
+
+ax.set_xlabel(r"$x$", fontsize=18)
+ax.set_ylabel(r"$\dot{x}$", fontsize=18)
+ax.tick_params(axis='both', which='major', labelsize=14)
+
+ax.set_title(r"Phase Space for $\dot{x}=\sin(x)$", fontsize=16)
+plt.tight_layout()
+plt.show()
+```
+
+## The power of knowing the derivative {transition="none-in none-out"}
+### The phase-space
+By knowing the derivative $\frac{dx}{dt} = sin(x)$, we can analyze the system's behavior in phase space:
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Domain and function
+x = np.linspace(-3*np.pi, 3*np.pi, 1200)
+y = np.sin(x)
+
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.plot(x, y, linewidth=3, color="C0", label=r"$\dot{x}=\sin(x)$")
+
+# Axes
+ax.axhline(0, linewidth=1, color='black')
+ax.axvline(0, linewidth=1, color='black')
+ax.set_ylim(-1.5, 1.5)
+
+# --- Arrows along x-axis ---
+eps = 1e-3
+x_ar = np.array([-2*np.pi - eps, -2*np.pi + eps, -3/2*np.pi, -3/2*np.pi, -np.pi/2 - eps, -np.pi/2 + eps, 0-eps, 0+eps, np.pi/2, np.pi/2, 3/2*np.pi, 3/2*np.pi, 2*np.pi - eps, 2*np.pi + eps])
+u = np.sign(np.sin(x_ar)).astype(float)
+u[u == 0] = 0.01
+v = np.zeros_like(x_ar)
+
+# position exactly on x-axis, much longer arrows -> use smaller scale
+ax.quiver(x_ar, np.zeros_like(x_ar), u, v,
+          angles='xy', scale_units='xy', scale=0.8, width=0.0045)
+
+# Labels and formatting
+ax.set_xlabel(r"$x$", fontsize=18)
+ax.set_ylabel(r"$\dot{x}$", fontsize=18)
+ax.tick_params(axis='both', which='major', labelsize=14)
+ax.set_title(r"Phase Space for $\dot{x}=\sin(x)$", fontsize=16)
+
+plt.tight_layout()
+plt.show()
+
+```
+
+## The power of knowing the derivative {transition="none-in none-out"}
+### The phase-space
+By knowing the derivative $\frac{dx}{dt} = sin(x)$, we can analyze the system's behavior in phase space:
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Domain and function
+x = np.linspace(-3*np.pi, 3*np.pi, 1200)
+y = np.sin(x)
+
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.plot(x, y, linewidth=3)
+
+# Axes
+ax.axhline(0, linewidth=1, color='black')
+ax.axvline(0, linewidth=1, color='black')
+ax.set_ylim(-1.5, 1.5)
+
+# --- Arrows along x-axis ---
+eps = 1e-3
+x_ar = np.array([-2*np.pi - eps, -2*np.pi + eps, -3/2*np.pi, -3/2*np.pi, -np.pi/2 - eps, -np.pi/2 + eps, 0-eps, 0+eps, np.pi/2, np.pi/2, 3/2*np.pi, 3/2*np.pi, 2*np.pi - eps, 2*np.pi + eps])
+u = np.sign(np.sin(x_ar)).astype(float)
+u[u == 0] = 0.01
+v = np.zeros_like(x_ar)
+
+# position exactly on x-axis, much longer arrows -> use smaller scale
+ax.quiver(x_ar, np.zeros_like(x_ar), u, v,
+          angles='xy', scale_units='xy', scale=0.8, width=0.0045)
+
+# --- Stationary points x = nπ ---
+k = np.arange(-2, 3)
+x_fp = k * np.pi
+y_fp = np.zeros_like(x_fp)
+stable = np.cos(x_fp) < 0
+
+# Plot stationary points (with legend)
+ax.scatter(x_fp[stable], y_fp[stable], s=80, facecolor='black', edgecolor='black', zorder=5, label='Stable')
+ax.scatter(x_fp[~stable], y_fp[~stable], s=80, facecolor='none', edgecolor='black', zorder=5, label='Unstable')
+
+# Labels and formatting
+ax.set_xlabel(r"$x$", fontsize=18)
+ax.set_ylabel(r"$\dot{x}$", fontsize=18)
+ax.tick_params(axis='both', which='major', labelsize=14)
+ax.set_title(r"Phase Space for $\dot{x}=\sin(x)$", fontsize=16)
+
+# Legend only for stationary points
+ax.legend(frameon=False, loc='upper right', fontsize=12)
+
+plt.tight_layout()
+plt.show()
+
+```
+
+:::: {.fragment .fade-left}
+::: callout-important
+**Intuition**: knowing the derivative allows us to predict the system's behavior without solving the ODE explicitly!
+:::
+::::
+
+## Euler's Method
+
+We were able to predict the system's behavior *qualitatively* by analyzing the phase space.
+
+Similarly, to obtain a *quantitative* solution, we can use the same intuituion to approximate the solution numerically using **Euler's Method**.
+
+![](assets/euler.png){alt="Euler_meme" width="250px"}
+
+## The idea behind Euler’s Method
+
+We know the differential equation describes a *velocity field*:
+
+$$
+\frac{dx}{dt} = f(x)
+$$
+
+At each point $x$, the function $f(x)$ tells us how fast and in which direction $x$ changes.
+
+::: {.fragment .fade-left}
+If we start from $x_0$ at $t_0$, and move a small time step $\Delta t$, the **displacement** is approximately the *local velocity* times $\Delta t$:
+
+$$
+x(t_0 + \Delta t) \approx x_0 + f(x_0)\,\Delta t
+$$
+:::
+
+## Iterating the idea {transition="none-in none-out"}
+
+By repeating the same reasoning step-by-step, we generate a sequence:
+
+$$
+x_{n+1} = x_n + f(x_n)\,\Delta t
+$$
+
+Each step uses the *current slope* to estimate the *next position*.
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Example: dx/dt = sin(x)
+f = lambda x: np.sin(x)
+
+# Parameters
+dt = 0.2
+N = 25
+x = np.zeros(N)
+x[0] = 1.0  # initial condition
+
+# Euler integration
+for n in range(N-1):
+    x[n+1] = x[n] + f(x[n]) * dt
+
+t = np.linspace(0, (N-1)*dt, N)
+
+# True solution for comparison
+from scipy.integrate import solve_ivp
+sol = solve_ivp(lambda t, x: np.sin(x), [0, t[-1]], [1.0], t_eval=t)
+
+# Plot
+plt.figure(figsize=(8, 5))
+plt.plot(t, sol.y[0], label='Exact', lw=2)
+plt.plot(t, x, 'o-', label='Euler approx.', lw=2)
+plt.xlabel('Time')
+plt.ylabel('x(t)')
+plt.legend(frameon=False)
+plt.title("Euler’s Method Approximation vs Exact Solution")
+plt.tight_layout()
+plt.show()
+```
+
+## However...
+
+-   The accuracy of Euler's method depends on the step size $\Delta t$.
+-   When you have different time scales in the system, Euler's method may require *impractically* small step sizes to maintain stability and accuracy.
+
+. . .
+
+Numerically, an ODE is considered **stiff** if it exhibits behavior on vastly different time scales, making it challenging for standard *numerical* methods to solve efficiently.
+
+:::: {.fragment .fade-left}
+::: callout-note
+In chemical engineering, stiff equations are the standard rather than the exception, often arising from reaction kinetics and transport phenomena.
+:::
+::::
+
+## Example: stiffness and step size {transition="fade-in slide-out"}
+
+Let's test the Euler method on a **stiff ODE**:
+
+$$
+\dot{x} = -15 \, x
+$$
+
+::::: {.columns}
+:::: {.column}
+::: {.fragment}
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+def dydt(t, y, lam):
+    dydt = -lam * y
+    return dydt
+    
+def euler(y0, dt, t_end):
+    N = int(np.round(t_end / dt))
+    t = np.linspace(0.0, N*dt, N+1)
+    y = np.empty(N+1)
+    y[0] = y0
+    for n in range(N):
+        y[n+1] = y[n] + dt*dydt(t[n], y[n], lam)
+    return t, y
+
+# Problem definition
+lam = 15.0
+y0 = 1.0
+t_end = 1.0
+
+# Exact solution on a fine grid
+t_exact = np.linspace(0.0, t_end, 1000)
+y_exact = np.exp(-lam * t_exact)
+
+# Methods / steps
+t_e1, y_e1 = euler(y0, 1/4, t_end)   # Euler, h=1/4 (unstable oscillations)
+t_e2, y_e2 = euler(y0, 1/8, t_end)   # Euler, h=1/8 (oscillatory but bounded)
+
+# Plot
+plt.figure(figsize=(8, 4.5))
+plt.plot(t_exact, y_exact, label="Exact solution", linewidth=3, color="tab:red")
+plt.plot(t_e1, y_e1, 'o-', label="Euler dt=1/4", linewidth=2)
+plt.plot(t_e2, y_e2, 's-', label="Euler dt=1/8", linewidth=2)
+plt.xlabel("t", fontsize=14)
+plt.ylabel("y(t)", fontsize=14)
+plt.ylim(-10, 10)
+plt.title("Explicit instability on y' = -15 y", fontsize=16)
+plt.legend(frameon=False)
+plt.tight_layout()
+plt.show()
+
+```
+:::
+::::
+
+:::: {.column}
+- Don't be fooled by the seemingly simple ODE!
+- With a large step size (e.g., $\Delta t = 1/4$), the Euler method produces wildly oscillating and diverging results.
+- We need different numerical methods designed to handle stiffness effectively.
+::::
+:::::
+
+::: {.fragment .fade-left}
+::: {.callout-tip appearance="simple" title="Tip"}
+Don't use Euler scheme.
+:::
+:::
+
+::: footer
+The example was taken from Wikipedia. Check out the full article on [Stiff equations](https://en.wikipedia.org/wiki/Stiff_equation) for more details!
+:::
+
+## Many ways to integrate ODEs {transition="fade-in slide-out"}
+
+When integrating ODEs, different schemes are suited for different regimes:
+
+::: {.fragment .fade-left}
+### 🧮 Runge–Kutta (RK45)
+- **Explicit** → fast, accurate for *non-stiff* systems  
+- Works best when all time scales are similar  
+:::
+
+::: {.fragment .fade-left}
+### ⚙️ BDF (Backward Differentiation Formula)
+- **Implicit** → robust for *stiff* systems  
+- Ideal for chemical kinetics, heat transfer, adsorption dynamics
+:::
+
+::: {.fragment .fade-left}
+### 🔀 LSODA
+- **Hybrid** → automatically switches between explicit (Adams) and implicit (BDF)  
+- Detects stiffness during runtime  
+- Excellent default if stiffness is uncertain
+:::
+
+
+

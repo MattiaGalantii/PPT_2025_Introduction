@@ -1,0 +1,304 @@
+# {{< fa calculator >}} Essential Libraries: NumPy and Matplotlib
+> Empower your Python workflow with two of the most essential libraries for scientific computing and data visualization.
+
+Together, these libraries form the foundation of modern scientific programming in Python.
+
+::: {layout-ncol=2 style="display:flex; justify-content:left; align-items:left; gap:80px; margin-top:1em;"}
+![](assets/numpy_logo.png){width="400px"}
+![](assets/matplotlib_logo.png){width="400px"}
+:::
+
+
+::: footer
+If you need a refresher, check out these guides:  
+[NumPy: the absolute basics for beginners](https://numpy.org/doc/1.25/user/absolute_beginners.html)   
+[Matplotlib quick start guide](https://matplotlib.org/stable/contents.html)
+:::
+
+## {{< fa cubes >}} NumPy
+[NumPy](https://numpy.org/doc/stable/) is the fundamental package for scientific computing in Python. It provides multidimensional array objects, efficient and high-performance computations, mathematical functions, and other tools for working with arrays.
+
+> ```import numpy as np``` 
+
+::: {.callout-tip}
+If you have doubts when programming with NumPy, check out the [NumPy User Guide](https://numpy.org/doc/stable/user/index.html) for comprehensive explanations and examples. In alternative, ask ChatGPT for a quick help!
+:::
+
+---
+
+## {{< fa cubes >}} Key Features {transition="slide-in none-out" auto-animate="true"}
+
+### ndarray 
+A powerful n-dimensional array object that allows for efficient storage and manipulation of large datasets.
+
+::: {.fragment}
+```{.python code-line-numbers="1,2,3,4|"}
+import numpy as np
+array_1d = np.array([1, 2, 3, 4, 5])
+array_2d = np.array([[1, 2, 3], [4, 5, 6]])
+array_3d = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+
+print(f"1D array shape: {array_1d.shape}")
+print(f"2D array shape: {array_2d.shape}")
+print(f"3D array shape: {array_3d.shape}")
+```
+:::
+
+::: {.fragment}
+```{python}
+import numpy as np
+array_1d = np.array([1, 2, 3, 4, 5])
+array_2d = np.array([[1, 2, 3], [4, 5, 6]])
+array_3d = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+
+print(f"1D array shape: {array_1d.shape}")
+print(f"2D array shape: {array_2d.shape}")
+print(f"3D array shape: {array_3d.shape}")
+```
+:::
+
+::: footer
+If you need a refresher, check out these guides:  
+[NumPy: the absolute basics for beginners](https://numpy.org/doc/1.25/user/absolute_beginners.html)   
+:::
+
+---
+
+## {{< fa cubes >}} Key Features {transition="none-in none-out" auto-animate="true"}
+
+### ndarray 
+A powerful n-dimensional array object that allows for efficient storage and manipulation of large datasets.
+
+
+```{.python}
+import numpy as np
+array_1d = np.array([1, 2, 3, 4, 5])
+array_2d = np.array([[1, 2, 3], [4, 5, 6]])
+array_3d = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+
+print(f"1D array shape: {array_1d.shape}")
+print(f"2D array shape: {array_2d.shape}")
+print(f"3D array shape: {array_3d.shape}")
+
+print(array_1d[2])       
+print(array_2d[1, 0])     
+print(array_3d[0, 1, 1])  
+print(array_3d[:, 0, :])  
+```
+
+::: {.fragment}
+```{python}
+import numpy as np
+array_1d = np.array([1, 2, 3, 4, 5])
+array_2d = np.array([[1, 2, 3], [4, 5, 6]])
+array_3d = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+
+print(f"1D array shape: {array_1d.shape}")
+print(f"2D array shape: {array_2d.shape}")
+print(f"3D array shape: {array_3d.shape}")
+
+print(f"\nAccessing 1D array: {array_1d[2]}")
+print(f"Accessing 2D array: {array_2d[1, 0]}")
+print(f"Accessing 3D array: {array_3d[0, 1, 1]}")
+print(f"Accessing multiple dimensions in 3D array: {array_3d[:, 0, :]}")
+```
+:::
+
+::: footer
+If you need a refresher, check out these guides:  
+[NumPy: the absolute basics for beginners](https://numpy.org/doc/1.25/user/absolute_beginners.html)   
+:::
+
+## {{< fa cubes >}} Key Features {transition="none-in none-out"}
+
+### Vectorized Operations
+NumPy performs **element-wise operations** on entire arrays, eliminating explicit Python loops and providing major speed-ups.
+
+::: {.fragment}
+```{python}
+#| echo: true
+#| output-location: fragment
+import numpy as np
+
+# Two arrays (same shape)
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([10, 20, 30, 40, 50])
+
+# Element-wise math
+sum_ab   = a + b
+product  = a * b
+squared  = a ** 2
+
+print("Sum:", sum_ab)
+print("Product:", product)
+print("Squared:", squared)
+```
+:::
+
+::: footer
+If you need a refresher, check out these guides:  
+[NumPy: the absolute basics for beginners](https://numpy.org/doc/1.25/user/absolute_beginners.html)   
+:::
+
+---
+
+## {{< fa cubes >}} Key Features {transition="none-in none-out"}
+
+### Broadcasting
+An (*overpowered*) mechanism that allows NumPy to perform operations on arrays of **different shapes** in a way that is both efficient and intuitive. Every operation happens element-wise and in C-optimized code.
+
+::: {.fragment}
+```{python}
+#| echo: true
+#| output-location: fragment
+import numpy as np
+# Array of shape (3, 4)
+A = np.array([[1, 2, 3, 4],
+              [5, 6, 7, 8],
+              [9, 10, 11, 12]])
+# Array of shape (4,)
+b = np.array([10, 20, 30, 40])
+# Broadcasting addition
+C = A + b
+print("Result of Broadcasting Addition:\n", C)
+```
+:::
+
+::: {.fragment}
+::: {.callout-note appearance="simple" style="font-size:0.8em;"}
+Broadcasting allows NumPy to automatically expand the smaller array (b) across the larger array (A) so that they have compatible shapes for element-wise operations.
+:::
+:::
+
+::: footer
+Learn more about broadcasting here:  
+[Learn NumPy broadcasting in 6 minutes!](https://www.youtube.com/watch?v=P67wiuTx7l0) from youTube channel *Bro Code*
+
+[NumPy Broadcasting Explained: The Complete Guide for Beginners and Data Enthusiasts](https://medium.com/@rohanmistry231/numpy-broadcasting-explained-the-complete-guide-for-beginners-and-data-enthusiasts-36fb9790ad0d) from Medium.com, *Rohan Mistry*
+:::
+
+---
+
+## {{< fa cubes >}} Key Features {transition="none-in none-out"}
+
+### Mathematical Functions
+ A wide range of mathematical functions for performing operations on arrays, including linear algebra, statistical analysis, and more.
+
+::: {.fragment style="font-size:0.85em;"}
+```{python}
+#| echo: true
+#| output-location: fragment
+
+import numpy as np
+data = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])
+mean = np.mean(data, axis=1)
+std_dev = np.std(data, axis=1)
+exp = np.exp(data)
+sum_data = np.sum(data, axis=1)
+print(f"Mean: {mean} \nStandard Deviation: {std_dev} \nSum: {sum_data} \nExponential: {exp}")
+```
+:::
+
+::: {.fragment}
+::: {.callout-tip}
+When working with multidimensional arrays, you can specify the **axis** along which to perform the operation using the `axis` parameter in functions like `np.sum()`, `np.mean()`, etc.
+:::
+:::
+
+::: footer
+If you need a refresher, check out these guides:  
+[NumPy: the absolute basics for beginners](https://numpy.org/doc/1.25/user/absolute_beginners.html)   
+:::
+\
+
+---
+
+## {{< fa cubes >}} Key Features {transition="none-in slide-out"}
+
+### Integration with Other Libraries
+>NumPy serves as the foundation for many other scientific computing libraries in Python, such as SciPy, pandas, and scikit-learn.
+
+::: {.callout-important}
+Be sure to be familiar with NumPy, since it's the backbone of scientific computing in Python!
+:::
+
+::: footer
+If you need a refresher, check out these guides:  
+[NumPy: the absolute basics for beginners](https://numpy.org/doc/1.25/user/absolute_beginners.html)   
+:::
+
+## {{< fa chart-line >}} Matplotlib
+[Matplotlib](https://matplotlib.org/stable/contents.html) is a comprehensive library for creating static, animated, and interactive visualizations in Python. It provides a wide range of plotting capabilities, allowing you to create high-quality graphs and charts for data analysis and presentation.
+
+> ```from matplotlib import pyplot as plt``` 
+
+> ```import matplotlib.pyplot as plt``` 
+
+## {{< fa chart-line >}} Matplotlib Basics {transition="slide-in none-out"}
+
+[Matplotlib](https://matplotlib.org/stable/contents.html) lets you visualize data with just a few lines of code.
+
+::: {.fragment style="font-size:0.85em;"}
+```{python}
+#| echo: true
+#| output-location: column-fragment
+import numpy as np
+from matplotlib import pyplot as plt
+
+# Generate data
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+fig, ax = plt.subplots(figsize=(10, 6))
+
+ax.plot(x, y1, label='Sin(x)', color='blue', linewidth=2)
+ax.plot(x, y2, label='Cos(x)', color='red', linewidth=2)
+ax.fill_between(x, y1, y2, alpha=0.2)
+
+ax.set_title('Trigonometric Functions')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.legend()
+ax.grid(True)
+plt.show()
+```
+:::
+
+## {{< fa chart-line >}} Matplotlib in Action {transition="slide-in fade-out"}
+
+Matplotlib supports rich styling: color maps, transparency, annotations, and more. Perfect for high-quality visual analysis!
+
+::: {.fragment}
+```{python}
+#| echo: true
+#| output-location: column-fragment
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Generate synthetic data
+np.random.seed(0)
+x = np.linspace(0, 10, 200)
+y = np.sin(x) + np.random.normal(0, 0.2, size=x.size)
+colors = y  # color by value
+sizes = 80 * np.abs(y) + 10  # scale by magnitude
+
+plt.figure(figsize=(8, 5))
+scatter = plt.scatter(x, y, c=colors, s=sizes, cmap="viridis", alpha=0.8, edgecolors="k")
+
+# Add a colorbar and labels
+plt.colorbar(scatter, label="y value")
+plt.title("Fancy sine function with noise", fontsize=14, pad=10)
+plt.xlabel("x", fontsize=12)
+plt.ylabel("y", fontsize=12)
+
+# Add a highlight annotation
+idx = np.argmax(y)
+plt.scatter(x[idx], y[idx], color="red", s=200, edgecolors="white", zorder=3)
+plt.annotate("Peak!", (x[idx], y[idx]), textcoords="offset points", xytext=(15,10), color="red", fontsize=12)
+
+plt.grid(alpha=0.3)
+plt.tight_layout()
+plt.show()
+```
+:::

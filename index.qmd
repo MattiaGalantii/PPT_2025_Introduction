@@ -1,0 +1,21 @@
+---
+title: "Practicum Process Technology"
+subtitle: "Introduction to Python Scientific Programming"
+author: "Mattia Galanti"
+format:
+  revealjs:
+    title-slide-attributes:
+      data-transition: 'zoom'
+---
+
+{{< include _intro.qmd >}}
+{{< include _native_python_recap.qmd >}}
+{{< include _numpy_matplotlib.qmd >}}
+{{< include _odes_intro.qmd >}}
+{{< include _solving_odes_intro.qmd >}}
+{{< include _solve_ivp_1.qmd >}}
+{{< include _solve_ivp_2.qmd >}}
+{{< include _model_fitting.qmd >}}
+{{< include _conclusions.qmd >}}
+
+

@@ -1,0 +1,331 @@
+# {{< fa brands python >}} Solving ODEs with Python
+
+> This section will explain how python can be easily used to solve any ordinary differential equations system, regardless of its complexity.
+
+## Solving ODEs with Python
+Python offers several libraries for solving ODEs, with SciPy being one of the most popular. 
+
+The `scipy.integrate` module provides the function `solve_ivp` that can be used to numerically solve ODEs in the Initial Value Problem formulation.
+
+::: {.fragment .fade-left}
+> Let's take a look at SciPy's `solve_ivp`!
+
+![](assets/scipy_logo.svg){alt="Scipy_logo" width="250px"}
+:::
+
+::: footer
+Check out [SciPy](https://scipy.org/) for more details.
+:::
+
+## Scipy and `solve_ivp`
+The `solve_ivp` function can handle both stiff and non-stiff systems and offers various integration methods.
+
+Solving an ODE with `solve_ivp` typically involves the following steps:
+
+1. **Define the IVP problem**: Define the ODE system and initial conditions.
+
+2. **Implement the ODE system**: Write a function that computes and returns the derivatives.
+
+3. **Setup and call `solve_ivp`**: Specify the time span, initial conditions, and method.
+
+4. **Extract and analyze the results**.
+
+::: {.fragment .fade-left}
+> ``` import scipy.integrate as spi ```
+:::
+:::{.fragment .fade-left}
+> ```from scipy.integrate import solve_ivp```
+:::
+
+## 1. Define the IVP problem
+Consider a population of rabbits *N*. 
+
+The population grows at a rate proportional to its current size, and also proportional to the available resources, which decrease as the population increases. This can be modeled with the following ODE:
+
+::: {.fragment}
+$$
+\frac{dN}{dt} = rN\left(1 - \frac{N}{K}\right)
+$$
+:::
+
+::: {.fragment}
+where:
+
+- *r* is the intrinsic growth rate,
+- *K* is the carrying capacity of the environment.
+- $N(0)$ = $N_0$ is the initial population size.
+:::
+
+## 2. Implement the ODE system {auto-animate=true} 
+We can implement the ODE system in Python as follows:
+```{.python code-line-numbers="1-3|5-7"}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+def rabbit_population(t, y, r, K):
+    dydt = r * y * (1 - y / K)
+    return dydt
+```
+
+## 3. Setup `solve_ivp` {auto-animate=true}
+Let's set up the parameters and initial conditions for our simulation:
+```{.python code-line-numbers="|9-10|11-14|"}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+def rabbit_population(t, y, r, K):
+    dydt = r * y * (1 - y / K)
+    return dydt
+
+r = 0.1  # growth rate [1/s]
+K = 100  # carrying capacity [individuals]
+y0 = [10]  # initial population [individuals]
+t_span = (0, 100)  # time span for the simulation [s]
+t_eval = np.linspace(t_span[0], t_span[1], 100)
+method = 'RK45'  # integration method
+```
+
+## 4. Call `solve_ivp` {auto-animate=true}
+Now we can call the `solve_ivp` function to solve the ODE:
+
+```{.python code-line-numbers="|1-3|4-6|"}
+solution = solve_ivp(rabbit_population, 
+                     t_span, 
+                     y0, 
+                     args=(r, K), 
+                     t_eval=t_eval,
+                     method=method)
+```
+
+::: footer
+Doubts about the function arguments? Check the [official documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html) for more details.
+:::
+
+## 5. Extract and analyze results {auto-animate=true}
+Finally, we can plot the results to visualize the rabbit population growth over time:
+```{.python}
+solution = solve_ivp(rabbit_population, 
+                     t_span, 
+                     y0, 
+                     args=(r, K), 
+                     t_eval=t_eval,
+                     method=method)
+
+
+sol_time = solution.t
+sol_y = solution.y[0]
+    
+plt.plot(sol_time, sol_y, label='Rabbit Population', linewidth=2)
+plt.plot(0, y0, 'ro', label='Initial Population')
+plt.hlines(K, colors='g', linestyles='--', label='Carrying Capacity (K)', xmin=t_span[0], xmax=t_span[1])
+plt.title('Rabbit Population Growth Over Time')
+plt.xlabel('Time')
+plt.ylabel('Population')
+plt.legend()
+plt.grid()
+plt.show()
+```
+
+::: footer
+Doubts about the function arguments? Check the [official documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html) for more details.
+:::
+
+## Results
+``` {python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+def rabbit_population(t, y, r, K):
+    dydt = r * y * (1 - y / K)
+    return dydt
+
+# Parameters
+r = 0.1  # growth rate [1/s]
+K = 100  # carrying capacity [individuals]
+y0 = [10]  # initial population [individuals]
+t_span = (0, 100)  # time span for the simulation [s]
+t_eval = np.linspace(t_span[0], t_span[1], 100)
+
+# Solve ODE
+method = 'RK45'  # integration method
+solution = solve_ivp(rabbit_population, 
+                     t_span, 
+                     y0, 
+                     args=(r, K), 
+                     t_eval=t_eval,
+                     method=method)
+
+sol_time = solution.t
+sol_y = solution.y[0]
+    
+fig, ax = plt.subplots(figsize=(10, 6))    
+ax.plot(sol_time, sol_y, label='Rabbit Population', linewidth=3)
+ax.plot(0, y0, 'ro', label='Initial Population')
+ax.hlines(K, colors='g', linestyles='--', label='Carrying Capacity (K)', xmin=t_span[0], xmax=t_span[1])
+ax.set_title('Rabbit Population Growth Over Time', fontsize=16)
+ax.set_xlabel('Time [s]', fontsize=14)
+ax.set_ylabel('Population [individuals]', fontsize=14)
+ax.legend(fontsize=12)
+ax.grid()
+plt.show()
+
+```
+
+- Maybe not very realistic for rabbits, but still a good example of how to use `solve_ivp`!
+
+
+## Now you try!
+- Open the [rabbit population exercise notebook](b)
+- Play around with different parameters for *r*, *K*, and *N₀*.
+- Modify the code such that you solve the ODE for a **different initial conditions** and plot the results on the same graph.
+- Try to remove `t_eval=t_eval` from the `solve_ivp` function and see what happens to the output plot. Do you notice any difference?
+
+::: {.fragment}
+::: {.callout-tip}
+To account for multiple initial conditions, don't copy and paste the `solve_ivp` function multiple times. Instead, use the concept of **loops** that you learned in the previous sections!
+:::
+:::
+
+## Different initial conditions example
+Here's an example of how to solve the ODE for different initial conditions and plot the results on the same graph:
+```{.python code-line-numbers="|12|16-25"}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+def rabbit_population(t, y, r, K):
+    dydt = r * y * (1 - y / K)
+    return dydt
+
+# Parameters
+r = 0.1  # growth rate
+K = 100  # carrying capacity
+y0s = [0, 10, 50, 80, 120, 150]  # initial population
+t_span = (0, 100)  # time span for the simulation
+t_eval = np.linspace(t_span[0], t_span[1], 100)
+
+for N0 in y0s:
+    solution = solve_ivp(rabbit_population, 
+                         t_span, 
+                         [N0], 
+                         args=(r, K), 
+                         t_eval=t_eval)
+
+    # Plot results
+    plt.plot(solution.t, solution.y[0], label=f'Rabbit Population (N0={N0})', linewidth=2)
+    plt.plot(0, N0, 'ro', label='Initial Population')
+    
+plt.hlines(K, colors='g', linestyles='--', label='Carrying Capacity (K)', xmin=t_span[0], xmax=t_span[1])
+plt.title('Rabbit Population Growth Over Time')
+plt.xlabel('Time')
+plt.ylabel('Population')
+plt.grid()
+plt.show()
+```
+
+## Profiles and Phase Space
+:::: {.columns}
+::: {.column}
+```{python}
+#| echo: false
+#| dpi: 120
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+def rabbit_population(t, y, r, K):
+    dydt = r * y * (1 - y / K)
+    return dydt
+
+# Parameters
+r = 0.1  # growth rate
+K = 100  # carrying capacity
+y0s = [0, 10, 50, 80, 120, 150]  # initial population
+t_span = (0, 100)  # time span for the simulation
+t_eval = np.linspace(t_span[0], t_span[1], 100)
+fig, ax = plt.subplots(figsize=(9, 7))
+
+for N0 in y0s:
+    solution = solve_ivp(rabbit_population, 
+                         t_span, 
+                         [N0], 
+                         args=(r, K), 
+                         t_eval=t_eval)
+
+    # Plot results
+    ax.plot(solution.t, solution.y[0], label=f'Rabbit Population (N0={N0})', linewidth=3)
+    ax.plot(0, N0, 'ro', label='Initial Population')
+
+ax.hlines(K, colors='g', linestyles='--', label='Carrying Capacity (K)', xmin=t_span[0], xmax=t_span[1])
+ax.set_title(r'Rabbit Population Growth Over Time $N(t)$', fontsize=16)
+ax.set_xlabel('Time', fontsize=14)
+ax.set_ylabel(r"Population $N$", fontsize=14)
+ax.grid()
+plt.show()
+```
+:::
+::: {.column}
+```{python}
+#| echo: false
+#| dpi: 120
+import numpy as np
+import matplotlib.pyplot as plt
+
+def y_dot(t, y, r, K):
+    return r * y * (1 - y / K)
+
+# Parameters
+r = 0.1
+K = 100.0
+Nmax = 150.0
+N_vec = np.linspace(0, Nmax, 600)
+
+# --- Phase curve dN/dt vs N ---
+fig, ax = plt.subplots(figsize=(9, 7))
+ax.plot(N_vec, y_dot(None, N_vec, r, K), linewidth=3)
+
+# Axes lines
+ax.axhline(0, linewidth=1, color='black')
+ax.axvline(0, linewidth=1, color='black')
+
+# --- Arrows along N-axis (direction of motion) ---
+eps = 1e-6
+N_ar = np.array([0+eps, K/4, K/2, 3*K/4, (K+Nmax)/2, Nmax-5])
+u = np.sign(y_dot(None, N_ar, r, K)).astype(float)
+u[u == 0] = 0  # tiny arrow if exactly zero
+v = np.zeros_like(N_ar)
+
+ax.quiver(N_ar, np.zeros_like(N_ar), u, v,
+          angles='xy', scale_units='xy', scale=0.1, width=0.005, zorder=4)
+
+# --- Equilibria (fixed points) ---
+N_fp = np.array([0.0, K])
+y_fp = np.zeros_like(N_fp)
+# Stability via f'(N)=r(1-2N/K): stable if negative
+fprime = r * (1 - 2*N_fp/K)
+stable = fprime < 0
+
+ax.scatter(N_fp[stable], y_fp[stable], s=90, facecolor='red', edgecolor='black', zorder=5, label='Stable, N=K')
+ax.scatter(N_fp[~stable], y_fp[~stable], s=90, facecolor='white',  edgecolor='red', zorder=5, label='Unstable, N=0')
+
+# Labels & formatting
+ax.set_xlim(None, Nmax)
+ax.set_ylim(-10, 3)
+ax.set_xlabel(r"Population $N$", fontsize=14)
+ax.set_ylabel(r"$\dot N$", fontsize=14)
+ax.set_title(r"Phase Space for $\dot N = rN\,(1-N/K)$", fontsize=16)
+ax.legend(frameon=False, loc='upper right', fontsize=14)
+ax.grid(True, alpha=0.3)
+
+plt.show()
+```
+:::
+:::: 
+
+::: {.fragment}
+Let's proceed to something more complex in the next section!
+:::
+

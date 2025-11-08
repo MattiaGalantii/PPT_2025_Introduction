@@ -1,0 +1,134 @@
+# {{< fa infinity >}} An Introduction to Ordinary Differential Equations
+
+> This section aims to provide a foundational understanding of Ordinary Differential Equations (ODEs), their significance in various fields, and how to solve them using Python.
+
+## Dynamical Systems
+Every system that evolves over time can be described as a *dynamical system*.
+
+::: {.fragment .fade-left}
+> The word *dynamical* comes from the Greek δύναμις (dýnamis), which means power, potential, or capacity to act. So dynamical literally refers to something in the process of becoming, something that has the power to change.
+
+![](assets/aristotele.png){alt="Aristotle" width="300px"}
+:::
+
+::: footer
+> "The more you know, the more you realize you don't know." - Aristotle
+Image generated with chatGPT
+:::
+
+## Why Dynamical Systems Matter
+If you think about it, almost every process in nature and engineering changes with time, therefore following the **rules of change**. 
+
+::: {.fragment}
+> These rules tell us not what *is*, but what will be *next*. 
+:::
+
+::: {.fragment}
+Therefore, these rules will allow us to predict the future, given we know the present. 
+![](assets/galaxy_brain.png){alt="Galaxy Brain" width="400px"}
+
+:::
+
+## The System State {auto-animate=true}
+We start with a simple idea: **everything changes with time**.  
+At any moment, a system has a **state** (its position, temperature, or concentration) and this state evolves continuously.
+
+::: columns
+::: column
+::: {.fragment .fade-left}
+Mathematically, we can describe the state as a vector:
+
+$$
+\mathbf{x}(t) =
+\begin{bmatrix}
+x_1(t) \\[4pt]
+x_2(t) \\[2pt]
+\vdots \\[2pt]
+x_n(t)
+\end{bmatrix}
+$$
+:::
+:::
+
+::: column
+::: {.fragment .fade-left}
+and the rule of change as:
+
+$$
+\frac{d\mathbf{x}}{dt} = F(\mathbf{x}, t)
+$$
+
+where $F$ describes how the state changes over time.
+:::
+:::
+:::
+
+::: {.fragment .fade-left}
+Given $\mathbf{x}(t_0)=\mathbf{x}_0$ and $F(\mathbf{x}, t)$ we can predict the system’s future evolution.  
+We’ve written an **Ordinary Differential Equation**.
+:::
+
+## What are ODEs? {.nostretch}
+ODEs are the mathematical representation of these rules of change. They relate a function (the state of the system) to its derivatives (the rates of change of the system). 
+
+They're astonishingly powerful.
+
+![](assets/time_machine.png){.nostretch width="500px"}
+
+::: {.callout-note appearance="simple" style="font-size:0.9em;"}
+We define the initial value problem (IVP) for an ODE as:
+$$
+\frac{d\mathbf{x}}{dt} = F(\mathbf{x}, t), \quad \mathbf{x}(t_0) = \mathbf{x}_0
+$$
+:::
+
+<!-- This is why I like to think of ODEs as time machines. You feed in the present, and the laws of change compute what happens next, and next, and next… until you can see (or should I say *predict*) the future unrolling. Of course, the accuracy of our time machine prediction depends on how well we understand the underlying processes and how accurately we can model them. -->
+
+## ODEs and Condition of existence and uniqueness
+For an ODE to have a *unique solution*, certain conditions must be met. 
+
+::: {.fragment}
+These conditions are often related to the continuity and differentiability of the functions involved, explained in the Existence and Uniqueness Theorem (Picard-Lindelöf theorem):
+
+::: {.callout-note title="Existence and Uniqueness Theorem (Picard–Lindelöf)"}
+
+Consider the initial value problem
+
+$$
+\dot{x} = f(x), \quad x(0) = x_0.
+$$
+
+Suppose that $f(x)$ and $f'(x)$ are continuous on an open interval $R$ of the x-axis,
+and suppose that $x_0$ is a point in $R$.  
+Then the initial value problem has a solution $x(t)$ on some time interval
+$(- \tau, \tau)$ about $t = 0$, and the solution is unique.
+:::
+:::
+
+::: {.fragment}
+This theorem says that if $f(x)$ is smooth enough, then solutions exist and are
+unique. 
+
+(*Even so, there’s no guarantee that solutions exist forever..*)
+:::
+
+::: footer
+If you want to read more about it, check
+[Encyclopedia of Mathematics](https://encyclopediaofmath.org/wiki/Cauchy-Lipschitz_theorem)
+
+:::
+
+## (Extra) Laplace's Demon and Determinism {visibility="hidden"}
+Laplace's Demon is a thought experiment that illustrates the concept of determinism in classical mechanics. 
+
+> - If a hypothetical intellect (the "demon") knew the precise location and momentum of every atom in the universe, it could predict the future and retrodict the past with perfect accuracy.
+- This is pure determinism. Philosophically, it seems to question free will: if the full state of the universe fixes every future event, then our decisions look like inevitable consequences of prior states, not genuinely open choices.
+
+## (Extra) Why pure determinism is a myth {visibility="hidden"}
+While ODEs provide a deterministic framework for modeling systems, it's important to recognize that pure determinism is a myth. 
+
+- Chaotic systems exhibit sensitive dependence on initial conditions, leading to unpredictable long-term behavior despite being governed by deterministic laws.
+- Quantum mechanics introduces inherent uncertainties at the microscopic level, challenging the notion of a fully deterministic universe.
+- Real-world systems are often influenced by random fluctuations and external factors that cannot be precisely modeled.
+
+

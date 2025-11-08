@@ -1,0 +1,431 @@
+# {{< fa chart-line >}} Introduction to Model Fitting
+> _Fitting mathematical models to experimental data using Python_
+
+## Why Model Fitting?
+::: {.nonincremental}
+- In many scientific and engineering applications, we have experimental data that we want to describe using mathematical models.
+- Model fitting allows us to estimate the **parameters** of these models so that they best represent the observed data.
+- This is crucial for making predictions, understanding underlying processes, and optimizing systems.
+:::
+
+![](assets/meme_models.jpeg){width=600px}
+
+## Python Libraries for Model Fitting
+There are many libraries in Python that facilitate model fitting. 
+
+For this introduction, we will focus on Scipy's `curve_fit` and `least_squares` function from the `optimize` module.
+
+When to use `curve_fit`:
+
+- One experiment at a time
+- Fast and easy fitting
+
+When to use `least_squares`:
+
+- You have multiple experiments to fit simultaneously
+- You want more control over the optimization process
+
+::: footer
+Check the [official documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html) for more details.
+:::
+
+## Example: Fitting a Non-Linear Model
+Let's consider an example where we have experimental data that follows a non-linear relationship, such as an exponential decay model.
+$$
+y(x) = e^{-\lambda x}\,\sin(\omega x)
+$$
+
+We’ll recover the $\lambda$ and $\omega$ parameters of a **damped sine** model from noisy synthetic data. You can open this example in a Jupyter notebook: [model_fitting.ipynb]().
+
+## Generating Synthetic Data
+First , we generate synthetic data based on known parameters and add some noise to simulate experimental measurements.
+```{.python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+
+rng = np.random.default_rng(7)
+lam_true, omega_true = 0.5, np.pi
+t_exp = np.linspace(0, 10, 300)  
+y_true = np.exp(-lam_true * t_exp) * np.sin(omega_true * t_exp)  
+sigma = 0.03  
+y_exp = y_true + rng.normal(0, sigma, size=t_exp.size)
+```
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
+
+rng = np.random.default_rng(7)
+lam_true, omega_true = 0.5, np.pi
+t_exp = np.linspace(0, 10, 300)  
+y_true = np.exp(-lam_true * t_exp) * np.sin(omega_true * t_exp)  
+sigma = 0.03  
+y_exp = y_true + rng.normal(0, sigma, size=t_exp.size)
+
+plt.figure(figsize=(10, 4))
+plt.scatter(t_exp, y_exp, s=10, color='tab:red', alpha=0.5, label='Noisy data')
+plt.xlabel(r't_{exp}')
+plt.ylabel(r'y_{observed}')
+plt.title('Synthetic Data with Noise')
+plt.legend()
+plt.show()
+
+```
+## Fitting with `least_squares`: {auto-animate="true"}
+### Defining the Model and Residuals Function
+To fit the model using `least_squares`, we first need to define the model function and the residuals function, 
+
+```{.python}
+def damped_sine(t, lam, omega):
+    return np.exp(-lam * t) * np.sin(omega * t)
+
+def residuals(x_to_optimize, t_exp, y_exp, sigma=0.03):
+    lam, omega = x_to_optimize
+    y_pred = damped_sine(t_exp, lam, omega) 
+    return (y_exp - y_pred) / sigma  
+```
+::: {.fragment}
+The residuals function computes the difference between the observed data and the model predictions, and *must* take as *first argument* a single array of parameters to optimize. 
+
+Then, additional arguments (like `t_exp`, `y_exp`, and `sigma`) can be passed via the `args` and `kwargs` parameters of `least_squares`.
+
+Why? Look at the signature of [least_squares](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html)!
+:::
+
+::: footer
+Check the [official documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html) for more details.
+:::
+
+## Fitting with `least_squares`: {auto-animate="true"}
+###  Performing the Fit 
+Now, we can use `least_squares` to estimate the parameters of our model based on the noisy data.
+```{.python code-line-numbers=|9-10|12-16|}
+def damped_sine(t, lam, omega):
+    return np.exp(-lam * t) * np.sin(omega * t)
+
+def residuals(x_to_optimize, t_exp, y_exp, sigma=0.03):
+    lam, omega = x_to_optimize
+    y_pred = damped_sine(t_exp, lam, omega) 
+    return (y_exp - y_pred) / sigma   
+
+p0 = np.array([1.0, 1.0])
+bounds = (np.array([0.0, 0.0]), np.array([np.inf, 5.0]))
+
+res = least_squares(residuals, p0, 
+                    bounds=bounds, 
+                    args=(t_exp, y_exp), 
+                    kwargs={"sigma": sigma})
+lam_fit, omega_fit = res.x 
+```
+
+## 3. Visualizing the Results {auto-animate="true"}
+Finally, we can visualize the fitted model against the noisy data and the true model.
+
+```{.python code-line-numbers=|18-27|}
+def damped_sine(t, lam, omega):
+    return np.exp(-lam * t) * np.sin(omega * t)
+
+def residuals(x_to_optimize, t_exp, y_exp, sigma=0.03):
+    lam, omega = x_to_optimize
+    y_pred = damped_sine(t_exp, lam, omega) 
+    return (y_exp - y_pred) / sigma   
+
+p0 = np.array([1.0, 1.0])
+bounds = (np.array([0.0, 0.0]), np.array([np.inf, 5.0]))
+
+res = least_squares(residuals, p0, 
+                    bounds=bounds, 
+                    args=(t_exp, y_exp), 
+                    kwargs={"sigma": sigma})
+lam_fit, omega_fit = res.x 
+
+y_fit = damped_sine(t_exp, lam_fit, omega_fit)  
+plt.figure()
+plt.scatter(t_exp, y_exp, s=10, alpha=0.6, label="Noisy experimental data")  
+plt.plot(t_exp, y_fit, lw=2, label=f"Least squares fit: λ={lam_fit:.3f}, ω={omega_fit:.3f}")  
+plt.xlabel("t (Experimental Time)")
+plt.ylabel("y (Observed Data)")
+plt.title("Fit y = e^{-λt} sin(ωt) with least_squares")
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+## Results
+After running the fitting procedure, we obtain estimates for the parameters $\lambda$ and $\omega$:
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import least_squares
+
+# --- synthetic data ---
+rng = np.random.default_rng(7)
+lam_true, omega_true = 0.5, np.pi
+t_exp = np.linspace(0, 10, 300)  # Experimental time (independent variable)
+y_true = np.exp(-lam_true * t_exp) * np.sin(omega_true * t_exp)  # True model values (no noise)
+sigma = 0.03  # Known/assumed noise std (used as weight)
+y_exp = y_true + rng.normal(0, sigma, size=t_exp.size)  # Noisy experimental data
+
+# --- model: exp(-λ t) * sin(ω t) ---
+def damped_sine(t, lam, omega):
+    return np.exp(-lam * t) * np.sin(omega * t)
+
+# Residuals function: difference between observed and predicted values, normalized by sigma
+def residuals(x_to_optimize, t_exp, y_exp, sigma=0.03):
+    lam, omega = x_to_optimize
+    y_pred = damped_sine(t_exp, lam, omega)  # Predicted values from the model
+    return (y_exp - y_pred) / sigma  # Normalized residuals (scaled by sigma)
+
+# Initial guess and bounds 
+p0 = np.array([1.0, 1.0])
+bounds = (np.array([0.0, 0.0]), np.array([np.inf, 5.0]))
+
+# Optimization using least_squares
+res = least_squares(residuals, p0, bounds=bounds, args=(t_exp, y_exp), kwargs={"sigma": sigma})
+lam_fit, omega_fit = res.x  # Estimated parameters
+
+# --- Uncertainty via (J^T J)^{-1} scaled by residual variance ---
+n = t_exp.size  # Number of data points
+m = res.x.size  # Number of parameters (lam, omega)
+rss = np.sum(res.fun**2)  # Residual sum of squares (weighted)
+s2 = rss / max(n - m, 1)  # Residual variance estimate
+J = res.jac  # Jacobian of residuals wrt parameters (n x m)
+JTJ_inv = np.linalg.pinv(J.T @ J)  # Pseudo-inverse for numerical stability
+pcov = s2 * JTJ_inv  # Covariance matrix
+se = np.sqrt(np.diag(pcov))  # Standard errors (SE)
+lam_se, omega_se = se
+
+# Print estimated parameters with uncertainties
+print(f"Estimated λ = {lam_fit:.5f} ± {lam_se:.2e} (true 0.5)")
+print(f"Estimated ω = {omega_fit:.5f} ± {omega_se:.2e} (true {np.pi:.5f})")
+
+# --- Plot ---
+y_fit = damped_sine(t_exp, lam_fit, omega_fit)  # Fitted model values
+plt.figure()
+plt.scatter(t_exp, y_exp, s=10, alpha=0.6, label="Noisy experimental data")  # Experimental data
+plt.plot(t_exp, y_fit, lw=2, label=f"Least squares fit: λ={lam_fit:.3f}, ω={omega_fit:.3f}", color="tab:red")  # Fitted curve
+plt.xlabel("t (Experimental Time)")
+plt.ylabel("y (Observed Data)")
+plt.title("Fit y = e^{-λt} sin(ωt) with least_squares")
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+
+## How to fit ODEs parameters?
+Fitting parameters in ODE models follows the same approach, but with one additional step: 
+
+>your predicted values will be obtained from `solve_ivp` using the parameters to be estimated!
+
+Consider the following reaction scheme in two CSTRs in series:
+$$
+\begin{aligned}
+\text{CSTR 1:} &\quad A \xrightarrow{k_1} B \\
+\text{CSTR 2:} &\quad B \xrightarrow{k_2} C
+\end{aligned}
+$$
+
+We want to estimate the kinetic parameters $k_1$ and $k_2$ from synthetic noisy data of species C concentration over time.
+
+## Setup the CSTR Model
+$$
+\frac{dC_{ik}}{dt} = \frac{(C_{i,k-1} - C_{ik})}{\tau} + r_{ik} 
+$$
+
+with $i = A, B, C$ (species) and $k = 1, 2$ (CSTRs).
+
+::: {.fragment}
+Model states: $y = ([C_{A1}, C_{B1}, C_{B2}, C_{C2}])$ with feed $C_{A0}>0$, $C_{B0}=C_{C0}=0$.
+
+- CSTR 1: $r_{A1} = k_1\,C_{A1}$ (first-order in $A$)
+- CSTR 2: $r_{B2} = k_2\,C_{B2}^2$ (second-order in $B$)
+:::
+
+::: {.fragment}
+Now it's your turn! Open the [ode_model_fitting_exercise.ipynb]() notebook and implement the fitting of the CSTR model parameters using `least_squares` or `solve_ivp`.
+:::
+
+## Solution: CSTR Model {auto-animate="true"}
+You can find the solution in the [ode_model_fitting_solution.ipynb]() notebook.
+
+First, we define the ODE model for the CSTRs:
+```{.python code-line-numbers=|1-2|4-12|}
+def dydt(t, y, k1, k2, CA0=1.0, tau=1.0):
+    CA1, CB1, CB2, CC2 = y
+
+    r1 = k1 * CA1
+    dCA1 = (CA0 - CA1)/tau - r1
+    dCB1 = (0.0 - CB1)/tau + r1
+ 
+    r2 = k2 * CB2**2
+    dCB2 = (CB1 - CB2)/tau - r2
+    dCC2 = (0.0 - CC2)/tau + r2
+
+    return [dCA1, dCB1, dCB2, dCC2]
+```
+
+## Solution: Residuals Function {auto-animate="true"}
+Then, we write the residuals function that uses `solve_ivp` to simulate the model:
+
+```{.python code-line-numbers=|14|15-16|17-19|21-22}
+def dydt(t, y, k1, k2, CA0=1.0, tau=1.0):
+    CA1, CB1, CB2, CC2 = y
+
+    r1 = k1 * CA1
+    dCA1 = (CA0 - CA1)/tau - r1
+    dCB1 = (0.0 - CB1)/tau + r1
+ 
+    r2 = k2 * CB2**2
+    dCB2 = (CB1 - CB2)/tau - r2
+    dCC2 = (0.0 - CC2)/tau + r2
+
+    return [dCA1, dCB1, dCB2, dCC2]
+
+def residuals(x_params, t_exp, y_exp, sigma=0.01, CA0=1.0, tau=1.0):
+    k1, k2 = x_params
+    y0 = [0.0, 0.0, 0.0, 0.0]  
+    sol = solve_ivp(
+        dydt, (t_exp[0], t_exp[-1]), y0, t_eval=t_exp,
+        args=(k1, k2, CA0, tau))
+
+    y_pred = sol.y[3]  # CC2(t)
+    return (y_exp - y_pred) / sigma
+```
+
+## Solution: Performing the Fit
+Finally, we perform the fitting using `least_squares`:
+```{.python}
+p0 = np.array([0.5, 0.3])  # initial guess
+bounds = (np.array([1e-8, 1e-8]), np.array([5.0, 5.0]))
+
+res = least_squares(
+    residuals, p0, bounds=bounds,
+    args=(t_exp, C2_exp),
+    kwargs={"sigma": sigma, "CA0": CA0, "tau": tau})
+
+k1_fit, k2_fit = res.x
+```
+
+## Solution: Visualizing the Results
+We can visualize the fitted model against the noisy data:
+```{.python code-line-numbers=|1-6|8-16|}
+y0_plot = [0.0, 0.0, 0.0, 0.0]
+sol_fit = solve_ivp(
+    dydt, (t_exp[0], t_exp[-1]), y0_plot, t_eval=t_exp,
+    args=(k1_fit, k2_fit, CA0, tau),
+)
+C2_fit = sol_fit.y[3]
+
+plt.figure()
+plt.scatter(t_exp, C2_exp, s=12, alpha=0.7, label="Noisy experimental $C_2(t)$")
+plt.plot(t_exp, C2_fit, lw=2, label=f"Fit: k1={k1_fit:.3f}, k2={k2_fit:.3f}", color="tab:red")
+plt.xlabel("time")
+plt.ylabel(r"$C_2$ (outlet of CSTR 2)")
+plt.title("Two CSTRs in series — fit $k_1$ and $k_2$)")
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+
+## Solution: Visualizing the Results
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+from scipy.optimize import least_squares
+
+# ------------------------- Model (2 CSTRs in series) -------------------
+# States: [CA1, CB1, CB2, CC2]
+def dydt(t, y, k1, k2, CA0=1.0, tau=1.0):
+    CA1, CB1, CB2, CC2 = y
+
+    # CSTR 1: A -> B  
+    r1 = k1 * CA1
+    dCA1 = (CA0 - CA1)/tau - r1
+    dCB1 = (0.0 - CB1)/tau + r1
+
+    # CSTR 2: B -> C  
+    r2 = k2 * CB2**2
+    dCB2 = (CB1 - CB2)/tau - r2
+    dCC2 = (0.0 - CC2)/tau + r2
+
+    return [dCA1, dCB1, dCB2, dCC2]
+
+def residuals(x_params, t_exp, y_exp, sigma=0.01, CA0=1.0, tau=1.0):
+    """Weighted residuals: (measured - model)/sigma."""
+    k1, k2 = x_params
+    y0 = [0.0, 0.0, 0.0, 0.0]  # Initial conditions: [CA1, CB1, CB2, CC2]
+    sol = solve_ivp(
+        dydt, (t_exp[0], t_exp[-1]), y0, t_eval=t_exp,
+        args=(k1, k2, CA0, tau), rtol=1e-7, atol=1e-9
+    )
+    if not sol.success:
+        return np.full_like(t_exp, 1e9, dtype=float)
+    y_pred = sol.y[3]  # CC2(t)
+    return (y_exp - y_pred) / sigma
+
+# ------------------------- Synthetic data ------------------------------
+# True parameters and setup
+k1_true, k2_true = 0.8, 1.5
+CA0, tau = 10.0, 1.0
+
+t_end = 10.0
+t_exp = np.linspace(0.0, t_end, 400)
+sigma = 0.03
+rng = np.random.default_rng(42)
+
+# Generate noise-free and noisy CC2 data
+y0_true = [0.0, 0.0, 0.0, 0.0]
+sol_true = solve_ivp(
+    dydt, (t_exp[0], t_exp[-1]), y0_true, t_eval=t_exp,
+    args=(k1_true, k2_true, CA0, tau))
+C2_true = sol_true.y[3]
+C2_exp = C2_true + rng.normal(0, sigma, size=t_exp.size)
+
+# ------------------------- Fit k1, k2 with least_squares ---------------
+p0 = np.array([0.5, 0.3])  # initial guess
+bounds = (np.array([1e-8, 1e-8]), np.array([5.0, 5.0]))
+
+res = least_squares(
+    residuals, p0, bounds=bounds,
+    args=(t_exp, C2_exp),
+    kwargs={"sigma": sigma, "CA0": CA0, "tau": tau})
+
+k1_fit, k2_fit = res.x
+
+# ------------------------- Uncertainty estimates -----------------------
+n, m = t_exp.size, res.x.size
+rss = np.sum(res.fun**2)            # weighted RSS
+s2  = rss / max(n - m, 1)           # residual variance
+J   = res.jac                       # Jacobian at optimum (n x m)
+cov = s2 * np.linalg.pinv(J.T @ J)  # (J^T J)^(-1) scaled
+se  = np.sqrt(np.diag(cov))
+k1_se, k2_se = se
+
+print(f"k1 = {k1_fit:.4f} ± {k1_se:.4f}   (true {k1_true:.4f})")
+print(f"k2 = {k2_fit:.4f} ± {k2_se:.4f}   (true {k2_true:.4f})")
+
+# ------------------------- Plot ---------------------------------------
+# Simulate fitted model for plotting
+y0_plot = [0.0, 0.0, 0.0, 0.0]
+sol_fit = solve_ivp(
+    dydt, (t_exp[0], t_exp[-1]), y0_plot, t_eval=t_exp,
+    args=(k1_fit, k2_fit, CA0, tau),
+)
+C2_fit = sol_fit.y[3]
+
+plt.figure()
+plt.scatter(t_exp, C2_exp, s=12, alpha=0.7, label="Noisy experimental $C_2(t)$")
+plt.plot(t_exp, C2_fit, lw=2, label=f"Fit: k1={k1_fit:.3f}, k2={k2_fit:.3f}", color="tab:red")
+plt.xlabel("time")
+plt.ylabel(r"$C_2$ (outlet of CSTR 2)")
+plt.title("Two CSTRs in series — fit $k_1$ and $k_2$")
+plt.legend()
+plt.tight_layout()
+plt.show()
+```
+
+
+

@@ -1,0 +1,11 @@
+.reveal .slide-logo {
+    height: unset !important;
+    width: 360px!important;
+    max-width: unset !important;
+    max-height: unset !important;
+  }
+
+
+.py-green { color: #3BA776; font-weight: 600; }   
+.numpy    { color: #4D77CF;   font-weight: 600; }
+.mpl      { color: #E24A33; font-weight: 600; }
