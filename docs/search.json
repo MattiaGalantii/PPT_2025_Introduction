@@ -11,7 +11,7 @@
     "href": "index.html#what-will-we-do-in-this-crash-course",
     "title": "Practicum Process Technology",
     "section": "What will we do in this crash course?",
-    "text": "What will we do in this crash course?\nIn this crash course, we will cover the following topics:\n\n\n\nQuick refresh about Python, scientific libraries, environments and Jupyter Notebooks\nModeling of dynamic systems, ODEs and Python implementations\nFitting models to data and parameter estimation\nHands-on exercises and real-world examples\n\n\n\n\nBy the end of this course, you will have a solid foundation in Python programming for scientific applications, enabling you to tackle the challenges you’ll find in the rest of the Practicum Process Technology course."
+    "text": "What will we do in this crash course?\nIn this crash course, we will cover the following topics:\n\n\n\nQuick refresh about Python and scientific libraries\nModeling of dynamic systems, ODEs and Python implementations\nFitting models to data and parameter estimation\nHands-on exercises and real-world examples\n\n\n\n\nBy the end of this course, you will have a solid foundation in Python programming for scientific applications, enabling you to tackle the challenges you’ll find in the rest of the Practicum Process Technology course."
   },
   {
     "objectID": "index.html#why-python",
@@ -25,7 +25,7 @@
     "href": "index.html#how-to-program-in-python",
     "title": "Practicum Process Technology",
     "section": "How to program in Python?",
-    "text": "How to program in Python?\nIn this course, we will primarily use Jupyter Notebooks for coding and exercises. Jupyter Notebooks provide an interactive environment that allows you to combine code, text, and visualizations in a single document.\n\nYou can run Jupyter Notebooks locally on your computer using VS Code or use cloud-based platforms such as Google Colab.\n\nFollow the instructions provided in the course materials to set up your Python environment and get started with Jupyter Notebooks.\n\n\n\n\n\n\n\nAny problems?\n\n\nGiven the time limitations, I won’t address python installation and setup questions during the session. Following the setup instructions provided in the course materials is mandatory. Feel free to ask after class."
+    "text": "How to program in Python?\nIn this course, we will primarily use Jupyter Notebooks for coding and exercises. Jupyter Notebooks provide an interactive environment that allows you to combine code, text, and visualizations in a single document.\n\nYou can run Jupyter Notebooks locally on your computer using Anaconda or use cloud-based platforms such as Google Colab.\n\nFollow the instructions provided in the course materials to set up your Python environment and get started with Jupyter Notebooks.\n\n\n\n\n\n\n\nAny problems?\n\n\nGiven the time limitations, I won’t address python installation and setup questions during the session. Following the setup instructions provided in the course materials is mandatory. Feel free to ask after class."
   },
   {
     "objectID": "index.html#lets-get-started",

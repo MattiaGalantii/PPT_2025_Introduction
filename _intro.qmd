@@ -61,7 +61,7 @@ In this course, we will primarily use Jupyter Notebooks for coding and exercises
 
 . . . 
 
-You can run Jupyter Notebooks locally on your computer using [VS Code](https://code.visualstudio.com/) or use cloud-based platforms such as [Google Colab](https://colab.research.google.com/).
+You can run Jupyter Notebooks locally on your computer using [Anaconda](https://www.anaconda.com/products/distribution) or use cloud-based platforms such as [Google Colab](https://colab.research.google.com/).
 
 > Follow the instructions provided in the course materials to set up your Python environment and get started with Jupyter Notebooks.
 
