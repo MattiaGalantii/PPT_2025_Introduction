@@ -27,7 +27,7 @@ Feel free to reach out via email for any questions or assistance related to the 
 
 In this crash course, we will cover the following topics:
 
->- Quick refresh about Python, scientific libraries, environments and Jupyter Notebooks
+>- Quick refresh about Python and scientific libraries
 - Modeling of dynamic systems, ODEs and Python implementations
 - Fitting models to data and parameter estimation
 - Hands-on exercises and real-world examples
