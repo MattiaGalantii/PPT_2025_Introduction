@@ -37,7 +37,7 @@ $$
 
 We’ll recover the $\lambda$ and $\omega$ parameters of a **damped sine** model from noisy synthetic data. 
 
-You can open this example in a Jupyter notebook and follow me: [model_fitting_students.ipynb]().
+You can open this example in a Jupyter notebook and follow me: [model_fitting_students.ipynb](https://github.com/MattiaGalantii/PPT_2025_Introduction/blob/master/lecture_exercises_students/model_fitting_students.ipynb).
 
 ## Generating Synthetic Data
 First , we generate synthetic data based on known parameters and add some noise to simulate experimental measurements.
@@ -246,11 +246,11 @@ Model states: $y = ([C_{A1}, C_{B1}, C_{B2}, C_{C2}])$ with feed $C_{A0}>0$, $C_
 :::
 
 ::: {.fragment}
-Now it's your turn! Open the [ode_fitting_students.ipynb]() notebook and implement the fitting of the CSTR model parameters using `least_squares` and `solve_ivp`.
+Now it's your turn! Open the [ode_fitting_students.ipynb](https://github.com/MattiaGalantii/PPT_2025_Introduction/blob/master/lecture_exercises_students/ode_fitting_students.ipynb) notebook and implement the fitting of the CSTR model parameters using `least_squares` and `solve_ivp`.
 :::
 
 ## Solution: CSTR Model {auto-animate="true"}
-You can find the solution in the [ode_fitting.ipynb]() notebook.
+You can find the solution in the [ode_fitting.ipynb](https://github.com/MattiaGalantii/PPT_2025_Introduction/blob/master/notebooks/ode_fitting.ipynb) notebook.
 
 First, we define the ODE model for the CSTRs:
 ```{.python code-line-numbers=|1-2|4-12|}

@@ -18,4 +18,3 @@ format:
 {{< include _model_fitting.qmd >}}
 {{< include _conclusions.qmd >}}
 
-

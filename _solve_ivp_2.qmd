@@ -12,7 +12,7 @@ Recall:
 4. **Extract and analyze the results**
 
 ::: {.fragment}
-You can follow me along by opening the [lorenz_system_students.ipynb]() notebook!
+You can follow me along by opening the [lorenz_system_students.ipynb](https://github.com/MattiaGalantii/PPT_2025_Introduction/blob/master/lecture_exercises_students/Lorentz_system_students.ipynb) notebook!
 :::
 
 ## 1. A *"strange"* example: Lorenz system
@@ -149,7 +149,7 @@ X2, Y2, Z2 = sol2.y
 Visualizing the time evolution of the Lorenz system can reveal its peculiar behavior..
 
 It's time for you to complete the code and generate the plots! 
-[Go to the "exercise" cell]() and:
+[Go to the "exercise" cell](https://github.com/MattiaGalantii/PPT_2025_Introduction/blob/master/lecture_exercises_students/Lorentz_system_students.ipynb) and:
 
 - Create a 3x1 subplot figure.
 - Plot $x(t)$, $y(t)$, and $z(t)$ for both initial conditions.

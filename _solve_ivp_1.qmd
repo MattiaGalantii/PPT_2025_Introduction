@@ -36,7 +36,8 @@ Solving an ODE with `solve_ivp` typically involves the following steps:
 > ```from scipy.integrate import solve_ivp```
 
 
-You can follow me along in the [population_balance_students.ipynb]() notebook!
+You can follow me along in the [population_balance_students.ipynb](https://github.com/MattiaGalantii/PPT_2025_Introduction/blob/master/lecture_exercises_students/population_balance_students.ipynb) notebook!
+
 :::
 
 ## 1. Define the IVP problem
@@ -181,7 +182,7 @@ plt.show()
 
 
 ## Now you try!
-- Open the [population_balance_students.ipynb]() and go to the section **"Your turn!"**.
+- Open the [population_balance_students.ipynb](https://github.com/MattiaGalantii/PPT_2025_Introduction/blob/master/lecture_exercises_students/population_balance_students.ipynb) and go to the section **"Your turn!"**.
 - Play around with different parameters for *r*, *K*, and *N₀*.
 - Modify the code such that you solve the ODE for a **different initial conditions** and plot the results on the same graph.
 - Try to remove `t_eval=t_eval` from the `solve_ivp` function and see what happens to the output plot. Do you notice any difference?

@@ -15,6 +15,15 @@ This **crash course** introduced several key concepts in process technology mode
 ::: {.fragment}
 By mastering these tools, you are now equipped to tackle **complex process modeling** problems.
 
+## Extra Resources
+Extra materials and exercises are available to further enhance your understanding:
+
+- [Python basics tutorial - 1](https://example.com/python-basics)
+- [Python basics tutorial - 2](https://example.com/python-basics-2)
+- [Homeworks - 1](https://example.com/homeworks-1)
+- [Homeworks - 2](https://example.com/homeworks-2)
+- [Extra notebooks](https://example.com/extra-notebooks)
+
 Keep practicing, experimenting, and exploring advanced topics to strengthen your skills.  
 **Happy coding!**
 :::
