@@ -11,19 +11,19 @@ This **crash course** introduced several key concepts in process technology mode
 - **Parameter estimation**  
   Fitting dynamic models to experimental data using `least_squares`.
 
-
 ::: {.fragment}
 By mastering these tools, you are now equipped to tackle **complex process modeling** problems.
+:::
 
 ## Extra Resources
 Extra materials and exercises are available to further enhance your understanding:
 
-- [Python basics tutorial - 1](https://example.com/python-basics)
-- [Python basics tutorial - 2](https://example.com/python-basics-2)
-- [Homeworks - 1](https://example.com/homeworks-1)
-- [Homeworks - 2](https://example.com/homeworks-2)
-- [Extra notebooks](https://example.com/extra-notebooks)
-
-Keep practicing, experimenting, and exploring advanced topics to strengthen your skills.  
-**Happy coding!**
+::: {.nonincremental}
+- [Python basics tutorial - 1](https://github.com/MattiaGalantii/PPT_2025_Introduction/blob/master/extra_material/tutorial1.ipynb)
+- [Python basics tutorial - 2](https://github.com/MattiaGalantii/PPT_2025_Introduction/blob/master/extra_material/tutorial2.ipynb)
+- [Homeworks - 1](https://github.com/MattiaGalantii/PPT_2025_Introduction/blob/master/extra_material/homework1.ipynb)
+- [Homeworks - 2](https://github.com/MattiaGalantii/PPT_2025_Introduction/blob/master/extra_material/homework2.ipynb)
+- [Extra notebooks](https://github.com/MattiaGalantii/PPT_2025_Introduction/blob/master/extra_material/extra_exercises.ipynb)
 :::
+  
+**{{< fa solid face-smile-wink >}} Happy coding!**
