@@ -11,7 +11,7 @@
     "href": "index.html#what-will-we-do-in-this-crash-course",
     "title": "Practicum Process Technology",
     "section": "What will we do in this crash course?",
-    "text": "What will we do in this crash course?\nIn this crash course, we will cover the following topics:\n\n\n\nQuick refresh about Python and scientific libraries\nModeling of dynamic systems, ODEs and Python implementations\nFitting models to data and parameter estimation\nHands-on exercises and real-world examples\n\n\n\n\nBy the end of this course, you will have a solid foundation in Python programming for scientific applications, enabling you to tackle the challenges you’ll find in the rest of the Practicum Process Technology course."
+    "text": "What will we do in this crash course?\nIn this crash course, we will cover the following topics:\n\n\n\nQuick refresh about Python and scientific libraries (10-15 minutes)\nModeling of dynamic systems, ODEs and Python implementations (45 minutes)\nFitting models to data and parameter estimation (30 minutes)\nHands-on exercises and real-world examples\n\n\n\n\nBy the end of this course, you will have a solid foundation in Python programming for scientific applications, enabling you to tackle the challenges you’ll find in the rest of the Practicum Process Technology course."
   },
   {
     "objectID": "index.html#why-python",
@@ -31,7 +31,7 @@
     "objectID": "index.html#lets-get-started",
     "href": "index.html#lets-get-started",
     "title": "Practicum Process Technology",
-    "section": "Let’s get started!",
+    "section": " Let’s get started!",
     "text": "Let’s get started!"
   },
   {
@@ -46,7 +46,7 @@
     "href": "index.html#native-data-structures-1",
     "title": "Practicum Process Technology",
     "section": "Native Data Structures",
-    "text": "Native Data Structures\nPython offers several built-in data structures that are fundamental for programming:\n\nTuples: Ordered, immutable collections of items.\nExample:\nmy_tuple = (1, 2, 3)\ncoordinate_point = (3, 4)                  \nrecord = (\"CO₂\", 44.01, \"g/mol\") \n\n\nUse tuples when you want to ensure that the data cannot be modified after creation, or to group related but different types of data together.\n\n\n\n\n\n\n\n\nCaution\n\n\nTuples are immutable! Once created, you cannot change their values.\n\nmy_tuple = (1, 2, 3)\nmy_tuple[0] = 10                 \n\n\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[1], line 2\n      1 my_tuple = (1, 2, 3)\n----&gt; 2 my_tuple[0] = 10                 \n\nTypeError: 'tuple' object does not support item assignment"
+    "text": "Native Data Structures\nPython offers several built-in data structures that are fundamental for programming:\n\nTuples: Ordered, immutable collections of items.\nExample:\nmy_tuple = (1, 2, 3)\ncoordinate_point = (3, 4)                  \nrecord = (\"CO₂\", 44.01, \"g/mol\") \n\n\nUse tuples when you want to ensure that the data cannot be modified after creation, or to group related but different types of data together.\n\n\n\n\n\n\n\n\nCaution\n\n\nTuples are immutable! Once created, you cannot change their values.\n\nmy_tuple = (1, 2, 3)\nmy_tuple[0] = 10                 \n\n\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[287], line 2\n      1 my_tuple = (1, 2, 3)\n----&gt; 2 my_tuple[0] = 10                 \n\nTypeError: 'tuple' object does not support item assignment"
   },
   {
     "objectID": "index.html#native-data-structures-2",
@@ -200,49 +200,49 @@
     "href": "index.html#linear-odes",
     "title": "Practicum Process Technology",
     "section": "Linear ODEs",
-    "text": "Linear ODEs\nA linear ordinary differential equation (ODE) is one that can be written in the form:\n\\[\na_n(x)\\,\\frac{d^n y}{dx^n} + a_{n-1}(x)\\,\\frac{d^{n-1} y}{dx^{n-1}} + \\dots + a_1(x)\\,\\frac{dy}{dx} + a_0(x)\\,y = g(x)\n\\]\nwhere the coefficients \\(a_i(x)\\) and the forcing term \\(g(x)\\) are known functions of the independent variable \\(x\\).\nKey properties\n\nThe dependent variable \\(y\\) and its derivatives appear only to the first power.\n\\(y\\) and its derivatives are not multiplied together.\nUsually, can be solved analytically\nSuperposition holds:\nif \\(y_1\\) and \\(y_2\\) are solutions of the homogeneous equation, then \\(c_1 y_1 + c_2 y_2\\) is also a solution."
+    "text": "Linear ODEs\nA linear ordinary differential equation (ODE) is one that can be written in the form:\n\\[\na_n(t)\\,\\frac{d^n y}{dt^n} + a_{n-1}(t)\\,\\frac{d^{n-1} y}{dt^{n-1}} + \\dots + a_1(t)\\,\\frac{dy}{dt} + a_0(t)\\,y = g(t)\n\\]\nwhere the coefficients \\(a_i(t)\\) and the forcing term \\(g(t)\\) are known functions of the independent variable \\(t\\).\nKey properties\n\nThe dependent variable \\(y\\) and its derivatives appear only to the first power.\n\\(y\\) and its derivatives are not multiplied together.\nUsually, can be solved analytically\nSuperposition holds:\nif \\(y_1\\) and \\(y_2\\) are solutions of the homogeneous equation, then \\(c_1 y_1 + c_2 y_2\\) is also a solution."
   },
   {
     "objectID": "index.html#nonlinear-odes",
     "href": "index.html#nonlinear-odes",
     "title": "Practicum Process Technology",
     "section": "Nonlinear ODEs",
-    "text": "Nonlinear ODEs\nA non-linear ODE involves terms that are nonlinear functions of \\(y\\) or its derivatives,\nfor example, \\(y^2\\), \\(y\\,\\frac{dy}{dx}\\), or \\(\\sin(y)\\).\nNonlinear equations often describe richer and more complex dynamics (e.g., oscillations, bifurcations and chaos).\nTypically cannot be solved analytically and must be studied using numerical methods or approximations.\n\n\n\n\n\n\n\nStrange Attractor\n\n\n\n\n\n\n\n\n\nMandelbrot Set (kinda)\n\n\n\n\n\n\\[\n\\frac{du}{dt} = \\frac{1}{\\tau} \\left(u_{in} - u\\right) + k\\,u\n\\]\n\\[\n\\frac{d^2 \\theta}{dt^2} + \\sin(\\theta) = 0\n\\]\nLinear vs. Nonlinear\n\n\n\n\n\n“Most of everyday life is nonlinear, and the principle of superposition fails spectacularly.” - Steven Strogatz"
+    "text": "Nonlinear ODEs\nA non-linear ODE involves terms that are nonlinear functions of \\(y\\) or its derivatives,\nfor example, \\(y^2\\), \\(y\\,\\frac{dy}{dt}\\), or \\(\\sin(y)\\).\nNonlinear equations often describe richer and more complex dynamics (e.g., oscillations, bifurcations and chaos).\nTypically cannot be solved analytically and must be studied using numerical methods or approximations.\n\n\n\n\n\n\n\nStrange Attractor\n\n\n\n\n\n\n\n\n\nMandelbrot Set (kinda)\n\n\n\n\n\n\\[\n\\frac{du}{dt} = \\frac{1}{\\tau} \\left(u_{in} - u\\right) + k\\,u\n\\]\n\\[\n\\frac{d^2 \\theta}{dt^2} + \\sin(\\theta) = 0\n\\]\nLinear vs. Nonlinear\n\n\n\n\n\n“Most of everyday life is nonlinear, and the principle of superposition fails spectacularly.” - Steven Strogatz"
   },
   {
     "objectID": "index.html#solving-odes-numerically",
     "href": "index.html#solving-odes-numerically",
     "title": "Practicum Process Technology",
     "section": "Solving ODEs Numerically",
-    "text": "Solving ODEs Numerically\nImagine you have a first-order ODE of the form: \\[\n\\frac{dx}{dt} = sin(x)\n\\]\nwith an initial condition \\(x(t=0) = x_0\\).\nImagine x represents the position of a particle moving along a line over time t.\n\n\nKnowing the rule of change, specifically \\(\\frac{dx}{dt}\\), already allows us to predict the particle’s future behaviour without using any integrals!"
+    "text": "Solving ODEs Numerically\nImagine you have a first-order ODE of the form: \\[\n\\frac{d\\theta}{dt} = \\sin(\\theta)\n\\]\nwith an initial condition \\(\\theta(t=0) = \\theta_0\\).\nImagine \\(\\theta\\) represents the angular position of a particle moving along a line over time \\(t\\).\n\n\nKnowing the rule of change, specifically \\(\\frac{d\\theta}{dt}\\), already allows us to predict the particle’s future behaviour without using any integrals!"
   },
   {
     "objectID": "index.html#the-power-of-knowing-the-derivative",
     "href": "index.html#the-power-of-knowing-the-derivative",
     "title": "Practicum Process Technology",
     "section": "The power of knowing the derivative",
-    "text": "The power of knowing the derivative\nThe phase-space\nBy knowing the derivative \\(\\frac{dx}{dt} = sin(x)\\), we can analyze the system’s behavior in phase space:"
+    "text": "The power of knowing the derivative\nThe phase-space\nBy knowing the derivative \\(\\frac{d\\theta}{dt} = \\sin(\\theta)\\), we can analyze the system’s behavior in phase space:"
   },
   {
     "objectID": "index.html#the-power-of-knowing-the-derivative-1",
     "href": "index.html#the-power-of-knowing-the-derivative-1",
     "title": "Practicum Process Technology",
     "section": "The power of knowing the derivative",
-    "text": "The power of knowing the derivative\nThe phase-space\nBy knowing the derivative \\(\\frac{dx}{dt} = sin(x)\\), we can analyze the system’s behavior in phase space:"
+    "text": "The power of knowing the derivative\nThe phase-space\nBy knowing the derivative \\(\\frac{d\\theta}{dt} = \\sin(\\theta)\\), we can analyze the system’s behavior in phase space:"
   },
   {
     "objectID": "index.html#the-power-of-knowing-the-derivative-2",
     "href": "index.html#the-power-of-knowing-the-derivative-2",
     "title": "Practicum Process Technology",
     "section": "The power of knowing the derivative",
-    "text": "The power of knowing the derivative\nThe phase-space\nBy knowing the derivative \\(\\frac{dx}{dt} = sin(x)\\), we can analyze the system’s behavior in phase space:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\nIntuition: knowing the derivative allows us to predict the system’s behavior without solving the ODE explicitly!"
+    "text": "The power of knowing the derivative\nThe phase-space\nBy knowing the derivative \\(\\frac{d\\theta}{dt} = \\sin(\\theta)\\), we can analyze the system’s behavior in phase space:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\nIntuition: knowing the derivative allows us to predict the system’s behavior without solving the ODE explicitly!"
   },
   {
     "objectID": "index.html#eulers-method",
     "href": "index.html#eulers-method",
     "title": "Practicum Process Technology",
     "section": "Euler’s Method",
-    "text": "Euler’s Method\nWe were able to predict the system’s behavior qualitatively by analyzing the phase space.\nSimilarly, to obtain a quantitative solution, we can use the same intuituion to approximate the solution numerically using Euler’s Method."
+    "text": "Euler’s Method\nWe were able to predict the system’s behavior qualitatively by analyzing the phase space.\n\nSimilarly, to obtain a quantitative solution, we can use the same intuituion to approximate the solution numerically using Euler’s Method."
   },
   {
     "objectID": "index.html#the-idea-behind-eulers-method",
@@ -291,7 +291,7 @@
     "href": "index.html#scipy-and-solve_ivp",
     "title": "Practicum Process Technology",
     "section": "Scipy and solve_ivp",
-    "text": "Scipy and solve_ivp\nThe solve_ivp function can handle both stiff and non-stiff systems and offers various integration methods.\nSolving an ODE with solve_ivp typically involves the following steps:\n\nDefine the IVP problem: Define the ODE system and initial conditions.\nImplement the ODE system: Write a function that computes and returns the derivatives.\nSetup and call solve_ivp: Specify the time span, initial conditions, and method.\nExtract and analyze the results.\n\n\n\nimport scipy.integrate as spi\n\n\n\n\nfrom scipy.integrate import solve_ivp"
+    "text": "Scipy and solve_ivp\nThe solve_ivp function can handle both stiff and non-stiff systems and offers various integration methods.\nSolving an ODE with solve_ivp typically involves the following steps:\n\nDefine the IVP problem: Define the ODE system and initial conditions.\nImplement the ODE system: Write a function that computes and returns the derivatives.\nSetup and call solve_ivp: Specify the time span, initial conditions, and method.\nExtract and analyze the results.\n\n\n\nimport scipy.integrate as spi\n\n\nfrom scipy.integrate import solve_ivp\n\nYou can follow me along in the population_balance_students.ipynb notebook!"
   },
   {
     "objectID": "index.html#define-the-ivp-problem",
@@ -340,7 +340,7 @@
     "href": "index.html#now-you-try",
     "title": "Practicum Process Technology",
     "section": "Now you try!",
-    "text": "Now you try!\n\nOpen the rabbit population exercise notebook\nPlay around with different parameters for r, K, and N₀.\nModify the code such that you solve the ODE for a different initial conditions and plot the results on the same graph.\nTry to remove t_eval=t_eval from the solve_ivp function and see what happens to the output plot. Do you notice any difference?\n\n\n\n\n\n\n\n\nTip\n\n\nTo account for multiple initial conditions, don’t copy and paste the solve_ivp function multiple times. Instead, use the concept of loops that you learned in the previous sections!"
+    "text": "Now you try!\n\nOpen the population_balance_students.ipynb and go to the section “Your turn!”.\nPlay around with different parameters for r, K, and N₀.\nModify the code such that you solve the ODE for a different initial conditions and plot the results on the same graph.\nTry to remove t_eval=t_eval from the solve_ivp function and see what happens to the output plot. Do you notice any difference?\n\n\n\n\n\n\n\n\nTip\n\n\nTo account for multiple initial conditions, don’t copy and paste the solve_ivp function multiple times. Instead, use the concept of loops that you learned in the previous sections!"
   },
   {
     "objectID": "index.html#different-initial-conditions-example",
@@ -361,7 +361,7 @@
     "href": "index.html#solve-for-systems-of-odes",
     "title": "Practicum Process Technology",
     "section": "Solve for systems of ODEs",
-    "text": "Solve for systems of ODEs\nNow that we have a basic understanding of how to use solve_ivp, let’s tackle a more complex ODE system, containing more that one equation.\nRecall:\n\nDefine the IVP problem: Define the ODE system and initial conditions.\nImplement the ODE system: Write a function that computes and returns the derivatives.\nSetup and call solve_ivp: Specify the time span, initial conditions, and method.\nExtract and analyze the results."
+    "text": "Solve for systems of ODEs\nNow that we have a basic understanding of how to use solve_ivp, let’s tackle a more complex ODE system, containing more that one equation.\nRecall:\n\nDefine the IVP problem: Define the ODE system and initial conditions.\nImplement the ODE system: Write a function that computes and returns the derivatives.\nSetup and call solve_ivp: Specify the time span, initial conditions, and method.\nExtract and analyze the results\n\n\nYou can follow me along by opening the lorenz_system_students.ipynb notebook!"
   },
   {
     "objectID": "index.html#a-strange-example-lorenz-system",
@@ -382,28 +382,28 @@
     "href": "index.html#implementing-the-lorenz-system-in-python-1",
     "title": "Practicum Process Technology",
     "section": "2. Implementing the Lorenz system in Python",
-    "text": "2. Implementing the Lorenz system in Python\nLet’s implement the Lorenz system using solve_ivp.\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef lorenz_system(t, y, Pr, Ra, beta):\n    x, y, z = y\n    dxdt = Pr * (y - x)\n    dydt = x * (Ra - z) - y\n    dzdt = x * y - beta * z\n    return [dxdt, dydt, dzdt]\n\nsigma = 10.0\nrho   = 1\nbeta  = 8.0 / 3.0"
+    "text": "2. Implementing the Lorenz system in Python\nLet’s implement the Lorenz system using solve_ivp.\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef lorenz_system(t, y, Pr, Ra, beta):\n    x, y, z = y\n    dxdt = Pr * (y - x)\n    dydt = x * (Ra - z) - y\n    dzdt = x * y - beta * z\n    return [dxdt, dydt, dzdt]\n\nPr = 10.0\nRa  = 1\nbeta  = 8.0 / 3.0"
   },
   {
     "objectID": "index.html#setup-the-solver",
     "href": "index.html#setup-the-solver",
     "title": "Practicum Process Technology",
     "section": "3. Setup the solver",
-    "text": "3. Setup the solver\nLet’s implement the Lorenz system using solve_ivp.\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef lorenz_system(t, y, Pr, Ra, beta):\n    x, y, z = y\n    dxdt = Pr * (y - x)\n    dydt = x * (Ra - z) - y\n    dzdt = x * y - beta * z\n    return [dxdt, dydt, dzdt]\n\nsigma = 10.0\nrho   = 1\nbeta  = 8.0 / 3.0\n\ny0   = np.array([1.0, 1.0, 1.0])\neps  = 1e-6\ny0_2 = np.array([1.0 + eps, 1.0, 1.0])\n\nt_span = (0.0, 50.0)\nt_eval = np.linspace(t_span[0], t_span[1], 10000)"
+    "text": "3. Setup the solver\nLet’s implement the Lorenz system using solve_ivp.\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef lorenz_system(t, y, Pr, Ra, beta):\n    x, y, z = y\n    dxdt = Pr * (y - x)\n    dydt = x * (Ra - z) - y\n    dzdt = x * y - beta * z\n    return [dxdt, dydt, dzdt]\n\nPr = 10.0\nRa  = 1\nbeta  = 8.0 / 3.0\n\ny0   = np.array([1.0, 1.0, 1.0])\neps  = 1e-6\ny0_2 = np.array([1.0 + eps, 1.0, 1.0])\n\nt_end = 50.0\nt_span = (0.0, t_end)\nt_eval = np.linspace(t_span[0], t_span[1], 10000)"
   },
   {
     "objectID": "index.html#solve-the-system-and-extract-results",
     "href": "index.html#solve-the-system-and-extract-results",
     "title": "Practicum Process Technology",
     "section": "4. Solve the system and extract results",
-    "text": "4. Solve the system and extract results\nLet’s implement the Lorenz system using solve_ivp.\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef lorenz_system(t, y, Pr, Ra, beta):\n    x, y, z = y\n    dxdt = Pr * (y - x)\n    dydt = x * (Ra - z) - y\n    dzdt = x * y - beta * z\n    return [dxdt, dydt, dzdt]\n\nsigma = 10.0\nrho   = 1\nbeta  = 8.0 / 3.0\n\ny0   = np.array([1.0, 1.0, 1.0])\neps  = 1e-6\ny0_2 = np.array([1.0 + eps, 1.0, 1.0])\n\nt_span = (0.0, 50.0)\nt_eval = np.linspace(t_span[0], t_span[1], 10000)\n\nmethod = \"RK45\"          \n\nsol1 = solve_ivp(lorenz_system, t_span, y0,   args=(sigma, rho, beta), t_eval=t_eval, method=method, rtol=1e-9, atol=1e-12)\nsol2 = solve_ivp(lorenz_system, t_span, y0_2, args=(sigma, rho, beta), t_eval=t_eval, method=method, rtol=1e-9, atol=1e-12)\n\nt = sol1.t\nX1, Y1, Z1 = sol1.y\nX2, Y2, Z2 = sol2.y"
+    "text": "4. Solve the system and extract results\nLet’s implement the Lorenz system using solve_ivp.\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef lorenz_system(t, y, Pr, Ra, beta):\n    x, y, z = y\n    dxdt = Pr * (y - x)\n    dydt = x * (Ra - z) - y\n    dzdt = x * y - beta * z\n    return [dxdt, dydt, dzdt]\n\nPr = 10.0\nRa  = 1\nbeta  = 8.0 / 3.0\n\ny0   = np.array([1.0, 1.0, 1.0])\neps  = 1e-6\ny0_2 = np.array([1.0 + eps, 1.0, 1.0])\n\nt_end = 50.0\nt_span = (0.0, t_end)\nt_eval = np.linspace(t_span[0], t_span[1], 10000)\n\nmethod = \"RK45\"          \n\nsol1 = solve_ivp(lorenz_system, t_span, y0,   args=(Pr, Ra, beta), t_eval=t_eval, method=method, rtol=1e-9, atol=1e-12)\nsol2 = solve_ivp(lorenz_system, t_span, y0_2, args=(Pr, Ra, beta), t_eval=t_eval, method=method, rtol=1e-9, atol=1e-12)\n\nt = sol1.t\nX1, Y1, Z1 = sol1.y\nX2, Y2, Z2 = sol2.y"
   },
   {
     "objectID": "index.html#visualize-the-results",
     "href": "index.html#visualize-the-results",
     "title": "Practicum Process Technology",
     "section": "5. Visualize the results",
-    "text": "5. Visualize the results\nVisualizing the time evolution of the Lorenz system can reveal its peculiar behavior..\nIt’s time for you to complete the code and generate the plots! Open the exercise and:\n\nCreate a 3x1 subplot figure.\nPlot \\(x(t)\\), \\(y(t)\\), and \\(z(t)\\) for both initial conditions.\nCreate a 1x3 subplot figure.\nPlot the phase portraits: \\(x(t)\\) vs \\(z(t)\\), \\(x(t)\\) vs \\(y(t)\\), and \\(y(t)\\) vs \\(z(t)\\) for both initial conditions. (Note: x-axis vs y-axis)\nIncrease slowly Rayleigh number Ra (1 - 25) and observe how the system’s behavior changes!\n\n\nMinimal starter code is provided below:\nfig_3_1, axes_3_1 = plt.subplots(3, 1, figsize=(12, 10), sharex=True)\naxes[0].plot(t, X1)\n\nfig_3_1, axes_1_3 = plt.subplots(1, 3, figsize=(12, 5), sharex=False, sharey=False)\naxes_1_3[0].plot(X1, Z1)"
+    "text": "5. Visualize the results\nVisualizing the time evolution of the Lorenz system can reveal its peculiar behavior..\nIt’s time for you to complete the code and generate the plots! Go to the “exercise” cell and:\n\nCreate a 3x1 subplot figure.\nPlot \\(x(t)\\), \\(y(t)\\), and \\(z(t)\\) for both initial conditions.\nCreate a 1x3 subplot figure.\nPlot the phase portraits: \\(x(t)\\) vs \\(z(t)\\), \\(x(t)\\) vs \\(y(t)\\), and \\(y(t)\\) vs \\(z(t)\\) for both initial conditions. (Note: x-axis vs y-axis)\nIncrease slowly Rayleigh number Ra (1 - 25) and observe how the system’s behavior changes!\n\n\nMinimal starter code is provided below:\nfig_3_1, axes_3_1 = plt.subplots(3, 1, figsize=(12, 10), sharex=True)\ncolors = {\"x\":\"tab:blue\", \"y\":\"tab:orange\", \"z\":\"tab:green\"}\naxes[0].plot(t, X1, color=colors[\"x\"])\n\nfig_3_1, axes_1_3 = plt.subplots(1, 3, figsize=(12, 5), sharex=False, sharey=False)\naxes_1_3[0].plot(X1, Z1)"
   },
   {
     "objectID": "index.html#time-series-solutions",
@@ -445,7 +445,7 @@
     "href": "index.html#example-fitting-a-non-linear-model",
     "title": "Practicum Process Technology",
     "section": "Example: Fitting a Non-Linear Model",
-    "text": "Example: Fitting a Non-Linear Model\nLet’s consider an example where we have experimental data that follows a non-linear relationship, such as an exponential decay model. \\[\ny(x) = e^{-\\lambda x}\\,\\sin(\\omega x)\n\\]\nWe’ll recover the \\(\\lambda\\) and \\(\\omega\\) parameters of a damped sine model from noisy synthetic data. You can open this example in a Jupyter notebook: model_fitting.ipynb."
+    "text": "Example: Fitting a Non-Linear Model\nLet’s consider an example where we have experimental data that follows a non-linear relationship, such as an exponential decay model. \\[\ny(x) = e^{-\\lambda x}\\,\\sin(\\omega x)\n\\]\nWe’ll recover the \\(\\lambda\\) and \\(\\omega\\) parameters of a damped sine model from noisy synthetic data.\nYou can open this example in a Jupyter notebook and follow me: model_fitting_students.ipynb."
   },
   {
     "objectID": "index.html#generating-synthetic-data",
@@ -494,21 +494,21 @@
     "href": "index.html#setup-the-cstr-model",
     "title": "Practicum Process Technology",
     "section": "Setup the CSTR Model",
-    "text": "Setup the CSTR Model\n\\[\n\\frac{dC_{ik}}{dt} = \\frac{(C_{i,k-1} - C_{ik})}{\\tau} + r_{ik}\n\\]\nwith \\(i = A, B, C\\) (species) and \\(k = 1, 2\\) (CSTRs).\n\nModel states: \\(y = ([C_{A1}, C_{B1}, C_{B2}, C_{C2}])\\) with feed \\(C_{A0}&gt;0\\), \\(C_{B0}=C_{C0}=0\\).\n\nCSTR 1: \\(r_{A1} = k_1\\,C_{A1}\\) (first-order in \\(A\\))\nCSTR 2: \\(r_{B2} = k_2\\,C_{B2}^2\\) (second-order in \\(B\\))\n\n\n\nNow it’s your turn! Open the ode_model_fitting_exercise.ipynb notebook and implement the fitting of the CSTR model parameters using least_squares or solve_ivp."
+    "text": "Setup the CSTR Model\n\\[\n\\frac{dC_{ik}}{dt} = \\frac{(C_{i,k-1} - C_{ik})}{\\tau} + r_{ik}\n\\]\nwith \\(i = A, B, C\\) (species) and \\(k = 1, 2\\) (CSTRs).\n\nModel states: \\(y = ([C_{A1}, C_{B1}, C_{B2}, C_{C2}])\\) with feed \\(C_{A0}&gt;0\\), \\(C_{B0}=C_{C0}=0\\).\n\nCSTR 1: \\(r_{A1} = k_1\\,C_{A1}\\) (first-order in \\(A\\))\nCSTR 2: \\(r_{B2} = k_2\\,C_{B2}^2\\) (second-order in \\(B\\))\n\n\n\nNow it’s your turn! Open the ode_fitting_students.ipynb notebook and implement the fitting of the CSTR model parameters using least_squares and solve_ivp."
   },
   {
     "objectID": "index.html#solution-cstr-model",
     "href": "index.html#solution-cstr-model",
     "title": "Practicum Process Technology",
     "section": "Solution: CSTR Model",
-    "text": "Solution: CSTR Model\nYou can find the solution in the ode_model_fitting_solution.ipynb notebook.\nFirst, we define the ODE model for the CSTRs:\ndef dydt(t, y, k1, k2, CA0=1.0, tau=1.0):\n    CA1, CB1, CB2, CC2 = y\n\n    r1 = k1 * CA1\n    dCA1 = (CA0 - CA1)/tau - r1\n    dCB1 = (0.0 - CB1)/tau + r1\n \n    r2 = k2 * CB2**2\n    dCB2 = (CB1 - CB2)/tau - r2\n    dCC2 = (0.0 - CC2)/tau + r2\n\n    return [dCA1, dCB1, dCB2, dCC2]"
+    "text": "Solution: CSTR Model\nYou can find the solution in the ode_fitting.ipynb notebook.\nFirst, we define the ODE model for the CSTRs:\ndef dydt(t, y, k1, k2, CA0, tau):\n    CA1, CB1, CB2, CC2 = y\n\n    r1 = k1 * CA1\n    dCA1 = (CA0 - CA1)/tau - r1\n    dCB1 = (0.0 - CB1)/tau + r1\n \n    r2 = k2 * CB2**2\n    dCB2 = (CB1 - CB2)/tau - r2\n    dCC2 = (0.0 - CC2)/tau + r2\n\n    return [dCA1, dCB1, dCB2, dCC2]"
   },
   {
     "objectID": "index.html#solution-residuals-function",
     "href": "index.html#solution-residuals-function",
     "title": "Practicum Process Technology",
     "section": "Solution: Residuals Function",
-    "text": "Solution: Residuals Function\nThen, we write the residuals function that uses solve_ivp to simulate the model:\ndef dydt(t, y, k1, k2, CA0=1.0, tau=1.0):\n    CA1, CB1, CB2, CC2 = y\n\n    r1 = k1 * CA1\n    dCA1 = (CA0 - CA1)/tau - r1\n    dCB1 = (0.0 - CB1)/tau + r1\n \n    r2 = k2 * CB2**2\n    dCB2 = (CB1 - CB2)/tau - r2\n    dCC2 = (0.0 - CC2)/tau + r2\n\n    return [dCA1, dCB1, dCB2, dCC2]\n\ndef residuals(x_params, t_exp, y_exp, sigma=0.01, CA0=1.0, tau=1.0):\n    k1, k2 = x_params\n    y0 = [0.0, 0.0, 0.0, 0.0]  \n    sol = solve_ivp(\n        dydt, (t_exp[0], t_exp[-1]), y0, t_eval=t_exp,\n        args=(k1, k2, CA0, tau))\n\n    y_pred = sol.y[3]  # CC2(t)\n    return (y_exp - y_pred) / sigma"
+    "text": "Solution: Residuals Function\nThen, we write the residuals function that uses solve_ivp to simulate the model:\ndef dydt(t, y, k1, k2, CA0, tau):\n    CA1, CB1, CB2, CC2 = y\n\n    r1 = k1 * CA1\n    dCA1 = (CA0 - CA1)/tau - r1\n    dCB1 = (0.0 - CB1)/tau + r1\n \n    r2 = k2 * CB2**2\n    dCB2 = (CB1 - CB2)/tau - r2\n    dCC2 = (0.0 - CC2)/tau + r2\n\n    return [dCA1, dCB1, dCB2, dCC2]\n\ndef residuals(x_params, t_exp, y_exp, sigma=0.01, CA0=1.0, tau=1.0):\n    k1, k2 = x_params\n    y0 = [0.0, 0.0, 0.0, 0.0]  \n    sol = solve_ivp(\n        dydt, (t_exp[0], t_exp[-1]), y0, t_eval=t_exp,\n        args=(k1, k2, CA0, tau))\n\n    y_pred = sol.y[3]  # CC2(t)\n    return (y_exp - y_pred) / sigma"
   },
   {
     "objectID": "index.html#solution-performing-the-fit",

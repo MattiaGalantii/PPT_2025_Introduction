@@ -35,7 +35,9 @@ $$
 y(x) = e^{-\lambda x}\,\sin(\omega x)
 $$
 
-We’ll recover the $\lambda$ and $\omega$ parameters of a **damped sine** model from noisy synthetic data. You can open this example in a Jupyter notebook: [model_fitting.ipynb]().
+We’ll recover the $\lambda$ and $\omega$ parameters of a **damped sine** model from noisy synthetic data. 
+
+You can open this example in a Jupyter notebook and follow me: [model_fitting_students.ipynb]().
 
 ## Generating Synthetic Data
 First , we generate synthetic data based on known parameters and add some noise to simulate experimental measurements.
@@ -244,15 +246,15 @@ Model states: $y = ([C_{A1}, C_{B1}, C_{B2}, C_{C2}])$ with feed $C_{A0}>0$, $C_
 :::
 
 ::: {.fragment}
-Now it's your turn! Open the [ode_model_fitting_exercise.ipynb]() notebook and implement the fitting of the CSTR model parameters using `least_squares` or `solve_ivp`.
+Now it's your turn! Open the [ode_fitting_students.ipynb]() notebook and implement the fitting of the CSTR model parameters using `least_squares` and `solve_ivp`.
 :::
 
 ## Solution: CSTR Model {auto-animate="true"}
-You can find the solution in the [ode_model_fitting_solution.ipynb]() notebook.
+You can find the solution in the [ode_fitting.ipynb]() notebook.
 
 First, we define the ODE model for the CSTRs:
 ```{.python code-line-numbers=|1-2|4-12|}
-def dydt(t, y, k1, k2, CA0=1.0, tau=1.0):
+def dydt(t, y, k1, k2, CA0, tau):
     CA1, CB1, CB2, CC2 = y
 
     r1 = k1 * CA1
@@ -270,7 +272,7 @@ def dydt(t, y, k1, k2, CA0=1.0, tau=1.0):
 Then, we write the residuals function that uses `solve_ivp` to simulate the model:
 
 ```{.python code-line-numbers=|14|15-16|17-19|21-22}
-def dydt(t, y, k1, k2, CA0=1.0, tau=1.0):
+def dydt(t, y, k1, k2, CA0, tau):
     CA1, CB1, CB2, CC2 = y
 
     r1 = k1 * CA1

@@ -3,10 +3,10 @@
 A **linear ordinary differential equation (ODE)** is one that can be written in the form:
 
 $$
-a_n(x)\,\frac{d^n y}{dx^n} + a_{n-1}(x)\,\frac{d^{n-1} y}{dx^{n-1}} + \dots + a_1(x)\,\frac{dy}{dx} + a_0(x)\,y = g(x)
+a_n(t)\,\frac{d^n y}{dt^n} + a_{n-1}(t)\,\frac{d^{n-1} y}{dt^{n-1}} + \dots + a_1(t)\,\frac{dy}{dt} + a_0(t)\,y = g(t)
 $$
 
-where the coefficients $a_i(x)$ and the forcing term $g(x)$ are known functions of the independent variable $x$.
+where the coefficients $a_i(t)$ and the forcing term $g(t)$ are known functions of the independent variable $t$.
 
 ### Key properties
 
@@ -19,7 +19,7 @@ where the coefficients $a_i(x)$ and the forcing term $g(x)$ are known functions 
 ## Nonlinear ODEs
 
 A **non-linear ODE** involves terms that are nonlinear functions of $y$ or its derivatives,\
-for example, $y^2$, $y\,\frac{dy}{dx}$, or $\sin(y)$.
+for example, $y^2$, $y\,\frac{dy}{dt}$, or $\sin(y)$.
 
 Nonlinear equations often describe richer and more complex dynamics (e.g., oscillations, bifurcations and chaos).
 
@@ -51,20 +51,20 @@ $$
 
 Imagine you have a first-order ODE of the form: 
 $$
-\frac{dx}{dt} = sin(x)
+\frac{d\theta}{dt} = \sin(\theta)
 $$ 
 
-with an initial condition $x(t=0) = x_0$.
+with an initial condition $\theta(t=0) = \theta_0$.
 
-Imagine x represents the position of a particle moving along a line over time t.
+Imagine $\theta$ represents the angular position of a particle moving along a line over time $t$.
 
 ::: {.fragment .fade-left}
-> Knowing the rule of change, specifically $\frac{dx}{dt}$, already allows us to predict the particle's future behaviour without using any integrals!
+> Knowing the rule of change, specifically $\frac{d\theta}{dt}$, already allows us to predict the particle's future behaviour without using any integrals!
 :::
 
 ## The power of knowing the derivative {transition="none-in none-out"}
 ### The phase-space
-By knowing the derivative $\frac{dx}{dt} = sin(x)$, we can analyze the system's behavior in phase space:
+By knowing the derivative $\frac{d\theta}{dt} = \sin(\theta)$, we can analyze the system's behavior in phase space:
 
 ```{python}
 import numpy as np
@@ -81,18 +81,18 @@ ax.axvline(0, linewidth=1, color='black')
 ax.set_ylim(-1.5, 1.5)
 ax.set_ylim(-1.5, 1.5)
 
-ax.set_xlabel(r"$x$", fontsize=18)
-ax.set_ylabel(r"$\dot{x}$", fontsize=18)
+ax.set_xlabel(r"$\theta$", fontsize=18)
+ax.set_ylabel(r"$\dot{\theta}$", fontsize=18)
 ax.tick_params(axis='both', which='major', labelsize=14)
 
-ax.set_title(r"Phase Space for $\dot{x}=\sin(x)$", fontsize=16)
+ax.set_title(r"Phase Space for $\dot{\theta}=\sin(\theta)$", fontsize=16)
 plt.tight_layout()
 plt.show()
 ```
 
 ## The power of knowing the derivative {transition="none-in none-out"}
 ### The phase-space
-By knowing the derivative $\frac{dx}{dt} = sin(x)$, we can analyze the system's behavior in phase space:
+By knowing the derivative $\frac{d\theta}{dt} = \sin(\theta)$, we can analyze the system's behavior in phase space:
 
 ```{python}
 import numpy as np
@@ -123,9 +123,9 @@ ax.quiver(x_ar, np.zeros_like(x_ar), u, v,
 
 # Labels and formatting
 ax.set_xlabel(r"$x$", fontsize=18)
-ax.set_ylabel(r"$\dot{x}$", fontsize=18)
+ax.set_ylabel(r"$\dot{\theta}$", fontsize=18)
 ax.tick_params(axis='both', which='major', labelsize=14)
-ax.set_title(r"Phase Space for $\dot{x}=\sin(x)$", fontsize=16)
+ax.set_title(r"Phase Space for $\dot{\theta}=\sin(\theta)$", fontsize=16)
 
 plt.tight_layout()
 plt.show()
@@ -134,7 +134,7 @@ plt.show()
 
 ## The power of knowing the derivative {transition="none-in none-out"}
 ### The phase-space
-By knowing the derivative $\frac{dx}{dt} = sin(x)$, we can analyze the system's behavior in phase space:
+By knowing the derivative $\frac{d\theta}{dt} = \sin(\theta)$, we can analyze the system's behavior in phase space:
 
 ```{python}
 import numpy as np
@@ -174,10 +174,10 @@ ax.scatter(x_fp[stable], y_fp[stable], s=80, facecolor='black', edgecolor='black
 ax.scatter(x_fp[~stable], y_fp[~stable], s=80, facecolor='none', edgecolor='black', zorder=5, label='Unstable')
 
 # Labels and formatting
-ax.set_xlabel(r"$x$", fontsize=18)
-ax.set_ylabel(r"$\dot{x}$", fontsize=18)
+ax.set_xlabel(r"$\theta$", fontsize=18)
+ax.set_ylabel(r"$\dot{\theta}$", fontsize=18)
 ax.tick_params(axis='both', which='major', labelsize=14)
-ax.set_title(r"Phase Space for $\dot{x}=\sin(x)$", fontsize=16)
+ax.set_title(r"Phase Space for $\dot{\theta}=\sin(\theta)$", fontsize=16)
 
 # Legend only for stationary points
 ax.legend(frameon=False, loc='upper right', fontsize=12)
@@ -197,9 +197,11 @@ plt.show()
 
 We were able to predict the system's behavior *qualitatively* by analyzing the phase space.
 
+::: {.fragment}
 Similarly, to obtain a *quantitative* solution, we can use the same intuituion to approximate the solution numerically using **Euler's Method**.
 
-![](assets/euler.png){alt="Euler_meme" width="250px"}
+![](assets/euler.png){alt="Euler_meme" width="400px"}
+:::
 
 ## The idea behind Euler’s Method
 

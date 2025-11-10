@@ -1,6 +1,6 @@
 # {{< fa brands python >}} Python Recap
 This section provides a brief recap of essential Python concepts and libraries that will be useful throughout the course.  
-You should already be familiar with these topics, but this serves as a quick refresher.
+You may be already be familiar with these topics, but this serves as a quick refresher.
 
 ::: {.nonincremental}
 >

@@ -27,10 +27,10 @@ Feel free to reach out via email for any questions or assistance related to the 
 
 In this crash course, we will cover the following topics:
 
->- Quick refresh about Python and scientific libraries
-- Modeling of dynamic systems, ODEs and Python implementations
-- Fitting models to data and parameter estimation
-- Hands-on exercises and real-world examples
+>- Quick refresh about Python and scientific libraries (10-15 minutes)
+- Modeling of dynamic systems, ODEs and Python implementations (45 minutes)
+- Fitting models to data and parameter estimation (30 minutes)
+- Hands-on exercises and real-world examples 
 
 . . . 
 
@@ -70,7 +70,7 @@ You can run Jupyter Notebooks locally on your computer using [Anaconda](https://
 Given the time limitations, I won't address python installation and setup questions during the session. Following the setup instructions provided in the course materials is mandatory. Feel free to ask after class.
 :::
 
-## Let's get started! 
+## {{< fa flag-checkered >}} Let's get started! 
 
 
 

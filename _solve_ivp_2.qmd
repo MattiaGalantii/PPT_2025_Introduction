@@ -9,7 +9,11 @@ Recall:
 
 3. **Setup and call `solve_ivp`**: Specify the time span, initial conditions, and method.
 
-4. **Extract and analyze the results**.
+4. **Extract and analyze the results**
+
+::: {.fragment}
+You can follow me along by opening the [lorenz_system_students.ipynb]() notebook!
+:::
 
 ## 1. A *"strange"* example: Lorenz system
 Edward Lorentz (1963) wanted to model atmospheric convection, with variables $x(t)$, $y(t)$, and $z(t)$ related to fluid flow and temperature.
@@ -70,15 +74,15 @@ def lorenz_system(t, y, Pr, Ra, beta):
     dzdt = x * y - beta * z
     return [dxdt, dydt, dzdt]
 
-sigma = 10.0
-rho   = 1
+Pr = 10.0
+Ra  = 1
 beta  = 8.0 / 3.0
 ```
 
 ## 3. Setup the solver {auto-animate="true"}
 Let's implement the Lorenz system using `solve_ivp`.
 
-```{.python code-line-numbers=|16-18|20-21}
+```{.python code-line-numbers=|16-18|20-22}
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
@@ -90,22 +94,23 @@ def lorenz_system(t, y, Pr, Ra, beta):
     dzdt = x * y - beta * z
     return [dxdt, dydt, dzdt]
 
-sigma = 10.0
-rho   = 1
+Pr = 10.0
+Ra  = 1
 beta  = 8.0 / 3.0
 
 y0   = np.array([1.0, 1.0, 1.0])
 eps  = 1e-6
 y0_2 = np.array([1.0 + eps, 1.0, 1.0])
 
-t_span = (0.0, 50.0)
+t_end = 50.0
+t_span = (0.0, t_end)
 t_eval = np.linspace(t_span[0], t_span[1], 10000)
 ```
 
 ## 4. Solve the system and extract results {auto-animate="true"}
 Let's implement the Lorenz system using `solve_ivp`.
 
-```{.python code-line-numbers=23|25-26|28-30}
+```{.python code-line-numbers=24|26-27|29-31}
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
@@ -117,21 +122,22 @@ def lorenz_system(t, y, Pr, Ra, beta):
     dzdt = x * y - beta * z
     return [dxdt, dydt, dzdt]
 
-sigma = 10.0
-rho   = 1
+Pr = 10.0
+Ra  = 1
 beta  = 8.0 / 3.0
 
 y0   = np.array([1.0, 1.0, 1.0])
 eps  = 1e-6
 y0_2 = np.array([1.0 + eps, 1.0, 1.0])
 
-t_span = (0.0, 50.0)
+t_end = 50.0
+t_span = (0.0, t_end)
 t_eval = np.linspace(t_span[0], t_span[1], 10000)
 
 method = "RK45"          
 
-sol1 = solve_ivp(lorenz_system, t_span, y0,   args=(sigma, rho, beta), t_eval=t_eval, method=method, rtol=1e-9, atol=1e-12)
-sol2 = solve_ivp(lorenz_system, t_span, y0_2, args=(sigma, rho, beta), t_eval=t_eval, method=method, rtol=1e-9, atol=1e-12)
+sol1 = solve_ivp(lorenz_system, t_span, y0,   args=(Pr, Ra, beta), t_eval=t_eval, method=method, rtol=1e-9, atol=1e-12)
+sol2 = solve_ivp(lorenz_system, t_span, y0_2, args=(Pr, Ra, beta), t_eval=t_eval, method=method, rtol=1e-9, atol=1e-12)
 
 t = sol1.t
 X1, Y1, Z1 = sol1.y
@@ -143,7 +149,7 @@ X2, Y2, Z2 = sol2.y
 Visualizing the time evolution of the Lorenz system can reveal its peculiar behavior..
 
 It's time for you to complete the code and generate the plots! 
-[Open the exercise]() and:
+[Go to the "exercise" cell]() and:
 
 - Create a 3x1 subplot figure.
 - Plot $x(t)$, $y(t)$, and $z(t)$ for both initial conditions.
@@ -155,7 +161,8 @@ It's time for you to complete the code and generate the plots!
 Minimal starter code is provided below:
 ```{.python}
 fig_3_1, axes_3_1 = plt.subplots(3, 1, figsize=(12, 10), sharex=True)
-axes[0].plot(t, X1)
+colors = {"x":"tab:blue", "y":"tab:orange", "z":"tab:green"}
+axes[0].plot(t, X1, color=colors["x"])
 
 fig_3_1, axes_1_3 = plt.subplots(1, 3, figsize=(12, 5), sharex=False, sharey=False)
 axes_1_3[0].plot(X1, Z1)

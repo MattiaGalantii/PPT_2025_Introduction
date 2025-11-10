@@ -238,9 +238,9 @@ Eindhoven University of Technology (TU/e)<br>
 <blockquote>
 
 <ul>
-<li class="fragment">Quick refresh about Python and scientific libraries</li>
-<li class="fragment">Modeling of dynamic systems, ODEs and Python implementations</li>
-<li class="fragment">Fitting models to data and parameter estimation</li>
+<li class="fragment">Quick refresh about Python and scientific libraries (10-15 minutes)</li>
+<li class="fragment">Modeling of dynamic systems, ODEs and Python implementations (45 minutes)</li>
+<li class="fragment">Fitting models to data and parameter estimation (30 minutes)</li>
 <li class="fragment">Hands-on exercises and real-world examples</li>
 </ul>
 
@@ -294,13 +294,13 @@ Eindhoven University of Technology (TU/e)<br>
 </div>
 </section>
 <section id="lets-get-started" class="slide level2">
-<h2>Let’s get started!</h2>
+<h2><i class="fa-solid fa-flag-checkered" aria-label="flag-checkered"></i> Let’s get started!</h2>
 </section></section>
 <section>
 <section id="python-recap" class="title-slide slide level1 center">
 <h1><i class="fa-brands fa-python" aria-label="python"></i> Python Recap</h1>
 <p>This section provides a brief recap of essential Python concepts and libraries that will be useful throughout the course.<br>
-You should already be familiar with these topics, but this serves as a quick refresher.</p>
+You may be already be familiar with these topics, but this serves as a quick refresher.</p>
 <blockquote>
 
 <ul>
@@ -351,7 +351,7 @@ You should already be familiar with these topics, but this serves as a quick ref
 </div>
 <div class="callout-content">
 <p>Tuples are immutable! Once created, you cannot change their values.</p>
-<div id="1d7928e0" class="cell" data-execution_count="1">
+<div id="2fbb2062" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>my_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb3-2"><a></a>my_tuple[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span>                 </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -360,7 +360,7 @@ You should already be familiar with these topics, but this serves as a quick ref
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[1]</span><span class="ansi-green-fg">, line 2</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[287]</span><span class="ansi-green-fg">, line 2</span>
 <span class="ansi-green-fg">      1</span> my_tuple = (<span class="ansi-green-fg">1</span>, <span class="ansi-green-fg">2</span>, <span class="ansi-green-fg">3</span>)
 <span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span class="ansi-yellow-bg">my_tuple</span><span class="ansi-yellow-bg">[</span><span class="ansi-green-fg ansi-yellow-bg">0</span><span class="ansi-yellow-bg">]</span> = <span class="ansi-green-fg">10</span>                 
 
@@ -388,7 +388,7 @@ You should already be familiar with these topics, but this serves as a quick ref
 </div>
 <div class="fragment">
 <p><span class="py-green">Dictionaries</span> are useful for representing structured data and allow for efficient data retrieval using keys.</p>
-<div id="a5b2de72" class="cell" data-execution_count="2">
+<div id="4dd742ad" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>molecular_weights <span class="op">=</span> {</span>
 <span id="cb5-2"><a></a>    <span class="st">'H2O'</span>: <span class="fl">18.015</span>,</span>
 <span id="cb5-3"><a></a>    <span class="st">'CO2'</span>: <span class="fl">44.01</span>,</span>
@@ -409,7 +409,7 @@ You should already be familiar with these topics, but this serves as a quick ref
 <div class="fragment">
 <h3 id="if-else-statements"><strong>If-Else Statements:</strong></h3>
 <p>Conditional execution of code blocks.</p>
-<div id="24ef74ad" class="cell" data-execution_count="3">
+<div id="bfd38594" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>temperature <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb7-2"><a></a><span class="cf">if</span> temperature <span class="op">&gt;</span> <span class="dv">30</span>:</span>
 <span id="cb7-3"><a></a>    <span class="bu">print</span>(<span class="st">"It's hot outside!"</span>)</span>
@@ -431,7 +431,7 @@ You should already be familiar with these topics, but this serves as a quick ref
 <div class="fragment">
 <h3 id="for-loops"><strong>For Loops:</strong></h3>
 <p>Iterating over sequences (like lists or ranges).</p>
-<div id="b92c0b51" class="cell" data-execution_count="4">
+<div id="1c0afaca" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="cf">for</span> <span class="bu">iter</span> <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb9-2"><a></a>    <span class="bu">print</span>(<span class="ss">f"Iteration </span><span class="sc">{</span><span class="bu">iter</span><span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -456,7 +456,7 @@ Iteration 4</code></pre>
 </div>
 <div class="callout-content">
 <p>Check out lists comprehensions for a more concise way to create lists using for loops:</p>
-<div id="616f3695" class="cell" data-execution_count="5">
+<div id="cde639c6" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>squares <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
 <span id="cb11-2"><a></a><span class="bu">print</span>(<span class="st">"Squares from 0 to 9:"</span>, squares)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -476,7 +476,7 @@ Iteration 4</code></pre>
 <div class="fragment">
 <h3 id="while-loops"><strong>While Loops:</strong></h3>
 <p>Repeating a block of code while a condition is true.</p>
-<div id="4d74be8d" class="cell" data-execution_count="6">
+<div id="e2294fde" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>count <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb13-2"><a></a><span class="cf">while</span> count <span class="op">&lt;</span> <span class="dv">5</span>:</span>
 <span id="cb13-3"><a></a>    <span class="bu">print</span>(<span class="ss">f"Count is </span><span class="sc">{</span>count<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -499,7 +499,7 @@ Count is 4</code></pre>
 <div class="fragment">
 <h3 id="functions"><strong>Functions:</strong></h3>
 <p>Reusable blocks of code that perform a specific task.</p>
-<div id="6b5b39bf" class="cell" data-execution_count="7">
+<div id="bd476199" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="kw">def</span> this_function_is_kind(name):</span>
 <span id="cb15-2"><a></a>    <span class="cf">return</span> <span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">, nice to see you again!"</span></span>
 <span id="cb15-3"><a></a></span>
@@ -564,7 +564,7 @@ Count is 4</code></pre>
 <span id="cb17-23"><a></a>my_cat.unleash_cuteness()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<div id="d48e7292" class="cell" data-execution_count="8">
+<div id="baa323a1" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-stdout">
 <pre><code>Purr... 😺💤
 Scratch! 😾💢
@@ -605,7 +605,7 @@ Awwwwwwwwwww!! SOOOO CUTE!!! 😻✨💖</code></pre>
 <p>Empower your Python workflow with two of the most essential libraries for scientific computing and data visualization.</p>
 </blockquote>
 <p>Together, these libraries form the foundation of modern scientific programming in Python.</p>
-<div class="quarto-layout-panel" data-layout-ncol="2" style="display:flex; justify-content:left; align-items:left; gap:80px; margin-top:1em;">
+<div class="quarto-layout-panel" style="display:flex; justify-content:left; align-items:left; gap:80px; margin-top:1em;" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p><img data-src="assets/numpy_logo.png" width="400"> <img data-src="assets/matplotlib_logo.png" width="400"></p>
@@ -653,7 +653,7 @@ Awwwwwwwwwww!! SOOOO CUTE!!! 😻✨💖</code></pre>
 <span id="cb19-8" class="hljs-ln-code"><a></a><span class="bu">print</span>(<span class="ss">f"3D array shape: </span><span class="sc">{</span>array_3d<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<div id="955dc825" class="cell" data-execution_count="9">
+<div id="7e3ecfbe" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
 <pre><code>1D array shape: (5,)
 2D array shape: (2, 3)
@@ -684,7 +684,7 @@ Awwwwwwwwwww!! SOOOO CUTE!!! 😻✨💖</code></pre>
 <span id="cb21-12" class="hljs-ln-code"><a></a><span class="bu">print</span>(array_3d[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>])  </span>
 <span id="cb21-13" class="hljs-ln-code"><a></a><span class="bu">print</span>(array_3d[:, <span class="dv">0</span>, :])  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
-<div id="bb6514c4" class="cell" data-execution_count="10">
+<div id="2bf3e001" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-stdout">
 <pre><code>1D array shape: (5,)
 2D array shape: (2, 3)
@@ -708,7 +708,7 @@ Accessing multiple dimensions in 3D array: [[1 2]
 <h3 id="vectorized-operations">Vectorized Operations</h3>
 <p>NumPy performs <strong>element-wise operations</strong> on entire arrays, eliminating explicit Python loops and providing major speed-ups.</p>
 <div class="fragment">
-<div id="d8b39a77" class="cell" data-execution_count="11">
+<div id="c02c9b1b" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb23-2"><a></a></span>
 <span id="cb23-3"><a></a><span class="co"># Two arrays (same shape)</span></span>
@@ -742,7 +742,7 @@ Squared: [ 1  4  9 16 25]</code></pre>
 <h3 id="broadcasting">Broadcasting</h3>
 <p>An (<em>overpowered</em>) mechanism that allows NumPy to perform operations on arrays of <strong>different shapes</strong> in a way that is both efficient and intuitive. Every operation happens element-wise and in C-optimized code.</p>
 <div class="fragment">
-<div id="41978c28" class="cell" data-execution_count="12">
+<div id="f41ae9a7" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a></a><span class="co"># Array of shape (3, 4)</span></span>
 <span id="cb25-3"><a></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
@@ -788,7 +788,7 @@ Squared: [ 1  4  9 16 25]</code></pre>
 <h3 id="mathematical-functions">Mathematical Functions</h3>
 <p>A wide range of mathematical functions for performing operations on arrays, including linear algebra, statistical analysis, and more.</p>
 <div class="fragment" style="font-size:0.85em;">
-<div id="03c47c8f" class="cell" data-execution_count="13">
+<div id="4068c7ee" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a></a>data <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], [<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]])</span>
 <span id="cb27-3"><a></a>mean <span class="op">=</span> np.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
@@ -869,7 +869,7 @@ Exponential: [[2.71828183e+00 7.38905610e+00 2.00855369e+01 5.45981500e+01
 <h2><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Matplotlib Basics</h2>
 <p><a href="https://matplotlib.org/stable/contents.html">Matplotlib</a> lets you visualize data with just a few lines of code.</p>
 <div class="fragment" style="font-size:0.85em;">
-<div id="161135ed" class="cell columns column-output-location" data-execution_count="14">
+<div id="abce2813" class="cell columns column-output-location" data-execution_count="14">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
@@ -906,7 +906,7 @@ Exponential: [[2.71828183e+00 7.38905610e+00 2.00855369e+01 5.45981500e+01
 <h2><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Matplotlib in Action</h2>
 <p>Matplotlib supports rich styling: color maps, transparency, annotations, and more. Perfect for high-quality visual analysis!</p>
 <div class="fragment">
-<div id="d0dc3e81" class="cell columns column-output-location" data-execution_count="15">
+<div id="69f83b35" class="cell columns column-output-location" data-execution_count="15">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb30-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1073,9 +1073,9 @@ Then the initial value problem has a solution <span class="math inline">\(x(t)\)
 <h2>Linear ODEs</h2>
 <p>A <strong>linear ordinary differential equation (ODE)</strong> is one that can be written in the form:</p>
 <p><span class="math display">\[
-a_n(x)\,\frac{d^n y}{dx^n} + a_{n-1}(x)\,\frac{d^{n-1} y}{dx^{n-1}} + \dots + a_1(x)\,\frac{dy}{dx} + a_0(x)\,y = g(x)
+a_n(t)\,\frac{d^n y}{dt^n} + a_{n-1}(t)\,\frac{d^{n-1} y}{dt^{n-1}} + \dots + a_1(t)\,\frac{dy}{dt} + a_0(t)\,y = g(t)
 \]</span></p>
-<p>where the coefficients <span class="math inline">\(a_i(x)\)</span> and the forcing term <span class="math inline">\(g(x)\)</span> are known functions of the independent variable <span class="math inline">\(x\)</span>.</p>
+<p>where the coefficients <span class="math inline">\(a_i(t)\)</span> and the forcing term <span class="math inline">\(g(t)\)</span> are known functions of the independent variable <span class="math inline">\(t\)</span>.</p>
 <h3 id="key-properties">Key properties</h3>
 <ul>
 <li class="fragment">The dependent variable <span class="math inline">\(y\)</span> <strong>and its derivatives</strong> appear <strong>only to the first power</strong>.</li>
@@ -1088,7 +1088,7 @@ if <span class="math inline">\(y_1\)</span> and <span class="math inline">\(y_2\
 <section id="nonlinear-odes" class="slide level2">
 <h2>Nonlinear ODEs</h2>
 <p>A <strong>non-linear ODE</strong> involves terms that are nonlinear functions of <span class="math inline">\(y\)</span> or its derivatives,<br>
-for example, <span class="math inline">\(y^2\)</span>, <span class="math inline">\(y\,\frac{dy}{dx}\)</span>, or <span class="math inline">\(\sin(y)\)</span>.</p>
+for example, <span class="math inline">\(y^2\)</span>, <span class="math inline">\(y\,\frac{dy}{dt}\)</span>, or <span class="math inline">\(\sin(y)\)</span>.</p>
 <p>Nonlinear equations often describe richer and more complex dynamics (e.g., oscillations, bifurcations and chaos).</p>
 <p>Typically <strong>cannot be solved analytically</strong> and must be studied using <strong>numerical methods</strong> or <strong>approximations</strong>.</p>
 <div class="quarto-layout-panel" data-layout-ncol="3">
@@ -1133,25 +1133,25 @@ for example, <span class="math inline">\(y^2\)</span>, <span class="math inline"
 <section id="solving-odes-numerically" class="slide level2">
 <h2>Solving ODEs Numerically</h2>
 <p>Imagine you have a first-order ODE of the form: <span class="math display">\[
-\frac{dx}{dt} = sin(x)
+\frac{d\theta}{dt} = \sin(\theta)
 \]</span></p>
-<p>with an initial condition <span class="math inline">\(x(t=0) = x_0\)</span>.</p>
-<p>Imagine x represents the position of a particle moving along a line over time t.</p>
+<p>with an initial condition <span class="math inline">\(\theta(t=0) = \theta_0\)</span>.</p>
+<p>Imagine <span class="math inline">\(\theta\)</span> represents the angular position of a particle moving along a line over time <span class="math inline">\(t\)</span>.</p>
 <div class="fragment fade-left">
 <blockquote>
-<p>Knowing the rule of change, specifically <span class="math inline">\(\frac{dx}{dt}\)</span>, already allows us to predict the particle’s future behaviour without using any integrals!</p>
+<p>Knowing the rule of change, specifically <span class="math inline">\(\frac{d\theta}{dt}\)</span>, already allows us to predict the particle’s future behaviour without using any integrals!</p>
 </blockquote>
 </div>
 </section>
 <section id="the-power-of-knowing-the-derivative" class="slide level2" data-transition="none-in none-out">
 <h2>The power of knowing the derivative</h2>
 <h3 id="the-phase-space">The phase-space</h3>
-<p>By knowing the derivative <span class="math inline">\(\frac{dx}{dt} = sin(x)\)</span>, we can analyze the system’s behavior in phase space:</p>
-<div id="b4376d1d" class="cell" data-execution_count="16">
+<p>By knowing the derivative <span class="math inline">\(\frac{d\theta}{dt} = \sin(\theta)\)</span>, we can analyze the system’s behavior in phase space:</p>
+<div id="92a93139" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="index_files/figure-revealjs/cell-17-output-1.png" width="755" height="468"></p>
+<p><img data-src="index_files/figure-revealjs/cell-17-output-1.png" width="755" height="469"></p>
 </figure>
 </div>
 </div>
@@ -1160,12 +1160,12 @@ for example, <span class="math inline">\(y^2\)</span>, <span class="math inline"
 <section id="the-power-of-knowing-the-derivative-1" class="slide level2" data-transition="none-in none-out">
 <h2>The power of knowing the derivative</h2>
 <h3 id="the-phase-space-1">The phase-space</h3>
-<p>By knowing the derivative <span class="math inline">\(\frac{dx}{dt} = sin(x)\)</span>, we can analyze the system’s behavior in phase space:</p>
-<div id="91118d8b" class="cell" data-execution_count="17">
+<p>By knowing the derivative <span class="math inline">\(\frac{d\theta}{dt} = \sin(\theta)\)</span>, we can analyze the system’s behavior in phase space:</p>
+<div id="9ef98b9c" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="index_files/figure-revealjs/cell-18-output-1.png" width="755" height="468"></p>
+<p><img data-src="index_files/figure-revealjs/cell-18-output-1.png" width="755" height="469"></p>
 </figure>
 </div>
 </div>
@@ -1174,12 +1174,12 @@ for example, <span class="math inline">\(y^2\)</span>, <span class="math inline"
 <section id="the-power-of-knowing-the-derivative-2" class="slide level2" data-transition="none-in none-out">
 <h2>The power of knowing the derivative</h2>
 <h3 id="the-phase-space-2">The phase-space</h3>
-<p>By knowing the derivative <span class="math inline">\(\frac{dx}{dt} = sin(x)\)</span>, we can analyze the system’s behavior in phase space:</p>
-<div id="d9a6b7e1" class="cell" data-execution_count="18">
+<p>By knowing the derivative <span class="math inline">\(\frac{d\theta}{dt} = \sin(\theta)\)</span>, we can analyze the system’s behavior in phase space:</p>
+<div id="95a2afe9" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
-<p><img data-src="index_files/figure-revealjs/cell-19-output-1.png" width="755" height="468"></p>
+<p><img data-src="index_files/figure-revealjs/cell-19-output-1.png" width="755" height="469"></p>
 </figure>
 </div>
 </div>
@@ -1203,9 +1203,11 @@ for example, <span class="math inline">\(y^2\)</span>, <span class="math inline"
 <section id="eulers-method" class="slide level2">
 <h2>Euler’s Method</h2>
 <p>We were able to predict the system’s behavior <em>qualitatively</em> by analyzing the phase space.</p>
+<div class="fragment">
 <p>Similarly, to obtain a <em>quantitative</em> solution, we can use the same intuituion to approximate the solution numerically using <strong>Euler’s Method</strong>.</p>
-
-<img data-src="assets/euler.png" alt="Euler_meme" width="250" class="r-stretch"></section>
+<p><img data-src="assets/euler.png" alt="Euler_meme" width="400"></p>
+</div>
+</section>
 <section id="the-idea-behind-eulers-method" class="slide level2">
 <h2>The idea behind Euler’s Method</h2>
 <p>We know the differential equation describes a <em>velocity field</em>:</p>
@@ -1227,7 +1229,7 @@ x(t_0 + \Delta t) \approx x_0 + f(x_0)\,\Delta t
 x_{n+1} = x_n + f(x_n)\,\Delta t
 \]</span></p>
 <p>Each step uses the <em>current slope</em> to estimate the <em>next position</em>.</p>
-<div id="088a4d7f" class="cell" data-execution_count="19">
+<div id="1d490816" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1271,7 +1273,7 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 <div class="columns">
 <div class="column">
 <div class="fragment">
-<div id="e7f53c1a" class="cell" data-execution_count="20">
+<div id="77b12809" class="cell" data-execution_count="20">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1375,11 +1377,10 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 <blockquote>
 <p><code>import scipy.integrate as spi</code></p>
 </blockquote>
-</div>
-<div class="fragment fade-left">
 <blockquote>
 <p><code>from scipy.integrate import solve_ivp</code></p>
 </blockquote>
+<p>You can follow me along in the <a href="">population_balance_students.ipynb</a> notebook!</p>
 </div>
 </section>
 <section id="define-the-ivp-problem" class="slide level2">
@@ -1471,7 +1472,7 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 </section>
 <section id="results" class="slide level2">
 <h2>Results</h2>
-<div id="46908096" class="cell" data-execution_count="21">
+<div id="ffdcb555" class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1487,7 +1488,7 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 <section id="now-you-try" class="slide level2">
 <h2>Now you try!</h2>
 <ul>
-<li class="fragment">Open the <a href="b">rabbit population exercise notebook</a></li>
+<li class="fragment">Open the <a href="">population_balance_students.ipynb</a> and go to the section <strong>“Your turn!”</strong>.</li>
 <li class="fragment">Play around with different parameters for <em>r</em>, <em>K</em>, and <em>N₀</em>.</li>
 <li class="fragment">Modify the code such that you solve the ODE for a <strong>different initial conditions</strong> and plot the results on the same graph.</li>
 <li class="fragment">Try to remove <code>t_eval=t_eval</code> from the <code>solve_ivp</code> function and see what happens to the output plot. Do you notice any difference?</li>
@@ -1548,7 +1549,7 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 <h2>Profiles and Phase Space</h2>
 <div class="columns">
 <div class="column">
-<div id="3cc543aa" class="cell" data-dpi="120" data-execution_count="22">
+<div id="cfdc96b2" class="cell" data-dpi="120" data-execution_count="22">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1558,7 +1559,7 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 </div>
 </div>
 </div><div class="column">
-<div id="a276ec46" class="cell" data-dpi="120" data-execution_count="23">
+<div id="c519413a" class="cell" data-dpi="120" data-execution_count="23">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1580,8 +1581,11 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 <li class="fragment"><p><strong>Define the IVP problem</strong>: Define the ODE system and initial conditions.</p></li>
 <li class="fragment"><p><strong>Implement the ODE system</strong>: Write a function that computes and returns the derivatives.</p></li>
 <li class="fragment"><p><strong>Setup and call <code>solve_ivp</code></strong>: Specify the time span, initial conditions, and method.</p></li>
-<li class="fragment"><p><strong>Extract and analyze the results</strong>.</p></li>
+<li class="fragment"><p><strong>Extract and analyze the results</strong></p></li>
 </ol>
+<div class="fragment">
+<p>You can follow me along by opening the <a href="">lorenz_system_students.ipynb</a> notebook!</p>
+</div>
 </section>
 <section id="a-strange-example-lorenz-system" class="slide level2">
 <h2>1. A <em>“strange”</em> example: Lorenz system</h2>
@@ -1632,14 +1636,14 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 <span id="cb37-9" class="hljs-ln-code"><a></a>    dzdt <span class="op">=</span> x <span class="op">*</span> y <span class="op">-</span> beta <span class="op">*</span> z</span>
 <span id="cb37-10" class="hljs-ln-code"><a></a>    <span class="cf">return</span> [dxdt, dydt, dzdt]</span>
 <span id="cb37-11" class="hljs-ln-code"><a></a></span>
-<span id="cb37-12" class="hljs-ln-code"><a></a>sigma <span class="op">=</span> <span class="fl">10.0</span></span>
-<span id="cb37-13" class="hljs-ln-code"><a></a>rho   <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb37-12" class="hljs-ln-code"><a></a>Pr <span class="op">=</span> <span class="fl">10.0</span></span>
+<span id="cb37-13" class="hljs-ln-code"><a></a>Ra  <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb37-14" class="hljs-ln-code"><a></a>beta  <span class="op">=</span> <span class="fl">8.0</span> <span class="op">/</span> <span class="fl">3.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="setup-the-solver" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">3. Setup the solver</h2>
 <p>Let’s implement the Lorenz system using <code>solve_ivp</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38" data-code-line-numbers="|16-18|20-21"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb38-1" class="hljs-ln-code"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38" data-code-line-numbers="|16-18|20-22"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb38-1" class="hljs-ln-code"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb38-2" class="hljs-ln-code"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb38-3" class="hljs-ln-code"><a></a><span class="im">from</span> scipy.integrate <span class="im">import</span> solve_ivp</span>
 <span id="cb38-4" class="hljs-ln-code"><a></a></span>
@@ -1650,21 +1654,22 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 <span id="cb38-9" class="hljs-ln-code"><a></a>    dzdt <span class="op">=</span> x <span class="op">*</span> y <span class="op">-</span> beta <span class="op">*</span> z</span>
 <span id="cb38-10" class="hljs-ln-code"><a></a>    <span class="cf">return</span> [dxdt, dydt, dzdt]</span>
 <span id="cb38-11" class="hljs-ln-code"><a></a></span>
-<span id="cb38-12" class="hljs-ln-code"><a></a>sigma <span class="op">=</span> <span class="fl">10.0</span></span>
-<span id="cb38-13" class="hljs-ln-code"><a></a>rho   <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb38-12" class="hljs-ln-code"><a></a>Pr <span class="op">=</span> <span class="fl">10.0</span></span>
+<span id="cb38-13" class="hljs-ln-code"><a></a>Ra  <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb38-14" class="hljs-ln-code"><a></a>beta  <span class="op">=</span> <span class="fl">8.0</span> <span class="op">/</span> <span class="fl">3.0</span></span>
 <span id="cb38-15" class="hljs-ln-code"><a></a></span>
 <span id="cb38-16" class="hljs-ln-code"><a></a>y0   <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">1.0</span>, <span class="fl">1.0</span>])</span>
 <span id="cb38-17" class="hljs-ln-code"><a></a>eps  <span class="op">=</span> <span class="fl">1e-6</span></span>
 <span id="cb38-18" class="hljs-ln-code"><a></a>y0_2 <span class="op">=</span> np.array([<span class="fl">1.0</span> <span class="op">+</span> eps, <span class="fl">1.0</span>, <span class="fl">1.0</span>])</span>
 <span id="cb38-19" class="hljs-ln-code"><a></a></span>
-<span id="cb38-20" class="hljs-ln-code"><a></a>t_span <span class="op">=</span> (<span class="fl">0.0</span>, <span class="fl">50.0</span>)</span>
-<span id="cb38-21" class="hljs-ln-code"><a></a>t_eval <span class="op">=</span> np.linspace(t_span[<span class="dv">0</span>], t_span[<span class="dv">1</span>], <span class="dv">10000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb38-20" class="hljs-ln-code"><a></a>t_end <span class="op">=</span> <span class="fl">50.0</span></span>
+<span id="cb38-21" class="hljs-ln-code"><a></a>t_span <span class="op">=</span> (<span class="fl">0.0</span>, t_end)</span>
+<span id="cb38-22" class="hljs-ln-code"><a></a>t_eval <span class="op">=</span> np.linspace(t_span[<span class="dv">0</span>], t_span[<span class="dv">1</span>], <span class="dv">10000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="solve-the-system-and-extract-results" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">4. Solve the system and extract results</h2>
 <p>Let’s implement the Lorenz system using <code>solve_ivp</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39" data-code-line-numbers="23|25-26|28-30"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb39-1" class="hljs-ln-code"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39" data-code-line-numbers="24|26-27|29-31"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb39-1" class="hljs-ln-code"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb39-2" class="hljs-ln-code"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb39-3" class="hljs-ln-code"><a></a><span class="im">from</span> scipy.integrate <span class="im">import</span> solve_ivp</span>
 <span id="cb39-4" class="hljs-ln-code"><a></a></span>
@@ -1675,30 +1680,31 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 <span id="cb39-9" class="hljs-ln-code"><a></a>    dzdt <span class="op">=</span> x <span class="op">*</span> y <span class="op">-</span> beta <span class="op">*</span> z</span>
 <span id="cb39-10" class="hljs-ln-code"><a></a>    <span class="cf">return</span> [dxdt, dydt, dzdt]</span>
 <span id="cb39-11" class="hljs-ln-code"><a></a></span>
-<span id="cb39-12" class="hljs-ln-code"><a></a>sigma <span class="op">=</span> <span class="fl">10.0</span></span>
-<span id="cb39-13" class="hljs-ln-code"><a></a>rho   <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb39-12" class="hljs-ln-code"><a></a>Pr <span class="op">=</span> <span class="fl">10.0</span></span>
+<span id="cb39-13" class="hljs-ln-code"><a></a>Ra  <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb39-14" class="hljs-ln-code"><a></a>beta  <span class="op">=</span> <span class="fl">8.0</span> <span class="op">/</span> <span class="fl">3.0</span></span>
 <span id="cb39-15" class="hljs-ln-code"><a></a></span>
 <span id="cb39-16" class="hljs-ln-code"><a></a>y0   <span class="op">=</span> np.array([<span class="fl">1.0</span>, <span class="fl">1.0</span>, <span class="fl">1.0</span>])</span>
 <span id="cb39-17" class="hljs-ln-code"><a></a>eps  <span class="op">=</span> <span class="fl">1e-6</span></span>
 <span id="cb39-18" class="hljs-ln-code"><a></a>y0_2 <span class="op">=</span> np.array([<span class="fl">1.0</span> <span class="op">+</span> eps, <span class="fl">1.0</span>, <span class="fl">1.0</span>])</span>
 <span id="cb39-19" class="hljs-ln-code"><a></a></span>
-<span id="cb39-20" class="hljs-ln-code"><a></a>t_span <span class="op">=</span> (<span class="fl">0.0</span>, <span class="fl">50.0</span>)</span>
-<span id="cb39-21" class="hljs-ln-code"><a></a>t_eval <span class="op">=</span> np.linspace(t_span[<span class="dv">0</span>], t_span[<span class="dv">1</span>], <span class="dv">10000</span>)</span>
-<span id="cb39-22" class="hljs-ln-code"><a></a></span>
-<span id="cb39-23" class="hljs-ln-code"><a></a>method <span class="op">=</span> <span class="st">"RK45"</span>          </span>
-<span id="cb39-24" class="hljs-ln-code"><a></a></span>
-<span id="cb39-25" class="hljs-ln-code"><a></a>sol1 <span class="op">=</span> solve_ivp(lorenz_system, t_span, y0,   args<span class="op">=</span>(sigma, rho, beta), t_eval<span class="op">=</span>t_eval, method<span class="op">=</span>method, rtol<span class="op">=</span><span class="fl">1e-9</span>, atol<span class="op">=</span><span class="fl">1e-12</span>)</span>
-<span id="cb39-26" class="hljs-ln-code"><a></a>sol2 <span class="op">=</span> solve_ivp(lorenz_system, t_span, y0_2, args<span class="op">=</span>(sigma, rho, beta), t_eval<span class="op">=</span>t_eval, method<span class="op">=</span>method, rtol<span class="op">=</span><span class="fl">1e-9</span>, atol<span class="op">=</span><span class="fl">1e-12</span>)</span>
-<span id="cb39-27" class="hljs-ln-code"><a></a></span>
-<span id="cb39-28" class="hljs-ln-code"><a></a>t <span class="op">=</span> sol1.t</span>
-<span id="cb39-29" class="hljs-ln-code"><a></a>X1, Y1, Z1 <span class="op">=</span> sol1.y</span>
-<span id="cb39-30" class="hljs-ln-code"><a></a>X2, Y2, Z2 <span class="op">=</span> sol2.y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb39-20" class="hljs-ln-code"><a></a>t_end <span class="op">=</span> <span class="fl">50.0</span></span>
+<span id="cb39-21" class="hljs-ln-code"><a></a>t_span <span class="op">=</span> (<span class="fl">0.0</span>, t_end)</span>
+<span id="cb39-22" class="hljs-ln-code"><a></a>t_eval <span class="op">=</span> np.linspace(t_span[<span class="dv">0</span>], t_span[<span class="dv">1</span>], <span class="dv">10000</span>)</span>
+<span id="cb39-23" class="hljs-ln-code"><a></a></span>
+<span id="cb39-24" class="hljs-ln-code"><a></a>method <span class="op">=</span> <span class="st">"RK45"</span>          </span>
+<span id="cb39-25" class="hljs-ln-code"><a></a></span>
+<span id="cb39-26" class="hljs-ln-code"><a></a>sol1 <span class="op">=</span> solve_ivp(lorenz_system, t_span, y0,   args<span class="op">=</span>(Pr, Ra, beta), t_eval<span class="op">=</span>t_eval, method<span class="op">=</span>method, rtol<span class="op">=</span><span class="fl">1e-9</span>, atol<span class="op">=</span><span class="fl">1e-12</span>)</span>
+<span id="cb39-27" class="hljs-ln-code"><a></a>sol2 <span class="op">=</span> solve_ivp(lorenz_system, t_span, y0_2, args<span class="op">=</span>(Pr, Ra, beta), t_eval<span class="op">=</span>t_eval, method<span class="op">=</span>method, rtol<span class="op">=</span><span class="fl">1e-9</span>, atol<span class="op">=</span><span class="fl">1e-12</span>)</span>
+<span id="cb39-28" class="hljs-ln-code"><a></a></span>
+<span id="cb39-29" class="hljs-ln-code"><a></a>t <span class="op">=</span> sol1.t</span>
+<span id="cb39-30" class="hljs-ln-code"><a></a>X1, Y1, Z1 <span class="op">=</span> sol1.y</span>
+<span id="cb39-31" class="hljs-ln-code"><a></a>X2, Y2, Z2 <span class="op">=</span> sol2.y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="visualize-the-results" class="slide level2">
 <h2>5. Visualize the results</h2>
 <p>Visualizing the time evolution of the Lorenz system can reveal its peculiar behavior..</p>
-<p>It’s time for you to complete the code and generate the plots! <a href="">Open the exercise</a> and:</p>
+<p>It’s time for you to complete the code and generate the plots! <a href="">Go to the “exercise” cell</a> and:</p>
 <ul>
 <li class="fragment">Create a 3x1 subplot figure.</li>
 <li class="fragment">Plot <span class="math inline">\(x(t)\)</span>, <span class="math inline">\(y(t)\)</span>, and <span class="math inline">\(z(t)\)</span> for both initial conditions.</li>
@@ -1709,10 +1715,11 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 <div class="fragment">
 <p>Minimal starter code is provided below:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a></a>fig_3_1, axes_3_1 <span class="op">=</span> plt.subplots(<span class="dv">3</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">10</span>), sharex<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb40-2"><a></a>axes[<span class="dv">0</span>].plot(t, X1)</span>
-<span id="cb40-3"><a></a></span>
-<span id="cb40-4"><a></a>fig_3_1, axes_1_3 <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>), sharex<span class="op">=</span><span class="va">False</span>, sharey<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb40-5"><a></a>axes_1_3[<span class="dv">0</span>].plot(X1, Z1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb40-2"><a></a>colors <span class="op">=</span> {<span class="st">"x"</span>:<span class="st">"tab:blue"</span>, <span class="st">"y"</span>:<span class="st">"tab:orange"</span>, <span class="st">"z"</span>:<span class="st">"tab:green"</span>}</span>
+<span id="cb40-3"><a></a>axes[<span class="dv">0</span>].plot(t, X1, color<span class="op">=</span>colors[<span class="st">"x"</span>])</span>
+<span id="cb40-4"><a></a></span>
+<span id="cb40-5"><a></a>fig_3_1, axes_1_3 <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">5</span>), sharex<span class="op">=</span><span class="va">False</span>, sharey<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb40-6"><a></a>axes_1_3[<span class="dv">0</span>].plot(X1, Z1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="time-series-solutions" class="slide level2">
@@ -1789,7 +1796,8 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 <p>Let’s consider an example where we have experimental data that follows a non-linear relationship, such as an exponential decay model. <span class="math display">\[
 y(x) = e^{-\lambda x}\,\sin(\omega x)
 \]</span></p>
-<p>We’ll recover the <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(\omega\)</span> parameters of a <strong>damped sine</strong> model from noisy synthetic data. You can open this example in a Jupyter notebook: <a href="">model_fitting.ipynb</a>.</p>
+<p>We’ll recover the <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(\omega\)</span> parameters of a <strong>damped sine</strong> model from noisy synthetic data.</p>
+<p>You can open this example in a Jupyter notebook and follow me: <a href="">model_fitting_students.ipynb</a>.</p>
 </section>
 <section id="generating-synthetic-data" class="slide level2">
 <h2>Generating Synthetic Data</h2>
@@ -1804,7 +1812,7 @@ y(x) = e^{-\lambda x}\,\sin(\omega x)
 <span id="cb41-8"><a></a>y_true <span class="op">=</span> np.exp(<span class="op">-</span>lam_true <span class="op">*</span> t_exp) <span class="op">*</span> np.sin(omega_true <span class="op">*</span> t_exp)  </span>
 <span id="cb41-9"><a></a>sigma <span class="op">=</span> <span class="fl">0.03</span>  </span>
 <span id="cb41-10"><a></a>y_exp <span class="op">=</span> y_true <span class="op">+</span> rng.normal(<span class="dv">0</span>, sigma, size<span class="op">=</span>t_exp.size)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="8efd5f2a" class="cell" data-execution_count="24">
+<div id="89f3a395" class="cell" data-execution_count="24">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1889,7 +1897,7 @@ y(x) = e^{-\lambda x}\,\sin(\omega x)
 <section id="results-1" class="slide level2">
 <h2>Results</h2>
 <p>After running the fitting procedure, we obtain estimates for the parameters <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(\omega\)</span>:</p>
-<div id="b9cdcf31" class="cell" data-execution_count="25">
+<div id="5182850e" class="cell" data-execution_count="25">
 <div class="cell-output cell-output-stdout">
 <pre><code>Estimated λ = 0.50165 ± 5.15e-03 (true 0.5)
 Estimated ω = 3.14557 ± 5.16e-03 (true 3.14159)</code></pre>
@@ -1931,14 +1939,14 @@ Estimated ω = 3.14557 ± 5.16e-03 (true 3.14159)</code></pre>
 </ul>
 </div>
 <div class="fragment">
-<p>Now it’s your turn! Open the <a href="">ode_model_fitting_exercise.ipynb</a> notebook and implement the fitting of the CSTR model parameters using <code>least_squares</code> or <code>solve_ivp</code>.</p>
+<p>Now it’s your turn! Open the <a href="">ode_fitting_students.ipynb</a> notebook and implement the fitting of the CSTR model parameters using <code>least_squares</code> and <code>solve_ivp</code>.</p>
 </div>
 </section>
 <section id="solution-cstr-model" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Solution: CSTR Model</h2>
-<p>You can find the solution in the <a href="">ode_model_fitting_solution.ipynb</a> notebook.</p>
+<p>You can find the solution in the <a href="">ode_fitting.ipynb</a> notebook.</p>
 <p>First, we define the ODE model for the CSTRs:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46" data-code-line-numbers="|1-2|4-12|"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb46-1" class="hljs-ln-code"><a></a><span class="kw">def</span> dydt(t, y, k1, k2, CA0<span class="op">=</span><span class="fl">1.0</span>, tau<span class="op">=</span><span class="fl">1.0</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46" data-code-line-numbers="|1-2|4-12|"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb46-1" class="hljs-ln-code"><a></a><span class="kw">def</span> dydt(t, y, k1, k2, CA0, tau):</span>
 <span id="cb46-2" class="hljs-ln-code"><a></a>    CA1, CB1, CB2, CC2 <span class="op">=</span> y</span>
 <span id="cb46-3" class="hljs-ln-code"><a></a></span>
 <span id="cb46-4" class="hljs-ln-code"><a></a>    r1 <span class="op">=</span> k1 <span class="op">*</span> CA1</span>
@@ -1954,7 +1962,7 @@ Estimated ω = 3.14557 ± 5.16e-03 (true 3.14159)</code></pre>
 <section id="solution-residuals-function" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">Solution: Residuals Function</h2>
 <p>Then, we write the residuals function that uses <code>solve_ivp</code> to simulate the model:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47" data-code-line-numbers="|14|15-16|17-19|21-22"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb47-1" class="hljs-ln-code"><a></a><span class="kw">def</span> dydt(t, y, k1, k2, CA0<span class="op">=</span><span class="fl">1.0</span>, tau<span class="op">=</span><span class="fl">1.0</span>):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47" data-code-line-numbers="|14|15-16|17-19|21-22"><pre class="sourceCode numberSource python number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode python hljs"><span id="cb47-1" class="hljs-ln-code"><a></a><span class="kw">def</span> dydt(t, y, k1, k2, CA0, tau):</span>
 <span id="cb47-2" class="hljs-ln-code"><a></a>    CA1, CB1, CB2, CC2 <span class="op">=</span> y</span>
 <span id="cb47-3" class="hljs-ln-code"><a></a></span>
 <span id="cb47-4" class="hljs-ln-code"><a></a>    r1 <span class="op">=</span> k1 <span class="op">*</span> CA1</span>
@@ -2012,7 +2020,7 @@ Estimated ω = 3.14557 ± 5.16e-03 (true 3.14159)</code></pre>
 </section>
 <section id="solution-visualizing-the-results-1" class="slide level2">
 <h2>Solution: Visualizing the Results</h2>
-<div id="e011fa26" class="cell" data-execution_count="26">
+<div id="d478383f" class="cell" data-execution_count="26">
 <div class="cell-output cell-output-stdout">
 <pre><code>k1 = 0.8119 ± 0.0083   (true 0.8000)
 k2 = 1.4291 ± 0.0473   (true 1.5000)</code></pre>
