@@ -351,7 +351,7 @@ You may be already be familiar with these topics, but this serves as a quick ref
 </div>
 <div class="callout-content">
 <p>Tuples are immutable! Once created, you cannot change their values.</p>
-<div id="56a94eae" class="cell" data-execution_count="1">
+<div id="9fc5ccfc" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>my_tuple <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
 <span id="cb3-2"><a></a>my_tuple[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span>                 </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -360,7 +360,7 @@ You may be already be familiar with these topics, but this serves as a quick ref
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[105]</span><span class="ansi-green-fg">, line 2</span>
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[27]</span><span class="ansi-green-fg">, line 2</span>
 <span class="ansi-green-fg">      1</span> my_tuple = (<span class="ansi-green-fg">1</span>, <span class="ansi-green-fg">2</span>, <span class="ansi-green-fg">3</span>)
 <span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span class="ansi-yellow-bg">my_tuple</span><span class="ansi-yellow-bg">[</span><span class="ansi-green-fg ansi-yellow-bg">0</span><span class="ansi-yellow-bg">]</span> = <span class="ansi-green-fg">10</span>                 
 
@@ -388,7 +388,7 @@ You may be already be familiar with these topics, but this serves as a quick ref
 </div>
 <div class="fragment">
 <p><span class="py-green">Dictionaries</span> are useful for representing structured data and allow for efficient data retrieval using keys.</p>
-<div id="fda3df36" class="cell" data-execution_count="2">
+<div id="1b944438" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>molecular_weights <span class="op">=</span> {</span>
 <span id="cb5-2"><a></a>    <span class="st">'H2O'</span>: <span class="fl">18.015</span>,</span>
 <span id="cb5-3"><a></a>    <span class="st">'CO2'</span>: <span class="fl">44.01</span>,</span>
@@ -409,7 +409,7 @@ You may be already be familiar with these topics, but this serves as a quick ref
 <div class="fragment">
 <h3 id="if-else-statements"><strong>If-Else Statements:</strong></h3>
 <p>Conditional execution of code blocks.</p>
-<div id="6762304f" class="cell" data-execution_count="3">
+<div id="1b0a60c7" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>temperature <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb7-2"><a></a><span class="cf">if</span> temperature <span class="op">&gt;</span> <span class="dv">30</span>:</span>
 <span id="cb7-3"><a></a>    <span class="bu">print</span>(<span class="st">"It's hot outside!"</span>)</span>
@@ -431,7 +431,7 @@ You may be already be familiar with these topics, but this serves as a quick ref
 <div class="fragment">
 <h3 id="for-loops"><strong>For Loops:</strong></h3>
 <p>Iterating over sequences (like lists or ranges).</p>
-<div id="03b1d86f" class="cell" data-execution_count="4">
+<div id="df9f3409" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="cf">for</span> <span class="bu">iter</span> <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb9-2"><a></a>    <span class="bu">print</span>(<span class="ss">f"Iteration </span><span class="sc">{</span><span class="bu">iter</span><span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -456,7 +456,7 @@ Iteration 4</code></pre>
 </div>
 <div class="callout-content">
 <p>Check out lists comprehensions for a more concise way to create lists using for loops:</p>
-<div id="5c0cc7bd" class="cell" data-execution_count="5">
+<div id="e94495e1" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>squares <span class="op">=</span> [x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)]</span>
 <span id="cb11-2"><a></a><span class="bu">print</span>(<span class="st">"Squares from 0 to 9:"</span>, squares)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -476,7 +476,7 @@ Iteration 4</code></pre>
 <div class="fragment">
 <h3 id="while-loops"><strong>While Loops:</strong></h3>
 <p>Repeating a block of code while a condition is true.</p>
-<div id="44deb34a" class="cell" data-execution_count="6">
+<div id="5a1d5390" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a>count <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb13-2"><a></a><span class="cf">while</span> count <span class="op">&lt;</span> <span class="dv">5</span>:</span>
 <span id="cb13-3"><a></a>    <span class="bu">print</span>(<span class="ss">f"Count is </span><span class="sc">{</span>count<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -499,7 +499,7 @@ Count is 4</code></pre>
 <div class="fragment">
 <h3 id="functions"><strong>Functions:</strong></h3>
 <p>Reusable blocks of code that perform a specific task.</p>
-<div id="06fe1258" class="cell" data-execution_count="7">
+<div id="fdfa7c93" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="kw">def</span> this_function_is_kind(name):</span>
 <span id="cb15-2"><a></a>    <span class="cf">return</span> <span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">, nice to see you again!"</span></span>
 <span id="cb15-3"><a></a></span>
@@ -564,7 +564,7 @@ Count is 4</code></pre>
 <span id="cb17-23"><a></a>my_cat.unleash_cuteness()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<div id="2c59b876" class="cell" data-execution_count="8">
+<div id="2e37f290" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-stdout">
 <pre><code>Purr... 😺💤
 Scratch! 😾💢
@@ -653,7 +653,7 @@ Awwwwwwwwwww!! SOOOO CUTE!!! 😻✨💖</code></pre>
 <span id="cb19-8" class="hljs-ln-code"><a></a><span class="bu">print</span>(<span class="ss">f"3D array shape: </span><span class="sc">{</span>array_3d<span class="sc">.</span>shape<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="fragment">
-<div id="f8007407" class="cell" data-execution_count="9">
+<div id="e127ef5b" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-stdout">
 <pre><code>1D array shape: (5,)
 2D array shape: (2, 3)
@@ -684,7 +684,7 @@ Awwwwwwwwwww!! SOOOO CUTE!!! 😻✨💖</code></pre>
 <span id="cb21-12" class="hljs-ln-code"><a></a><span class="bu">print</span>(array_3d[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>])  </span>
 <span id="cb21-13" class="hljs-ln-code"><a></a><span class="bu">print</span>(array_3d[:, <span class="dv">0</span>, :])  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="fragment">
-<div id="cc8623f7" class="cell" data-execution_count="10">
+<div id="6f75e557" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-stdout">
 <pre><code>1D array shape: (5,)
 2D array shape: (2, 3)
@@ -708,7 +708,7 @@ Accessing multiple dimensions in 3D array: [[1 2]
 <h3 id="vectorized-operations">Vectorized Operations</h3>
 <p>NumPy performs <strong>element-wise operations</strong> on entire arrays, eliminating explicit Python loops and providing major speed-ups.</p>
 <div class="fragment">
-<div id="0b69188c" class="cell" data-execution_count="11">
+<div id="35cb8a27" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb23-2"><a></a></span>
 <span id="cb23-3"><a></a><span class="co"># Two arrays (same shape)</span></span>
@@ -742,7 +742,7 @@ Squared: [ 1  4  9 16 25]</code></pre>
 <h3 id="broadcasting">Broadcasting</h3>
 <p>An (<em>overpowered</em>) mechanism that allows NumPy to perform operations on arrays of <strong>different shapes</strong> in a way that is both efficient and intuitive. Every operation happens element-wise and in C-optimized code.</p>
 <div class="fragment">
-<div id="1ca2a825" class="cell" data-execution_count="12">
+<div id="8bb0ba6c" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb25-2"><a></a><span class="co"># Array of shape (3, 4)</span></span>
 <span id="cb25-3"><a></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
@@ -788,7 +788,7 @@ Squared: [ 1  4  9 16 25]</code></pre>
 <h3 id="mathematical-functions">Mathematical Functions</h3>
 <p>A wide range of mathematical functions for performing operations on arrays, including linear algebra, statistical analysis, and more.</p>
 <div class="fragment" style="font-size:0.85em;">
-<div id="3bbf232b" class="cell" data-execution_count="13">
+<div id="913a7f48" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb27-2"><a></a>data <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], [<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>]])</span>
 <span id="cb27-3"><a></a>mean <span class="op">=</span> np.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
@@ -869,7 +869,7 @@ Exponential: [[2.71828183e+00 7.38905610e+00 2.00855369e+01 5.45981500e+01
 <h2><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Matplotlib Basics</h2>
 <p><a href="https://matplotlib.org/stable/contents.html">Matplotlib</a> lets you visualize data with just a few lines of code.</p>
 <div class="fragment" style="font-size:0.85em;">
-<div id="de514b1c" class="cell columns column-output-location" data-execution_count="14">
+<div id="ad05f6ac" class="cell columns column-output-location" data-execution_count="14">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb29-2"><a></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
@@ -906,7 +906,7 @@ Exponential: [[2.71828183e+00 7.38905610e+00 2.00855369e+01 5.45981500e+01
 <h2><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> Matplotlib in Action</h2>
 <p>Matplotlib supports rich styling: color maps, transparency, annotations, and more. Perfect for high-quality visual analysis!</p>
 <div class="fragment">
-<div id="af41dcb4" class="cell columns column-output-location" data-execution_count="15">
+<div id="03fc9671" class="cell columns column-output-location" data-execution_count="15">
 <div class="column">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb30-2"><a></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1147,7 +1147,7 @@ for example, <span class="math inline">\(y^2\)</span>, <span class="math inline"
 <h2>The power of knowing the derivative</h2>
 <h3 id="the-phase-space">The phase-space</h3>
 <p>By knowing the derivative <span class="math inline">\(\frac{d\theta}{dt} = \sin(\theta)\)</span>, we can analyze the system’s behavior in phase space:</p>
-<div id="70d55a37" class="cell" data-execution_count="16">
+<div id="6eeec2b8" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1161,7 +1161,7 @@ for example, <span class="math inline">\(y^2\)</span>, <span class="math inline"
 <h2>The power of knowing the derivative</h2>
 <h3 id="the-phase-space-1">The phase-space</h3>
 <p>By knowing the derivative <span class="math inline">\(\frac{d\theta}{dt} = \sin(\theta)\)</span>, we can analyze the system’s behavior in phase space:</p>
-<div id="5c92bd42" class="cell" data-execution_count="17">
+<div id="fb263128" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1175,7 +1175,7 @@ for example, <span class="math inline">\(y^2\)</span>, <span class="math inline"
 <h2>The power of knowing the derivative</h2>
 <h3 id="the-phase-space-2">The phase-space</h3>
 <p>By knowing the derivative <span class="math inline">\(\frac{d\theta}{dt} = \sin(\theta)\)</span>, we can analyze the system’s behavior in phase space:</p>
-<div id="2d2a024d" class="cell" data-execution_count="18">
+<div id="ddf9bea1" class="cell" data-execution_count="18">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1229,7 +1229,7 @@ x(t_0 + \Delta t) \approx x_0 + f(x_0)\,\Delta t
 x_{n+1} = x_n + f(x_n)\,\Delta t
 \]</span></p>
 <p>Each step uses the <em>current slope</em> to estimate the <em>next position</em>.</p>
-<div id="0ded6345" class="cell" data-execution_count="19">
+<div id="dc8c2588" class="cell" data-execution_count="19">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1273,7 +1273,7 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 <div class="columns">
 <div class="column">
 <div class="fragment">
-<div id="208f2f86" class="cell" data-execution_count="20">
+<div id="1c787436" class="cell" data-execution_count="20">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1472,7 +1472,7 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 </section>
 <section id="results" class="slide level2">
 <h2>Results</h2>
-<div id="2ceeb2f3" class="cell" data-execution_count="21">
+<div id="31fe5a4a" class="cell" data-execution_count="21">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1549,7 +1549,7 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 <h2>Profiles and Phase Space</h2>
 <div class="columns">
 <div class="column">
-<div id="130d39df" class="cell" data-dpi="120" data-execution_count="22">
+<div id="6b7a1844" class="cell" data-dpi="120" data-execution_count="22">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1559,7 +1559,7 @@ x_{n+1} = x_n + f(x_n)\,\Delta t
 </div>
 </div>
 </div><div class="column">
-<div id="f3dd6bab" class="cell" data-dpi="120" data-execution_count="23">
+<div id="3e9af99e" class="cell" data-dpi="120" data-execution_count="23">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1812,7 +1812,7 @@ y(x) = e^{-\lambda x}\,\sin(\omega x)
 <span id="cb41-8"><a></a>y_true <span class="op">=</span> np.exp(<span class="op">-</span>lam_true <span class="op">*</span> t_exp) <span class="op">*</span> np.sin(omega_true <span class="op">*</span> t_exp)  </span>
 <span id="cb41-9"><a></a>sigma <span class="op">=</span> <span class="fl">0.03</span>  </span>
 <span id="cb41-10"><a></a>y_exp <span class="op">=</span> y_true <span class="op">+</span> rng.normal(<span class="dv">0</span>, sigma, size<span class="op">=</span>t_exp.size)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div id="710c3152" class="cell" data-execution_count="24">
+<div id="d2c167a9" class="cell" data-execution_count="24">
 <div class="cell-output cell-output-display">
 <div>
 <figure>
@@ -1897,7 +1897,7 @@ y(x) = e^{-\lambda x}\,\sin(\omega x)
 <section id="results-1" class="slide level2">
 <h2>Results</h2>
 <p>After running the fitting procedure, we obtain estimates for the parameters <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(\omega\)</span>:</p>
-<div id="aeeb51ed" class="cell" data-execution_count="25">
+<div id="6a7f0e85" class="cell" data-execution_count="25">
 <div class="cell-output cell-output-stdout">
 <pre><code>Estimated λ = 0.50165 ± 5.15e-03 (true 0.5)
 Estimated ω = 3.14557 ± 5.16e-03 (true 3.14159)</code></pre>
@@ -1910,6 +1910,22 @@ Estimated ω = 3.14557 ± 5.16e-03 (true 3.14159)</code></pre>
 </div>
 </div>
 </div>
+</section>
+<section id="bonus-how-do-we-estimate-parameter-uncertainties" class="slide level2">
+<h2>Bonus: how do we estimate parameter uncertainties?</h2>
+<p>After obtaining the optimal parameters from <code>least_squares</code>, we can estimate their uncertainties using the covariance matrix derived from the Jacobian of the residuals. The covariance matrix <code>pcov</code> is computed as:</p>
+<p><span class="math display">\[
+\text{pcov} = s^2 \cdot (J^T J)^{-1}
+\]</span></p>
+<p>where:</p>
+<ul>
+<li class="fragment">( s^2 ) is the estimated variance of the residuals, calculated as the residual sum of squares (RSS) divided by the degrees of freedom (number of data points minus number of parameters).</li>
+<li class="fragment">( J ) is the Jacobian matrix of the residuals with respect to the parameters, evaluated at the optimal parameter values.</li>
+</ul>
+<p>The standard errors (uncertainties) of the parameters are then obtained by taking the square root of the diagonal elements of the covariance matrix:</p>
+<p><span class="math display">\[
+\text{SE}_i = \sqrt{\text{pcov}_{ii}}
+\]</span></p>
 </section>
 <section id="how-to-fit-odes-parameters" class="slide level2">
 <h2>How to fit ODEs parameters?</h2>
@@ -2020,7 +2036,7 @@ Estimated ω = 3.14557 ± 5.16e-03 (true 3.14159)</code></pre>
 </section>
 <section id="solution-visualizing-the-results-1" class="slide level2">
 <h2>Solution: Visualizing the Results</h2>
-<div id="94c1687d" class="cell" data-execution_count="26">
+<div id="b3e5a2ef" class="cell" data-execution_count="26">
 <div class="cell-output cell-output-stdout">
 <pre><code>k1 = 0.8119 ± 0.0083   (true 0.8000)
 k2 = 1.4291 ± 0.0473   (true 1.5000)</code></pre>

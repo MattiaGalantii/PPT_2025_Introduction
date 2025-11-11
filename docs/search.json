@@ -46,7 +46,7 @@
     "href": "index.html#native-data-structures-1",
     "title": "Practicum Process Technology",
     "section": "Native Data Structures",
-    "text": "Native Data Structures\nPython offers several built-in data structures that are fundamental for programming:\n\nTuples: Ordered, immutable collections of items.\nExample:\nmy_tuple = (1, 2, 3)\ncoordinate_point = (3, 4)                  \nrecord = (\"CO₂\", 44.01, \"g/mol\") \n\n\nUse tuples when you want to ensure that the data cannot be modified after creation, or to group related but different types of data together.\n\n\n\n\n\n\n\n\nCaution\n\n\nTuples are immutable! Once created, you cannot change their values.\n\nmy_tuple = (1, 2, 3)\nmy_tuple[0] = 10                 \n\n\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[105], line 2\n      1 my_tuple = (1, 2, 3)\n----&gt; 2 my_tuple[0] = 10                 \n\nTypeError: 'tuple' object does not support item assignment"
+    "text": "Native Data Structures\nPython offers several built-in data structures that are fundamental for programming:\n\nTuples: Ordered, immutable collections of items.\nExample:\nmy_tuple = (1, 2, 3)\ncoordinate_point = (3, 4)                  \nrecord = (\"CO₂\", 44.01, \"g/mol\") \n\n\nUse tuples when you want to ensure that the data cannot be modified after creation, or to group related but different types of data together.\n\n\n\n\n\n\n\n\nCaution\n\n\nTuples are immutable! Once created, you cannot change their values.\n\nmy_tuple = (1, 2, 3)\nmy_tuple[0] = 10                 \n\n\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[27], line 2\n      1 my_tuple = (1, 2, 3)\n----&gt; 2 my_tuple[0] = 10                 \n\nTypeError: 'tuple' object does not support item assignment"
   },
   {
     "objectID": "index.html#native-data-structures-2",
@@ -481,6 +481,13 @@
     "title": "Practicum Process Technology",
     "section": "Results",
     "text": "Results\nAfter running the fitting procedure, we obtain estimates for the parameters \\(\\lambda\\) and \\(\\omega\\):\n\n\nEstimated λ = 0.50165 ± 5.15e-03 (true 0.5)\nEstimated ω = 3.14557 ± 5.16e-03 (true 3.14159)"
+  },
+  {
+    "objectID": "index.html#bonus-how-do-we-estimate-parameter-uncertainties",
+    "href": "index.html#bonus-how-do-we-estimate-parameter-uncertainties",
+    "title": "Practicum Process Technology",
+    "section": "Bonus: how do we estimate parameter uncertainties?",
+    "text": "Bonus: how do we estimate parameter uncertainties?\nAfter obtaining the optimal parameters from least_squares, we can estimate their uncertainties using the covariance matrix derived from the Jacobian of the residuals. The covariance matrix pcov is computed as:\n\\[\n\\text{pcov} = s^2 \\cdot (J^T J)^{-1}\n\\]\nwhere:\n\n( s^2 ) is the estimated variance of the residuals, calculated as the residual sum of squares (RSS) divided by the degrees of freedom (number of data points minus number of parameters).\n( J ) is the Jacobian matrix of the residuals with respect to the parameters, evaluated at the optimal parameter values.\n\nThe standard errors (uncertainties) of the parameters are then obtained by taking the square root of the diagonal elements of the covariance matrix:\n\\[\n\\text{SE}_i = \\sqrt{\\text{pcov}_{ii}}\n\\]"
   },
   {
     "objectID": "index.html#how-to-fit-odes-parameters",

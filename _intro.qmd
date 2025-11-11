@@ -1,9 +1,7 @@
 # {{< fa person-chalkboard >}} Introduction
-Welcome to the "Introduction to Python Scientific Programming for Practicum Process Technology"!  
+Welcome to the "Introduction to Python Scientific Programming for CBL Process Technology"!  
 
-This course is designed to equip you with the *fundamental* skills and knowledge needed to effectively use Python for scientific computing and data analysis in the context of Practicum Process Technology course.
-
-
+This course is designed to equip you with the *fundamental* skills and knowledge needed to effectively use Python for scientific computing and data analysis in the context of CBL Process Technology course.
 
 ## About the lecturers 
 

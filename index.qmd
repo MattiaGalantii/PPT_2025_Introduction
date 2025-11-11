@@ -1,5 +1,5 @@
 ---
-title: "Practicum Process Technology"
+title: "CBL Process Technology"
 subtitle: "Introduction to Python Scientific Programming"
 author: "Mattia Galanti"
 format:
