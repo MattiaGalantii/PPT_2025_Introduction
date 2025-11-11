@@ -6,7 +6,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Python Crash Course for Practicum Process Technology"
+  title: "Python Crash Course for CBL Process Technology"
   site-url: "https://MattiaGalantii.github.io/PPT_intro_slides"
 
 format:
