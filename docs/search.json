@@ -2,546 +2,539 @@
   {
     "objectID": "index.html#about-the-lecturers",
     "href": "index.html#about-the-lecturers",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "About the lecturers",
     "text": "About the lecturers\nMattia Galanti\nEindhoven University of Technology (TU/e)\n📧 m.galanti@tue.nl\n🏢 STW 0.35, Helix Building\n\nDr. Ivo Roghair\nEindhoven University of Technology (TU/e)\n📧 i.roghair@tue.nl\n🏢 STW 0.37, Helix Building\n\nFeel free to reach out via email for any questions or assistance related to the course."
   },
   {
     "objectID": "index.html#what-will-we-do-in-this-crash-course",
     "href": "index.html#what-will-we-do-in-this-crash-course",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "What will we do in this crash course?",
     "text": "What will we do in this crash course?\nIn this crash course, we will cover the following topics:\n\n\n\nQuick refresh about Python and scientific libraries (10-15 minutes)\nModeling of dynamic systems, ODEs and Python implementations (45 minutes)\nFitting models to data and parameter estimation (30 minutes)\nHands-on exercises and real-world examples\n\n\n\n\nBy the end of this course, you will have a solid foundation in Python programming for scientific applications, enabling you to tackle the challenges you’ll find in the rest of the Practicum Process Technology course."
   },
   {
     "objectID": "index.html#why-python",
     "href": "index.html#why-python",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Why Python?",
     "text": "Why Python?\nPython is a versatile and powerful programming language widely used in scientific computing and data analysis. Here are some reasons why Python is an excellent choice:\n\n\n\nEase of Learning: Python has a simple and readable syntax, making it accessible for beginners.\nExtensive Libraries: Python has a rich ecosystem of libraries such as NumPy, SciPy, and Matplotlib that facilitate scientific computing and data visualization.\nCommunity Support: Python has a large and active community, providing ample resources, tutorials, and forums for learning and troubleshooting.\nIt’s Free 😎: Python is open-source and free to use, making it accessible to everyone.\n\n\n\n\n\n\nLearn more: Python Data Science Handbook by Jake VanderPlas\n\n\nFormerly, the faculty would endorse Matlab as a scripting language, but proficiency in Python is believed to be more valuable for trained engineers."
   },
   {
     "objectID": "index.html#how-to-program-in-python",
     "href": "index.html#how-to-program-in-python",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "How to program in Python?",
     "text": "How to program in Python?\nIn this course, we will primarily use Jupyter Notebooks for coding and exercises. Jupyter Notebooks provide an interactive environment that allows you to combine code, text, and visualizations in a single document.\n\nYou can run Jupyter Notebooks locally on your computer using Anaconda or use cloud-based platforms such as Google Colab.\n\nFollow the instructions provided in the course materials to set up your Python environment and get started with Jupyter Notebooks.\n\n\n\n\n\n\n\nAny problems?\n\n\nGiven the time limitations, I won’t address python installation and setup questions during the session. Following the setup instructions provided in the course materials is mandatory. Feel free to ask after class."
   },
   {
     "objectID": "index.html#lets-get-started",
     "href": "index.html#lets-get-started",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": " Let’s get started!",
     "text": "Let’s get started!"
   },
   {
     "objectID": "index.html#native-data-structures",
     "href": "index.html#native-data-structures",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Native Data Structures",
     "text": "Native Data Structures\nPython offers several built-in data structures that are fundamental for programming:\n\nLists: Ordered, mutable collections of items.\nExample:\nmy_list_of_numbers = [1, 2, 3]\nmy_list_of_strings = [\"apple\", \"banana\", \"cherry\"]\nmy_list_of_booleans = [True, False, True]\nmy_list_of_lists = [[1, 2], [3, 4, 5], []]\nmy_heterogeneous_list = [1, \"apple\", 3.14, True, [1, 2], {\"a\": 1}]\n\n\nLists can be heterogeneous (contain elements of different types), but whenever possible it’s best to keep them homogeneous (containing elements of the same type) for easier processing and compatibility with libraries like NumPy."
   },
   {
     "objectID": "index.html#native-data-structures-1",
     "href": "index.html#native-data-structures-1",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Native Data Structures",
-    "text": "Native Data Structures\nPython offers several built-in data structures that are fundamental for programming:\n\nTuples: Ordered, immutable collections of items.\nExample:\nmy_tuple = (1, 2, 3)\ncoordinate_point = (3, 4)                  \nrecord = (\"CO₂\", 44.01, \"g/mol\") \n\n\nUse tuples when you want to ensure that the data cannot be modified after creation, or to group related but different types of data together.\n\n\n\n\n\n\n\n\nCaution\n\n\nTuples are immutable! Once created, you cannot change their values.\n\nmy_tuple = (1, 2, 3)\nmy_tuple[0] = 10                 \n\n\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[27], line 2\n      1 my_tuple = (1, 2, 3)\n----&gt; 2 my_tuple[0] = 10                 \n\nTypeError: 'tuple' object does not support item assignment"
+    "text": "Native Data Structures\nPython offers several built-in data structures that are fundamental for programming:\n\nTuples: Ordered, immutable collections of items.\nExample:\nmy_tuple = (1, 2, 3)\ncoordinate_point = (3, 4)                  \nrecord = (\"CO₂\", 44.01, \"g/mol\") \n\n\nUse tuples when you want to ensure that the data cannot be modified after creation, or to group related but different types of data together.\n\n\n\n\n\n\n\n\nCaution\n\n\nTuples are immutable! Once created, you cannot change their values.\n\nmy_tuple = (1, 2, 3)\nmy_tuple[0] = 10                 \n\n\n\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\nCell In[1], line 2\n      1 my_tuple = (1, 2, 3)\n----&gt; 2 my_tuple[0] = 10                 \n\nTypeError: 'tuple' object does not support item assignment"
   },
   {
     "objectID": "index.html#native-data-structures-2",
     "href": "index.html#native-data-structures-2",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Native Data Structures",
     "text": "Native Data Structures\nPython offers several built-in data structures that are fundamental for programming:\n\nDictionaries: Key-value pairs for storing data.\nmy_dict = {'a': 1, 'b': [1, 2, 3], 'c': 'hello'}\nexams_I_passed = {\n    'Numerical Methods': True,\n    'Physical Transport Phenomena': False,\n    'Chemical Reactors': True,\n    'Practicum Process Technology': nan\n}\n\n\nDictionaries are useful for representing structured data and allow for efficient data retrieval using keys.\n\nmolecular_weights = {\n    'H2O': 18.015,\n    'CO2': 44.01,\n    'CH4': 16.04\n}\nprint(f\"Molecular weight of CO2: {molecular_weights['CO2']}\")\n\n\n\nMolecular weight of CO2: 44.01"
   },
   {
     "objectID": "index.html#control-structures-and-functions",
     "href": "index.html#control-structures-and-functions",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Control Structures and Functions",
     "text": "Control Structures and Functions\nControl structures and functions are essential for controlling the flow of a program and organizing code into reusable blocks.\n\nIf-Else Statements:\nConditional execution of code blocks.\n\ntemperature = 10\nif temperature &gt; 30:\n    print(\"It's hot outside!\")\nelif temperature &lt; 15:\n    print(\"It's cold outside\") \nelse:\n    print(\"The weather is moderate.\")\n\n\n\nIt's cold outside"
   },
   {
     "objectID": "index.html#control-structures-and-functions-1",
     "href": "index.html#control-structures-and-functions-1",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Control Structures and Functions",
     "text": "Control Structures and Functions\nControl structures and functions are essential for controlling the flow of a program and organizing code into reusable blocks.\n\nFor Loops:\nIterating over sequences (like lists or ranges).\n\nfor iter in range(5):\n    print(f\"Iteration {iter}\")\n\n\n\nIteration 0\nIteration 1\nIteration 2\nIteration 3\nIteration 4\n\n\n\n\n\n\n\n\n\n\nTip\n\n\nCheck out lists comprehensions for a more concise way to create lists using for loops:\n\nsquares = [x**2 for x in range(10)]\nprint(\"Squares from 0 to 9:\", squares)\n\n\n\nSquares from 0 to 9: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]"
   },
   {
     "objectID": "index.html#control-structures-and-functions-2",
     "href": "index.html#control-structures-and-functions-2",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Control Structures and Functions",
     "text": "Control Structures and Functions\nControl structures and functions are essential for controlling the flow of a program and organizing code into reusable blocks.\n\nWhile Loops:\nRepeating a block of code while a condition is true.\n\ncount = 0\nwhile count &lt; 5:\n    print(f\"Count is {count}\")\n    count += 1\n\n\n\nCount is 0\nCount is 1\nCount is 2\nCount is 3\nCount is 4"
   },
   {
     "objectID": "index.html#control-structures-and-functions-3",
     "href": "index.html#control-structures-and-functions-3",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Control Structures and Functions",
     "text": "Control Structures and Functions\nControl structures and functions are essential for controlling the flow of a program and organizing code into reusable blocks.\n\nFunctions:\nReusable blocks of code that perform a specific task.\n\ndef this_function_is_kind(name):\n    return f\"Hello, {name}, nice to see you again!\"\n\nmy_name = \"Mattia\"\nprint(this_function_is_kind(my_name))\n\n\n\nHello, Mattia, nice to see you again!\n\n\n\n\nFunctions help in organizing code, improving readability, efficiency, and avoiding repetition.\n\n\n\n\n\n\nImportant\n\n\nThey are going to be extensively used throughout this course, so make sure you are comfortable with them.\n\n\n\n\n\nRefresh your knowledge on functions:\nPython Functions\nDefining Your Own Python Function"
   },
   {
     "objectID": "index.html#classes",
     "href": "index.html#classes",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Classes:",
     "text": "Classes:\nSometimes, you may end up with many functions and data that are related to each other. In such cases, it is often useful to group them together into a single unit called a class.\nA class is a blueprint for creating objects that share common properties and behaviors.\n\nclass Cat:\n    def __init__(self, name, age, color):\n        self.name = name\n        self.age = age\n        self.color = color\n        self.cuteness_level = 999999999999\n\n    def purr(self):\n        print(\"Purr... 😺💤\")\n        return \n\n    def scratch(self):\n        print(\"Scratch! 😾💢\")\n        return\n\n    def unleash_cuteness(self):\n        print(\"Awwwwwwwwwww!! SOOOO CUTE!!! 😻✨💖\")\n        return\n\nmy_cat = Cat(\"Arturo\", 2, \"Gray\")\nmy_cat.purr()\nmy_cat.scratch()\nmy_cat.unleash_cuteness()\n\n\n\n\nPurr... 😺💤\nScratch! 😾💢\nAwwwwwwwwwww!! SOOOO CUTE!!! 😻✨💖"
   },
   {
     "objectID": "index.html#numpy",
     "href": "index.html#numpy",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": " NumPy",
     "text": "NumPy\nNumPy is the fundamental package for scientific computing in Python. It provides multidimensional array objects, efficient and high-performance computations, mathematical functions, and other tools for working with arrays.\n\nimport numpy as np\n\n\n\n\n\n\n\nTip\n\n\nIf you have doubts when programming with NumPy, check out the NumPy User Guide for comprehensive explanations and examples. In alternative, ask ChatGPT for a quick help!"
   },
   {
     "objectID": "index.html#key-features",
     "href": "index.html#key-features",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": " Key Features",
     "text": "Key Features\nndarray\nA powerful n-dimensional array object that allows for efficient storage and manipulation of large datasets.\n\nimport numpy as np\narray_1d = np.array([1, 2, 3, 4, 5])\narray_2d = np.array([[1, 2, 3], [4, 5, 6]])\narray_3d = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])\n\nprint(f\"1D array shape: {array_1d.shape}\")\nprint(f\"2D array shape: {array_2d.shape}\")\nprint(f\"3D array shape: {array_3d.shape}\")\n\n\n\n\n1D array shape: (5,)\n2D array shape: (2, 3)\n3D array shape: (2, 2, 2)\n\n\n\n\nIf you need a refresher, check out these guides:\nNumPy: the absolute basics for beginners"
   },
   {
     "objectID": "index.html#key-features-1",
     "href": "index.html#key-features-1",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": " Key Features",
     "text": "Key Features\nndarray\nA powerful n-dimensional array object that allows for efficient storage and manipulation of large datasets.\nimport numpy as np\narray_1d = np.array([1, 2, 3, 4, 5])\narray_2d = np.array([[1, 2, 3], [4, 5, 6]])\narray_3d = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])\n\nprint(f\"1D array shape: {array_1d.shape}\")\nprint(f\"2D array shape: {array_2d.shape}\")\nprint(f\"3D array shape: {array_3d.shape}\")\n\nprint(array_1d[2])       \nprint(array_2d[1, 0])     \nprint(array_3d[0, 1, 1])  \nprint(array_3d[:, 0, :])  \n\n\n\n1D array shape: (5,)\n2D array shape: (2, 3)\n3D array shape: (2, 2, 2)\n\nAccessing 1D array: 3\nAccessing 2D array: 4\nAccessing 3D array: 4\nAccessing multiple dimensions in 3D array: [[1 2]\n [5 6]]\n\n\n\n\nIf you need a refresher, check out these guides:\nNumPy: the absolute basics for beginners"
   },
   {
     "objectID": "index.html#key-features-2",
     "href": "index.html#key-features-2",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": " Key Features",
     "text": "Key Features\nVectorized Operations\nNumPy performs element-wise operations on entire arrays, eliminating explicit Python loops and providing major speed-ups.\n\n\nimport numpy as np\n\n# Two arrays (same shape)\na = np.array([1, 2, 3, 4, 5])\nb = np.array([10, 20, 30, 40, 50])\n\n# Element-wise math\nsum_ab   = a + b\nproduct  = a * b\nsquared  = a ** 2\n\nprint(\"Sum:\", sum_ab)\nprint(\"Product:\", product)\nprint(\"Squared:\", squared)\n\n\n\nSum: [11 22 33 44 55]\nProduct: [ 10  40  90 160 250]\nSquared: [ 1  4  9 16 25]\n\n\n\n\nIf you need a refresher, check out these guides:\nNumPy: the absolute basics for beginners"
   },
   {
     "objectID": "index.html#key-features-3",
     "href": "index.html#key-features-3",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": " Key Features",
     "text": "Key Features\nBroadcasting\nAn (overpowered) mechanism that allows NumPy to perform operations on arrays of different shapes in a way that is both efficient and intuitive. Every operation happens element-wise and in C-optimized code.\n\n\nimport numpy as np\n# Array of shape (3, 4)\nA = np.array([[1, 2, 3, 4],\n              [5, 6, 7, 8],\n              [9, 10, 11, 12]])\n# Array of shape (4,)\nb = np.array([10, 20, 30, 40])\n# Broadcasting addition\nC = A + b\nprint(\"Result of Broadcasting Addition:\\n\", C)\n\n\n\nResult of Broadcasting Addition:\n [[11 22 33 44]\n [15 26 37 48]\n [19 30 41 52]]\n\n\n\n\n\n\n\n\n\n\n\nBroadcasting allows NumPy to automatically expand the smaller array (b) across the larger array (A) so that they have compatible shapes for element-wise operations.\n\n\n\n\n\n\nLearn more about broadcasting here:\nLearn NumPy broadcasting in 6 minutes! from youTube channel Bro Code\nNumPy Broadcasting Explained: The Complete Guide for Beginners and Data Enthusiasts from Medium.com, Rohan Mistry"
   },
   {
     "objectID": "index.html#key-features-4",
     "href": "index.html#key-features-4",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": " Key Features",
     "text": "Key Features\nMathematical Functions\nA wide range of mathematical functions for performing operations on arrays, including linear algebra, statistical analysis, and more.\n\n\nimport numpy as np\ndata = np.array([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]])\nmean = np.mean(data, axis=1)\nstd_dev = np.std(data, axis=1)\nexp = np.exp(data)\nsum_data = np.sum(data, axis=1)\nprint(f\"Mean: {mean} \\nStandard Deviation: {std_dev} \\nSum: {sum_data} \\nExponential: {exp}\")\n\n\n\nMean: [3. 8.] \nStandard Deviation: [1.41421356 1.41421356] \nSum: [15 40] \nExponential: [[2.71828183e+00 7.38905610e+00 2.00855369e+01 5.45981500e+01\n  1.48413159e+02]\n [4.03428793e+02 1.09663316e+03 2.98095799e+03 8.10308393e+03\n  2.20264658e+04]]\n\n\n\n\n\n\n\n\n\n\nTip\n\n\nWhen working with multidimensional arrays, you can specify the axis along which to perform the operation using the axis parameter in functions like np.sum(), np.mean(), etc.\n\n\n\n\n\nIf you need a refresher, check out these guides:\nNumPy: the absolute basics for beginners"
   },
   {
     "objectID": "index.html#key-features-5",
     "href": "index.html#key-features-5",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": " Key Features",
     "text": "Key Features\nIntegration with Other Libraries\n\nNumPy serves as the foundation for many other scientific computing libraries in Python, such as SciPy, pandas, and scikit-learn.\n\n\n\n\n\n\n\nImportant\n\n\nBe sure to be familiar with NumPy, since it’s the backbone of scientific computing in Python!\n\n\n\n\nIf you need a refresher, check out these guides:\nNumPy: the absolute basics for beginners"
   },
   {
     "objectID": "index.html#matplotlib",
     "href": "index.html#matplotlib",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": " Matplotlib",
     "text": "Matplotlib\nMatplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. It provides a wide range of plotting capabilities, allowing you to create high-quality graphs and charts for data analysis and presentation.\n\nfrom matplotlib import pyplot as plt\n\n\nimport matplotlib.pyplot as plt"
   },
   {
     "objectID": "index.html#matplotlib-basics",
     "href": "index.html#matplotlib-basics",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": " Matplotlib Basics",
     "text": "Matplotlib Basics\nMatplotlib lets you visualize data with just a few lines of code.\n\n\n\nimport numpy as np\nfrom matplotlib import pyplot as plt\n\n# Generate data\nx = np.linspace(0, 10, 100)\ny1 = np.sin(x)\ny2 = np.cos(x)\n\nfig, ax = plt.subplots(figsize=(10, 6))\n\nax.plot(x, y1, label='Sin(x)', color='blue', linewidth=2)\nax.plot(x, y2, label='Cos(x)', color='red', linewidth=2)\nax.fill_between(x, y1, y2, alpha=0.2)\n\nax.set_title('Trigonometric Functions')\nax.set_xlabel('x')\nax.set_ylabel('y')\nax.legend()\nax.grid(True)\nplt.show()"
   },
   {
     "objectID": "index.html#matplotlib-in-action",
     "href": "index.html#matplotlib-in-action",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": " Matplotlib in Action",
     "text": "Matplotlib in Action\nMatplotlib supports rich styling: color maps, transparency, annotations, and more. Perfect for high-quality visual analysis!\n\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# Generate synthetic data\nnp.random.seed(0)\nx = np.linspace(0, 10, 200)\ny = np.sin(x) + np.random.normal(0, 0.2, size=x.size)\ncolors = y  # color by value\nsizes = 80 * np.abs(y) + 10  # scale by magnitude\n\nplt.figure(figsize=(8, 5))\nscatter = plt.scatter(x, y, c=colors, s=sizes, cmap=\"viridis\", alpha=0.8, edgecolors=\"k\")\n\n# Add a colorbar and labels\nplt.colorbar(scatter, label=\"y value\")\nplt.title(\"Fancy sine function with noise\", fontsize=14, pad=10)\nplt.xlabel(\"x\", fontsize=12)\nplt.ylabel(\"y\", fontsize=12)\n\n# Add a highlight annotation\nidx = np.argmax(y)\nplt.scatter(x[idx], y[idx], color=\"red\", s=200, edgecolors=\"white\", zorder=3)\nplt.annotate(\"Peak!\", (x[idx], y[idx]), textcoords=\"offset points\", xytext=(15,10), color=\"red\", fontsize=12)\n\nplt.grid(alpha=0.3)\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "index.html#dynamical-systems",
     "href": "index.html#dynamical-systems",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Dynamical Systems",
     "text": "Dynamical Systems\nEvery system that evolves over time can be described as a dynamical system.\n\n\nThe word dynamical comes from the Greek δύναμις (dýnamis), which means power, potential, or capacity to act. So dynamical literally refers to something in the process of becoming, something that has the power to change.\n\n\n\n\n\n“The more you know, the more you realize you don’t know.” - Aristotle Image generated with chatGPT"
   },
   {
     "objectID": "index.html#why-dynamical-systems-matter",
     "href": "index.html#why-dynamical-systems-matter",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Why Dynamical Systems Matter",
     "text": "Why Dynamical Systems Matter\nIf you think about it, almost every process in nature and engineering changes with time, therefore following the rules of change.\n\n\nThese rules tell us not what is, but what will be next.\n\n\n\nTherefore, these rules will allow us to predict the future, given we know the present."
   },
   {
     "objectID": "index.html#the-system-state",
     "href": "index.html#the-system-state",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "The System State",
     "text": "The System State\nWe start with a simple idea: everything changes with time.\nAt any moment, a system has a state (its position, temperature, or concentration) and this state evolves continuously.\n\n\n\nMathematically, we can describe the state as a vector:\n\\[\n\\mathbf{x}(t) =\n\\begin{bmatrix}\nx_1(t) \\\\[4pt]\nx_2(t) \\\\[2pt]\n\\vdots \\\\[2pt]\nx_n(t)\n\\end{bmatrix}\n\\]\n\n\n\nand the rule of change as:\n\\[\n\\frac{d\\mathbf{x}}{dt} = F(\\mathbf{x}, t)\n\\]\nwhere \\(F\\) describes how the state changes over time.\n\n\n\nGiven \\(\\mathbf{x}(t_0)=\\mathbf{x}_0\\) and \\(F(\\mathbf{x}, t)\\) we can predict the system’s future evolution.\nWe’ve written an Ordinary Differential Equation."
   },
   {
     "objectID": "index.html#what-are-odes",
     "href": "index.html#what-are-odes",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "What are ODEs?",
     "text": "What are ODEs?\nODEs are the mathematical representation of these rules of change. They relate a function (the state of the system) to its derivatives (the rates of change of the system).\nThey’re astonishingly powerful.\n\n\n\n\n\n\n\n\nWe define the initial value problem (IVP) for an ODE as: \\[\n\\frac{d\\mathbf{x}}{dt} = F(\\mathbf{x}, t), \\quad \\mathbf{x}(t_0) = \\mathbf{x}_0\n\\]"
   },
   {
     "objectID": "index.html#odes-and-condition-of-existence-and-uniqueness",
     "href": "index.html#odes-and-condition-of-existence-and-uniqueness",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "ODEs and Condition of existence and uniqueness",
     "text": "ODEs and Condition of existence and uniqueness\nFor an ODE to have a unique solution, certain conditions must be met.\n\nThese conditions are often related to the continuity and differentiability of the functions involved, explained in the Existence and Uniqueness Theorem (Picard-Lindelöf theorem):\n\n\n\n\n\n\n\nExistence and Uniqueness Theorem (Picard–Lindelöf)\n\n\nConsider the initial value problem\n\\[\n\\dot{x} = f(x), \\quad x(0) = x_0.\n\\]\nSuppose that \\(f(x)\\) and \\(f'(x)\\) are continuous on an open interval \\(R\\) of the x-axis, and suppose that \\(x_0\\) is a point in \\(R\\).\nThen the initial value problem has a solution \\(x(t)\\) on some time interval \\((- \\tau, \\tau)\\) about \\(t = 0\\), and the solution is unique.\n\n\n\n\n\n\nThis theorem says that if \\(f(x)\\) is smooth enough, then solutions exist and are unique.\n(Even so, there’s no guarantee that solutions exist forever..)\n\n\nIf you want to read more about it, check Encyclopedia of Mathematics"
   },
   {
     "objectID": "index.html#linear-odes",
     "href": "index.html#linear-odes",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Linear ODEs",
     "text": "Linear ODEs\nA linear ordinary differential equation (ODE) is one that can be written in the form:\n\\[\na_n(t)\\,\\frac{d^n y}{dt^n} + a_{n-1}(t)\\,\\frac{d^{n-1} y}{dt^{n-1}} + \\dots + a_1(t)\\,\\frac{dy}{dt} + a_0(t)\\,y = g(t)\n\\]\nwhere the coefficients \\(a_i(t)\\) and the forcing term \\(g(t)\\) are known functions of the independent variable \\(t\\).\nKey properties\n\nThe dependent variable \\(y\\) and its derivatives appear only to the first power.\n\\(y\\) and its derivatives are not multiplied together.\nUsually, can be solved analytically\nSuperposition holds:\nif \\(y_1\\) and \\(y_2\\) are solutions of the homogeneous equation, then \\(c_1 y_1 + c_2 y_2\\) is also a solution."
   },
   {
     "objectID": "index.html#nonlinear-odes",
     "href": "index.html#nonlinear-odes",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Nonlinear ODEs",
     "text": "Nonlinear ODEs\nA non-linear ODE involves terms that are nonlinear functions of \\(y\\) or its derivatives,\nfor example, \\(y^2\\), \\(y\\,\\frac{dy}{dt}\\), or \\(\\sin(y)\\).\nNonlinear equations often describe richer and more complex dynamics (e.g., oscillations, bifurcations and chaos).\nTypically cannot be solved analytically and must be studied using numerical methods or approximations.\n\n\n\n\n\n\n\nStrange Attractor\n\n\n\n\n\n\n\n\n\nMandelbrot Set (kinda)\n\n\n\n\n\n\\[\n\\frac{du}{dt} = \\frac{1}{\\tau} \\left(u_{in} - u\\right) + k\\,u\n\\]\n\\[\n\\frac{d^2 \\theta}{dt^2} + \\sin(\\theta) = 0\n\\]\nLinear vs. Nonlinear\n\n\n\n\n\n“Most of everyday life is nonlinear, and the principle of superposition fails spectacularly.” - Steven Strogatz"
   },
   {
     "objectID": "index.html#solving-odes-numerically",
     "href": "index.html#solving-odes-numerically",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Solving ODEs Numerically",
     "text": "Solving ODEs Numerically\nImagine you have a first-order ODE of the form: \\[\n\\frac{d\\theta}{dt} = \\sin(\\theta)\n\\]\nwith an initial condition \\(\\theta(t=0) = \\theta_0\\).\nImagine \\(\\theta\\) represents the angular position of a particle moving along a line over time \\(t\\).\n\n\nKnowing the rule of change, specifically \\(\\frac{d\\theta}{dt}\\), already allows us to predict the particle’s future behaviour without using any integrals!"
   },
   {
     "objectID": "index.html#the-power-of-knowing-the-derivative",
     "href": "index.html#the-power-of-knowing-the-derivative",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "The power of knowing the derivative",
     "text": "The power of knowing the derivative\nThe phase-space\nBy knowing the derivative \\(\\frac{d\\theta}{dt} = \\sin(\\theta)\\), we can analyze the system’s behavior in phase space:"
   },
   {
     "objectID": "index.html#the-power-of-knowing-the-derivative-1",
     "href": "index.html#the-power-of-knowing-the-derivative-1",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "The power of knowing the derivative",
     "text": "The power of knowing the derivative\nThe phase-space\nBy knowing the derivative \\(\\frac{d\\theta}{dt} = \\sin(\\theta)\\), we can analyze the system’s behavior in phase space:"
   },
   {
     "objectID": "index.html#the-power-of-knowing-the-derivative-2",
     "href": "index.html#the-power-of-knowing-the-derivative-2",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "The power of knowing the derivative",
     "text": "The power of knowing the derivative\nThe phase-space\nBy knowing the derivative \\(\\frac{d\\theta}{dt} = \\sin(\\theta)\\), we can analyze the system’s behavior in phase space:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\nIntuition: knowing the derivative allows us to predict the system’s behavior without solving the ODE explicitly!"
   },
   {
     "objectID": "index.html#eulers-method",
     "href": "index.html#eulers-method",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Euler’s Method",
     "text": "Euler’s Method\nWe were able to predict the system’s behavior qualitatively by analyzing the phase space.\n\nSimilarly, to obtain a quantitative solution, we can use the same intuituion to approximate the solution numerically using Euler’s Method."
   },
   {
     "objectID": "index.html#the-idea-behind-eulers-method",
     "href": "index.html#the-idea-behind-eulers-method",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "The idea behind Euler’s Method",
     "text": "The idea behind Euler’s Method\nWe know the differential equation describes a velocity field:\n\\[\n\\frac{dx}{dt} = f(x)\n\\]\nAt each point \\(x\\), the function \\(f(x)\\) tells us how fast and in which direction \\(x\\) changes.\n\nIf we start from \\(x_0\\) at \\(t_0\\), and move a small time step \\(\\Delta t\\), the displacement is approximately the local velocity times \\(\\Delta t\\):\n\\[\nx(t_0 + \\Delta t) \\approx x_0 + f(x_0)\\,\\Delta t\n\\]"
   },
   {
     "objectID": "index.html#iterating-the-idea",
     "href": "index.html#iterating-the-idea",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Iterating the idea",
     "text": "Iterating the idea\nBy repeating the same reasoning step-by-step, we generate a sequence:\n\\[\nx_{n+1} = x_n + f(x_n)\\,\\Delta t\n\\]\nEach step uses the current slope to estimate the next position."
   },
   {
     "objectID": "index.html#however",
     "href": "index.html#however",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "However…",
     "text": "However…\n\nThe accuracy of Euler’s method depends on the step size \\(\\Delta t\\).\nWhen you have different time scales in the system, Euler’s method may require impractically small step sizes to maintain stability and accuracy.\n\n\nNumerically, an ODE is considered stiff if it exhibits behavior on vastly different time scales, making it challenging for standard numerical methods to solve efficiently.\n\n\n\n\n\n\n\nNote\n\n\nIn chemical engineering, stiff equations are the standard rather than the exception, often arising from reaction kinetics and transport phenomena."
   },
   {
     "objectID": "index.html#example-stiffness-and-step-size",
     "href": "index.html#example-stiffness-and-step-size",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Example: stiffness and step size",
     "text": "Example: stiffness and step size\nLet’s test the Euler method on a stiff ODE:\n\\[\n\\dot{x} = -15 \\, x\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDon’t be fooled by the seemingly simple ODE!\nWith a large step size (e.g., \\(\\Delta t = 1/4\\)), the Euler method produces wildly oscillating and diverging results.\nWe need different numerical methods designed to handle stiffness effectively.\n\n\n\n\n\n\n\n\n\n\nTip\n\n\nDon’t use Euler scheme.\n\n\n\n\n\n\nThe example was taken from Wikipedia. Check out the full article on Stiff equations for more details!"
   },
   {
     "objectID": "index.html#many-ways-to-integrate-odes",
     "href": "index.html#many-ways-to-integrate-odes",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Many ways to integrate ODEs",
     "text": "Many ways to integrate ODEs\nWhen integrating ODEs, different schemes are suited for different regimes:\n\n🧮 Runge–Kutta (RK45)\n\nExplicit → fast, accurate for non-stiff systems\n\nWorks best when all time scales are similar\n\n\n\n\n⚙️ BDF (Backward Differentiation Formula)\n\nImplicit → robust for stiff systems\n\nIdeal for chemical kinetics, heat transfer, adsorption dynamics\n\n\n\n🔀 LSODA\n\nHybrid → automatically switches between explicit (Adams) and implicit (BDF)\n\nDetects stiffness during runtime\n\nExcellent default if stiffness is uncertain"
   },
   {
     "objectID": "index.html#solving-odes-with-python-1",
     "href": "index.html#solving-odes-with-python-1",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Solving ODEs with Python",
     "text": "Solving ODEs with Python\nPython offers several libraries for solving ODEs, with SciPy being one of the most popular.\nThe scipy.integrate module provides the function solve_ivp that can be used to numerically solve ODEs in the Initial Value Problem formulation.\n\n\nLet’s take a look at SciPy’s solve_ivp!\n\n\n\n\nCheck out SciPy for more details."
   },
   {
     "objectID": "index.html#scipy-and-solve_ivp",
     "href": "index.html#scipy-and-solve_ivp",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Scipy and solve_ivp",
     "text": "Scipy and solve_ivp\nThe solve_ivp function can handle both stiff and non-stiff systems and offers various integration methods.\nSolving an ODE with solve_ivp typically involves the following steps:\n\nDefine the IVP problem: Define the ODE system and initial conditions.\nImplement the ODE system: Write a function that computes and returns the derivatives.\nSetup and call solve_ivp: Specify the time span, initial conditions, and method.\nExtract and analyze the results.\n\n\n\nimport scipy.integrate as spi\n\n\nfrom scipy.integrate import solve_ivp\n\nYou can follow me along in the population_balance_students.ipynb notebook!"
   },
   {
     "objectID": "index.html#define-the-ivp-problem",
     "href": "index.html#define-the-ivp-problem",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "1. Define the IVP problem",
     "text": "1. Define the IVP problem\nConsider a population of rabbits N.\nThe population grows at a rate proportional to its current size, and also proportional to the available resources, which decrease as the population increases. This can be modeled with the following ODE:\n\n\\[\n\\frac{dN}{dt} = rN\\left(1 - \\frac{N}{K}\\right)\n\\]\n\n\nwhere:\n\nr is the intrinsic growth rate,\nK is the carrying capacity of the environment.\n\\(N(0)\\) = \\(N_0\\) is the initial population size."
   },
   {
     "objectID": "index.html#implement-the-ode-system",
     "href": "index.html#implement-the-ode-system",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "2. Implement the ODE system",
     "text": "2. Implement the ODE system\nWe can implement the ODE system in Python as follows:\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef rabbit_population(t, y, r, K):\n    dydt = r * y * (1 - y / K)\n    return dydt"
   },
   {
     "objectID": "index.html#setup-solve_ivp",
     "href": "index.html#setup-solve_ivp",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "3. Setup solve_ivp",
     "text": "3. Setup solve_ivp\nLet’s set up the parameters and initial conditions for our simulation:\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef rabbit_population(t, y, r, K):\n    dydt = r * y * (1 - y / K)\n    return dydt\n\nr = 0.1  # growth rate [1/s]\nK = 100  # carrying capacity [individuals]\ny0 = [10]  # initial population [individuals]\nt_span = (0, 100)  # time span for the simulation [s]\nt_eval = np.linspace(t_span[0], t_span[1], 100)\nmethod = 'RK45'  # integration method"
   },
   {
     "objectID": "index.html#call-solve_ivp",
     "href": "index.html#call-solve_ivp",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "4. Call solve_ivp",
     "text": "4. Call solve_ivp\nNow we can call the solve_ivp function to solve the ODE:\nsolution = solve_ivp(rabbit_population, \n                     t_span, \n                     y0, \n                     args=(r, K), \n                     t_eval=t_eval,\n                     method=method)\n\nDoubts about the function arguments? Check the official documentation for more details."
   },
   {
     "objectID": "index.html#extract-and-analyze-results",
     "href": "index.html#extract-and-analyze-results",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "5. Extract and analyze results",
     "text": "5. Extract and analyze results\nFinally, we can plot the results to visualize the rabbit population growth over time:\nsolution = solve_ivp(rabbit_population, \n                     t_span, \n                     y0, \n                     args=(r, K), \n                     t_eval=t_eval,\n                     method=method)\n\n\nsol_time = solution.t\nsol_y = solution.y[0]\n    \nplt.plot(sol_time, sol_y, label='Rabbit Population', linewidth=2)\nplt.plot(0, y0, 'ro', label='Initial Population')\nplt.hlines(K, colors='g', linestyles='--', label='Carrying Capacity (K)', xmin=t_span[0], xmax=t_span[1])\nplt.title('Rabbit Population Growth Over Time')\nplt.xlabel('Time')\nplt.ylabel('Population')\nplt.legend()\nplt.grid()\nplt.show()\n\nDoubts about the function arguments? Check the official documentation for more details."
   },
   {
     "objectID": "index.html#results",
     "href": "index.html#results",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Results",
     "text": "Results\n\n\n\n\n\n\n\n\n\n\nMaybe not very realistic for rabbits, but still a good example of how to use solve_ivp!"
   },
   {
     "objectID": "index.html#now-you-try",
     "href": "index.html#now-you-try",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Now you try!",
     "text": "Now you try!\n\nOpen the population_balance_students.ipynb and go to the section “Your turn!”.\nPlay around with different parameters for r, K, and N₀.\nModify the code such that you solve the ODE for a different initial conditions and plot the results on the same graph.\nTry to remove t_eval=t_eval from the solve_ivp function and see what happens to the output plot. Do you notice any difference?\n\n\n\n\n\n\n\n\nTip\n\n\nTo account for multiple initial conditions, don’t copy and paste the solve_ivp function multiple times. Instead, use the concept of loops that you learned in the previous sections!"
   },
   {
     "objectID": "index.html#different-initial-conditions-example",
     "href": "index.html#different-initial-conditions-example",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Different initial conditions example",
     "text": "Different initial conditions example\nHere’s an example of how to solve the ODE for different initial conditions and plot the results on the same graph:\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef rabbit_population(t, y, r, K):\n    dydt = r * y * (1 - y / K)\n    return dydt\n\n# Parameters\nr = 0.1  # growth rate\nK = 100  # carrying capacity\ny0s = [0, 10, 50, 80, 120, 150]  # initial population\nt_span = (0, 100)  # time span for the simulation\nt_eval = np.linspace(t_span[0], t_span[1], 100)\n\nfor N0 in y0s:\n    solution = solve_ivp(rabbit_population, \n                         t_span, \n                         [N0], \n                         args=(r, K), \n                         t_eval=t_eval)\n\n    # Plot results\n    plt.plot(solution.t, solution.y[0], label=f'Rabbit Population (N0={N0})', linewidth=2)\n    plt.plot(0, N0, 'ro', label='Initial Population')\n    \nplt.hlines(K, colors='g', linestyles='--', label='Carrying Capacity (K)', xmin=t_span[0], xmax=t_span[1])\nplt.title('Rabbit Population Growth Over Time')\nplt.xlabel('Time')\nplt.ylabel('Population')\nplt.grid()\nplt.show()"
   },
   {
     "objectID": "index.html#profiles-and-phase-space",
     "href": "index.html#profiles-and-phase-space",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Profiles and Phase Space",
     "text": "Profiles and Phase Space\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLet’s proceed to something more complex in the next section!"
   },
   {
     "objectID": "index.html#solve-for-systems-of-odes",
     "href": "index.html#solve-for-systems-of-odes",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Solve for systems of ODEs",
     "text": "Solve for systems of ODEs\nNow that we have a basic understanding of how to use solve_ivp, let’s tackle a more complex ODE system, containing more that one equation.\nRecall:\n\nDefine the IVP problem: Define the ODE system and initial conditions.\nImplement the ODE system: Write a function that computes and returns the derivatives.\nSetup and call solve_ivp: Specify the time span, initial conditions, and method.\nExtract and analyze the results\n\n\nYou can follow me along by opening the lorenz_system_students.ipynb notebook!"
   },
   {
     "objectID": "index.html#a-strange-example-lorenz-system",
     "href": "index.html#a-strange-example-lorenz-system",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "1. A “strange” example: Lorenz system",
     "text": "1. A “strange” example: Lorenz system\nEdward Lorentz (1963) wanted to model atmospheric convection, with variables \\(x(t)\\), \\(y(t)\\), and \\(z(t)\\) related to fluid flow and temperature.\n\nHe ended up with a simplified model, a set of three first-order, coupled, nonlinear differential equations:\n\\[\n\\begin{align*}\n\\dot{x} &= \\Pr (y - x) \\\\\n\\dot{y} &= x (\\text{Ra} - z) - y \\\\\n\\dot{z} &= xy - \\beta z\n\\end{align*}\n\\]\nThe parameters \\(\\Pr\\) (Prandtl), Ra (Rayleigh), and \\(\\beta\\) are constants that depend on the physical properties of the fluid and the conditions of the system.\n\n\nThe story behind the Lorenz system is quite fascinating, I recommend reading about it! Check-out this Veritasium video: Chaos: The Science of the Butterfly Effect | Veritasium"
   },
   {
     "objectID": "index.html#implementing-the-lorenz-system-in-python",
     "href": "index.html#implementing-the-lorenz-system-in-python",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "2. Implementing the Lorenz system in Python",
     "text": "2. Implementing the Lorenz system in Python\nLet’s implement the Lorenz system using solve_ivp.\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef lorenz_system(t, y, Pr, Ra, beta):\n    x, y, z = y\n    dxdt = Pr * (y - x)\n    dydt = x * (Ra - z) - y\n    dzdt = x * y - beta * z\n    return [dxdt, dydt, dzdt]\n\nLet’s consider two initial conditions that are very close to each other: \\[\\mathbf{y_0} = [1.0, 1.0, 1.0]\\] \\[\\mathbf{y_0'} = [1.0 + \\varepsilon, 1.0, 1.0]\\] with \\(\\varepsilon = 10^{-6}\\)."
   },
   {
     "objectID": "index.html#implementing-the-lorenz-system-in-python-1",
     "href": "index.html#implementing-the-lorenz-system-in-python-1",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "2. Implementing the Lorenz system in Python",
     "text": "2. Implementing the Lorenz system in Python\nLet’s implement the Lorenz system using solve_ivp.\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef lorenz_system(t, y, Pr, Ra, beta):\n    x, y, z = y\n    dxdt = Pr * (y - x)\n    dydt = x * (Ra - z) - y\n    dzdt = x * y - beta * z\n    return [dxdt, dydt, dzdt]\n\nPr = 10.0\nRa  = 1\nbeta  = 8.0 / 3.0"
   },
   {
     "objectID": "index.html#setup-the-solver",
     "href": "index.html#setup-the-solver",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "3. Setup the solver",
     "text": "3. Setup the solver\nLet’s implement the Lorenz system using solve_ivp.\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef lorenz_system(t, y, Pr, Ra, beta):\n    x, y, z = y\n    dxdt = Pr * (y - x)\n    dydt = x * (Ra - z) - y\n    dzdt = x * y - beta * z\n    return [dxdt, dydt, dzdt]\n\nPr = 10.0\nRa  = 1\nbeta  = 8.0 / 3.0\n\ny0   = np.array([1.0, 1.0, 1.0])\neps  = 1e-6\ny0_2 = np.array([1.0 + eps, 1.0, 1.0])\n\nt_end = 50.0\nt_span = (0.0, t_end)\nt_eval = np.linspace(t_span[0], t_span[1], 10000)"
   },
   {
     "objectID": "index.html#solve-the-system-and-extract-results",
     "href": "index.html#solve-the-system-and-extract-results",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "4. Solve the system and extract results",
     "text": "4. Solve the system and extract results\nLet’s implement the Lorenz system using solve_ivp.\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.integrate import solve_ivp\n\ndef lorenz_system(t, y, Pr, Ra, beta):\n    x, y, z = y\n    dxdt = Pr * (y - x)\n    dydt = x * (Ra - z) - y\n    dzdt = x * y - beta * z\n    return [dxdt, dydt, dzdt]\n\nPr = 10.0\nRa  = 1\nbeta  = 8.0 / 3.0\n\ny0   = np.array([1.0, 1.0, 1.0])\neps  = 1e-6\ny0_2 = np.array([1.0 + eps, 1.0, 1.0])\n\nt_end = 50.0\nt_span = (0.0, t_end)\nt_eval = np.linspace(t_span[0], t_span[1], 10000)\n\nmethod = \"RK45\"          \n\nsol1 = solve_ivp(lorenz_system, t_span, y0,   args=(Pr, Ra, beta), t_eval=t_eval, method=method, rtol=1e-9, atol=1e-12)\nsol2 = solve_ivp(lorenz_system, t_span, y0_2, args=(Pr, Ra, beta), t_eval=t_eval, method=method, rtol=1e-9, atol=1e-12)\n\nt = sol1.t\nX1, Y1, Z1 = sol1.y\nX2, Y2, Z2 = sol2.y"
   },
   {
     "objectID": "index.html#visualize-the-results",
     "href": "index.html#visualize-the-results",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "5. Visualize the results",
     "text": "5. Visualize the results\nVisualizing the time evolution of the Lorenz system can reveal its peculiar behavior..\nIt’s time for you to complete the code and generate the plots! Go to the “exercise” cell and:\n\nCreate a 3x1 subplot figure.\nPlot \\(x(t)\\), \\(y(t)\\), and \\(z(t)\\) for both initial conditions.\nCreate a 1x3 subplot figure.\nPlot the phase portraits: \\(x(t)\\) vs \\(z(t)\\), \\(x(t)\\) vs \\(y(t)\\), and \\(y(t)\\) vs \\(z(t)\\) for both initial conditions. (Note: x-axis vs y-axis)\nIncrease slowly Rayleigh number Ra (1 - 25) and observe how the system’s behavior changes!\n\n\nMinimal starter code is provided below:\nfig_3_1, axes_3_1 = plt.subplots(3, 1, figsize=(12, 10), sharex=True)\ncolors = {\"x\":\"tab:blue\", \"y\":\"tab:orange\", \"z\":\"tab:green\"}\naxes[0].plot(t, X1, color=colors[\"x\"])\n\nfig_3_1, axes_1_3 = plt.subplots(1, 3, figsize=(12, 5), sharex=False, sharey=False)\naxes_1_3[0].plot(X1, Z1)"
   },
   {
     "objectID": "index.html#time-series-solutions",
     "href": "index.html#time-series-solutions",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Time series solutions",
     "text": "Time series solutions"
   },
   {
     "objectID": "index.html#phase-space-plots",
     "href": "index.html#phase-space-plots",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Phase space plots",
     "text": "Phase space plots\n\n\nWant to know more? I highly recommend checking out the following resources:\nThe Lorenz Attractor, a Paradigm for Chaos\nChaos: The Science of the Butterfly Effect | Veritasium\nChaos Theory: The Language of (in)stability | Gonkee\nAre there other Chaotic Attractors?"
   },
   {
     "objectID": "index.html#summary",
     "href": "index.html#summary",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Summary",
     "text": "Summary\nI might have convinced you that solve_ivp is a powerful tool to solve ODEs in Python, even for complex systems.\n\n\nYou should now be able to:\n\nDefine and implement systems of ODEs in Python.\nUse solve_ivp to solve these systems numerically.\nVisualize and analyze the results effectively.\n\n\n\n\n\n\n\nOnly one thing is missing: what if we don’t know the parameters of the system? How can we estimate them from data?"
   },
   {
     "objectID": "index.html#why-model-fitting",
     "href": "index.html#why-model-fitting",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Why Model Fitting?",
     "text": "Why Model Fitting?\n\nIn many scientific and engineering applications, we have experimental data that we want to describe using mathematical models.\nModel fitting allows us to estimate the parameters of these models so that they best represent the observed data.\nThis is crucial for making predictions, understanding underlying processes, and optimizing systems."
   },
   {
     "objectID": "index.html#python-libraries-for-model-fitting",
     "href": "index.html#python-libraries-for-model-fitting",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Python Libraries for Model Fitting",
     "text": "Python Libraries for Model Fitting\nThere are many libraries in Python that facilitate model fitting.\nFor this introduction, we will focus on Scipy’s curve_fit and least_squares function from the optimize module.\nWhen to use curve_fit:\n\nOne experiment at a time\nFast and easy fitting\n\nWhen to use least_squares:\n\nYou have multiple experiments to fit simultaneously\nYou want more control over the optimization process\n\n\nCheck the official documentation for more details."
   },
   {
     "objectID": "index.html#example-fitting-a-non-linear-model",
     "href": "index.html#example-fitting-a-non-linear-model",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Example: Fitting a Non-Linear Model",
     "text": "Example: Fitting a Non-Linear Model\nLet’s consider an example where we have experimental data that follows a non-linear relationship, such as an exponential decay model. \\[\ny(x) = e^{-\\lambda x}\\,\\sin(\\omega x)\n\\]\nWe’ll recover the \\(\\lambda\\) and \\(\\omega\\) parameters of a damped sine model from noisy synthetic data.\nYou can open this example in a Jupyter notebook and follow me: model_fitting_students.ipynb."
   },
   {
     "objectID": "index.html#generating-synthetic-data",
     "href": "index.html#generating-synthetic-data",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Generating Synthetic Data",
     "text": "Generating Synthetic Data\nFirst , we generate synthetic data based on known parameters and add some noise to simulate experimental measurements.\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom scipy.optimize import curve_fit\n\nrng = np.random.default_rng(7)\nlam_true, omega_true = 0.5, np.pi\nt_exp = np.linspace(0, 10, 300)  \ny_true = np.exp(-lam_true * t_exp) * np.sin(omega_true * t_exp)  \nsigma = 0.03  \ny_exp = y_true + rng.normal(0, sigma, size=t_exp.size)"
   },
   {
     "objectID": "index.html#fitting-with-least_squares",
     "href": "index.html#fitting-with-least_squares",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Fitting with least_squares:",
     "text": "Fitting with least_squares:\nDefining the Model and Residuals Function\nTo fit the model using least_squares, we first need to define the model function and the residuals function,\ndef damped_sine(t, lam, omega):\n    return np.exp(-lam * t) * np.sin(omega * t)\n\ndef residuals(x_to_optimize, t_exp, y_exp, sigma=0.03):\n    lam, omega = x_to_optimize\n    y_pred = damped_sine(t_exp, lam, omega) \n    return (y_exp - y_pred) / sigma  \n\nThe residuals function computes the difference between the observed data and the model predictions, and must take as first argument a single array of parameters to optimize.\nThen, additional arguments (like t_exp, y_exp, and sigma) can be passed via the args and kwargs parameters of least_squares.\nWhy? Look at the signature of least_squares!\n\n\nCheck the official documentation for more details."
   },
   {
     "objectID": "index.html#fitting-with-least_squares-1",
     "href": "index.html#fitting-with-least_squares-1",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Fitting with least_squares:",
     "text": "Fitting with least_squares:\nPerforming the Fit\nNow, we can use least_squares to estimate the parameters of our model based on the noisy data.\ndef damped_sine(t, lam, omega):\n    return np.exp(-lam * t) * np.sin(omega * t)\n\ndef residuals(x_to_optimize, t_exp, y_exp, sigma=0.03):\n    lam, omega = x_to_optimize\n    y_pred = damped_sine(t_exp, lam, omega) \n    return (y_exp - y_pred) / sigma   \n\np0 = np.array([1.0, 1.0])\nbounds = (np.array([0.0, 0.0]), np.array([np.inf, 5.0]))\n\nres = least_squares(residuals, p0, \n                    bounds=bounds, \n                    args=(t_exp, y_exp), \n                    kwargs={\"sigma\": sigma})\nlam_fit, omega_fit = res.x"
   },
   {
     "objectID": "index.html#visualizing-the-results",
     "href": "index.html#visualizing-the-results",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "3. Visualizing the Results",
     "text": "3. Visualizing the Results\nFinally, we can visualize the fitted model against the noisy data and the true model.\ndef damped_sine(t, lam, omega):\n    return np.exp(-lam * t) * np.sin(omega * t)\n\ndef residuals(x_to_optimize, t_exp, y_exp, sigma=0.03):\n    lam, omega = x_to_optimize\n    y_pred = damped_sine(t_exp, lam, omega) \n    return (y_exp - y_pred) / sigma   \n\np0 = np.array([1.0, 1.0])\nbounds = (np.array([0.0, 0.0]), np.array([np.inf, 5.0]))\n\nres = least_squares(residuals, p0, \n                    bounds=bounds, \n                    args=(t_exp, y_exp), \n                    kwargs={\"sigma\": sigma})\nlam_fit, omega_fit = res.x \n\ny_fit = damped_sine(t_exp, lam_fit, omega_fit)  \nplt.figure()\nplt.scatter(t_exp, y_exp, s=10, alpha=0.6, label=\"Noisy experimental data\")  \nplt.plot(t_exp, y_fit, lw=2, label=f\"Least squares fit: λ={lam_fit:.3f}, ω={omega_fit:.3f}\")  \nplt.xlabel(\"t (Experimental Time)\")\nplt.ylabel(\"y (Observed Data)\")\nplt.title(\"Fit y = e^{-λt} sin(ωt) with least_squares\")\nplt.legend()\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "index.html#results-1",
     "href": "index.html#results-1",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Results",
     "text": "Results\nAfter running the fitting procedure, we obtain estimates for the parameters \\(\\lambda\\) and \\(\\omega\\):\n\n\nEstimated λ = 0.50165 ± 5.15e-03 (true 0.5)\nEstimated ω = 3.14557 ± 5.16e-03 (true 3.14159)"
   },
   {
-    "objectID": "index.html#bonus-how-do-we-estimate-parameter-uncertainties",
-    "href": "index.html#bonus-how-do-we-estimate-parameter-uncertainties",
-    "title": "Practicum Process Technology",
-    "section": "Bonus: how do we estimate parameter uncertainties?",
-    "text": "Bonus: how do we estimate parameter uncertainties?\nAfter obtaining the optimal parameters from least_squares, we can estimate their uncertainties using the covariance matrix derived from the Jacobian of the residuals. The covariance matrix pcov is computed as:\n\\[\n\\text{pcov} = s^2 \\cdot (J^T J)^{-1}\n\\]\nwhere:\n\n( s^2 ) is the estimated variance of the residuals, calculated as the residual sum of squares (RSS) divided by the degrees of freedom (number of data points minus number of parameters).\n( J ) is the Jacobian matrix of the residuals with respect to the parameters, evaluated at the optimal parameter values.\n\nThe standard errors (uncertainties) of the parameters are then obtained by taking the square root of the diagonal elements of the covariance matrix:\n\\[\n\\text{SE}_i = \\sqrt{\\text{pcov}_{ii}}\n\\]"
-  },
-  {
     "objectID": "index.html#how-to-fit-odes-parameters",
     "href": "index.html#how-to-fit-odes-parameters",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "How to fit ODEs parameters?",
     "text": "How to fit ODEs parameters?\nFitting parameters in ODE models follows the same approach, but with one additional step:\n\nyour predicted values will be obtained from solve_ivp using the parameters to be estimated!\n\nConsider the following reaction scheme in two CSTRs in series: \\[\n\\begin{aligned}\n\\text{CSTR 1:} &\\quad A \\xrightarrow{k_1} B \\\\\n\\text{CSTR 2:} &\\quad B \\xrightarrow{k_2} C\n\\end{aligned}\n\\]\nWe want to estimate the kinetic parameters \\(k_1\\) and \\(k_2\\) from synthetic noisy data of species C concentration over time."
   },
   {
     "objectID": "index.html#setup-the-cstr-model",
     "href": "index.html#setup-the-cstr-model",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Setup the CSTR Model",
     "text": "Setup the CSTR Model\n\\[\n\\frac{dC_{ik}}{dt} = \\frac{(C_{i,k-1} - C_{ik})}{\\tau} + r_{ik}\n\\]\nwith \\(i = A, B, C\\) (species) and \\(k = 1, 2\\) (CSTRs).\n\nModel states: \\(y = ([C_{A1}, C_{B1}, C_{B2}, C_{C2}])\\) with feed \\(C_{A0}&gt;0\\), \\(C_{B0}=C_{C0}=0\\).\n\nCSTR 1: \\(r_{A1} = k_1\\,C_{A1}\\) (first-order in \\(A\\))\nCSTR 2: \\(r_{B2} = k_2\\,C_{B2}^2\\) (second-order in \\(B\\))\n\n\n\nNow it’s your turn! Open the ode_fitting_students.ipynb notebook and implement the fitting of the CSTR model parameters using least_squares and solve_ivp."
   },
   {
     "objectID": "index.html#solution-cstr-model",
     "href": "index.html#solution-cstr-model",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Solution: CSTR Model",
     "text": "Solution: CSTR Model\nYou can find the solution in the ode_fitting.ipynb notebook.\nFirst, we define the ODE model for the CSTRs:\ndef dydt(t, y, k1, k2, CA0, tau):\n    CA1, CB1, CB2, CC2 = y\n\n    r1 = k1 * CA1\n    dCA1 = (CA0 - CA1)/tau - r1\n    dCB1 = (0.0 - CB1)/tau + r1\n \n    r2 = k2 * CB2**2\n    dCB2 = (CB1 - CB2)/tau - r2\n    dCC2 = (0.0 - CC2)/tau + r2\n\n    return [dCA1, dCB1, dCB2, dCC2]"
   },
   {
     "objectID": "index.html#solution-residuals-function",
     "href": "index.html#solution-residuals-function",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Solution: Residuals Function",
     "text": "Solution: Residuals Function\nThen, we write the residuals function that uses solve_ivp to simulate the model:\ndef dydt(t, y, k1, k2, CA0, tau):\n    CA1, CB1, CB2, CC2 = y\n\n    r1 = k1 * CA1\n    dCA1 = (CA0 - CA1)/tau - r1\n    dCB1 = (0.0 - CB1)/tau + r1\n \n    r2 = k2 * CB2**2\n    dCB2 = (CB1 - CB2)/tau - r2\n    dCC2 = (0.0 - CC2)/tau + r2\n\n    return [dCA1, dCB1, dCB2, dCC2]\n\ndef residuals(x_params, t_exp, y_exp, sigma=0.01, CA0=1.0, tau=1.0):\n    k1, k2 = x_params\n    y0 = [0.0, 0.0, 0.0, 0.0]  \n    sol = solve_ivp(\n        dydt, (t_exp[0], t_exp[-1]), y0, t_eval=t_exp,\n        args=(k1, k2, CA0, tau))\n\n    y_pred = sol.y[3]  # CC2(t)\n    return (y_exp - y_pred) / sigma"
   },
   {
     "objectID": "index.html#solution-performing-the-fit",
     "href": "index.html#solution-performing-the-fit",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Solution: Performing the Fit",
     "text": "Solution: Performing the Fit\nFinally, we perform the fitting using least_squares:\np0 = np.array([0.5, 0.3])  # initial guess\nbounds = (np.array([1e-8, 1e-8]), np.array([5.0, 5.0]))\n\nres = least_squares(\n    residuals, p0, bounds=bounds,\n    args=(t_exp, C2_exp),\n    kwargs={\"sigma\": sigma, \"CA0\": CA0, \"tau\": tau})\n\nk1_fit, k2_fit = res.x"
   },
   {
     "objectID": "index.html#solution-visualizing-the-results",
     "href": "index.html#solution-visualizing-the-results",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Solution: Visualizing the Results",
     "text": "Solution: Visualizing the Results\nWe can visualize the fitted model against the noisy data:\ny0_plot = [0.0, 0.0, 0.0, 0.0]\nsol_fit = solve_ivp(\n    dydt, (t_exp[0], t_exp[-1]), y0_plot, t_eval=t_exp,\n    args=(k1_fit, k2_fit, CA0, tau),\n)\nC2_fit = sol_fit.y[3]\n\nplt.figure()\nplt.scatter(t_exp, C2_exp, s=12, alpha=0.7, label=\"Noisy experimental $C_2(t)$\")\nplt.plot(t_exp, C2_fit, lw=2, label=f\"Fit: k1={k1_fit:.3f}, k2={k2_fit:.3f}\", color=\"tab:red\")\nplt.xlabel(\"time\")\nplt.ylabel(r\"$C_2$ (outlet of CSTR 2)\")\nplt.title(\"Two CSTRs in series — fit $k_1$ and $k_2$)\")\nplt.legend()\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "index.html#solution-visualizing-the-results-1",
     "href": "index.html#solution-visualizing-the-results-1",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Solution: Visualizing the Results",
     "text": "Solution: Visualizing the Results\n\n\nk1 = 0.8119 ± 0.0083   (true 0.8000)\nk2 = 1.4291 ± 0.0473   (true 1.5000)"
   },
   {
     "objectID": "index.html#extra-resources",
     "href": "index.html#extra-resources",
-    "title": "Practicum Process Technology",
+    "title": "CBL Process Technology",
     "section": "Extra Resources",
     "text": "Extra Resources\nExtra materials and exercises are available to further enhance your understanding:\n\nPython basics tutorial - 1\nPython basics tutorial - 2\nHomeworks - 1\nHomeworks - 2\nExtra notebooks\n\n Happy coding!"
   }
